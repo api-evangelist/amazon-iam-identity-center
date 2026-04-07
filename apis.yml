@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Identity Management
-  - Single Sign-On
   - Access Control
   - Authentication
   - AWS
+  - Identity Management
+  - Single Sign-On
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -28,9 +28,9 @@ apis:
     humanURL: https://aws.amazon.com/iam/identity-center/
     baseURL: https://sso.amazonaws.com
     tags:
+      - Access Control
       - Identity Management
       - Single Sign-On
-      - Access Control
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
