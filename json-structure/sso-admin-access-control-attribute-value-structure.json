@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-access-control-attribute-value-structure.json",
+  "name": "AccessControlAttributeValue",
+  "description": "The value used for mapping a specified attribute to an identity source. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html\">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.",
+  "type": "object",
+  "properties": {
+    "Source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccessControlAttributeValueSourceList"
+        },
+        {
+          "description": "The identity source to use when mapping a specified attribute to IAM Identity Center."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Source"
+  ]
+}

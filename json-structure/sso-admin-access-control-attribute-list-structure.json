@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-access-control-attribute-list-structure.json",
+  "name": "AccessControlAttributeList",
+  "description": "AccessControlAttributeList schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "Key",
+      "Value"
+    ],
+    "properties": {
+      "Key": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AccessControlAttributeKey"
+          },
+          {
+            "description": "The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center."
+          }
+        ]
+      },
+      "Value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AccessControlAttributeValue"
+          },
+          {
+            "description": "The value used for mapping a specified attribute to an identity source."
+          }
+        ]
+      }
+    },
+    "description": "These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation."
+  }
+}

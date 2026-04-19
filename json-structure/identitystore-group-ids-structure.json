@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-group-ids-structure.json",
+  "name": "GroupIds",
+  "description": "GroupIds schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}",
+    "minLength": 1,
+    "maxLength": 47
+  }
+}

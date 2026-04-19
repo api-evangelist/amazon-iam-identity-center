@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-is-member-in-groups-response-schema.json",
+  "title": "IsMemberInGroupsResponse",
+  "description": "IsMemberInGroupsResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "Results": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroupMembershipExistenceResults"
+        },
+        {
+          "description": "A list containing the results of membership existence checks."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Results"
+  ]
+}

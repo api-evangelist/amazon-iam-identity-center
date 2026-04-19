@@ -1,0 +1,7 @@
+{
+  "GroupId": "id-abc123",
+  "DisplayName": "example-name",
+  "ExternalIds": "id-abc123",
+  "Description": "example-value",
+  "IdentityStoreId": "id-abc123"
+}

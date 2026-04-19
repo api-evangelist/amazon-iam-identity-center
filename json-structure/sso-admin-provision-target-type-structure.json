@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-provision-target-type-structure.json",
+  "name": "ProvisionTargetType",
+  "description": "ProvisionTargetType schema from AWS IAM Identity Center",
+  "type": "string",
+  "enum": [
+    "AWS_ACCOUNT",
+    "ALL_PROVISIONED_ACCOUNTS"
+  ]
+}

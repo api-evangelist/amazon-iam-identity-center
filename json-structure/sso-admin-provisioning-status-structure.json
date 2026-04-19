@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-provisioning-status-structure.json",
+  "name": "ProvisioningStatus",
+  "description": "ProvisioningStatus schema from AWS IAM Identity Center",
+  "type": "string",
+  "enum": [
+    "LATEST_PERMISSION_SET_PROVISIONED",
+    "LATEST_PERMISSION_SET_NOT_PROVISIONED"
+  ]
+}

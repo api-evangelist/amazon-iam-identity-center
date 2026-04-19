@@ -1,0 +1,8 @@
+{
+  "Status": "ENABLED",
+  "RequestId": "id-abc123",
+  "AccountId": "id-abc123",
+  "PermissionSetArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "FailureReason": "example-value",
+  "CreatedDate": "example-value"
+}

@@ -1,0 +1,6 @@
+{
+  "InstanceArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "PermissionSetArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "TargetId": "id-abc123",
+  "TargetType": "CUSTOM"
+}

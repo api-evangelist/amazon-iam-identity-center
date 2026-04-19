@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-list-customer-managed-policy-references-in-permission-set-response-structure.json",
+  "name": "ListCustomerManagedPolicyReferencesInPermissionSetResponse",
+  "description": "ListCustomerManagedPolicyReferencesInPermissionSetResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "CustomerManagedPolicyReferences": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerManagedPolicyReferenceList"
+        },
+        {
+          "description": "Specifies the names and paths of the customer managed policies that you have attached to your permission set."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-group-membership-existence-result-schema.json",
+  "title": "GroupMembershipExistenceResult",
+  "description": "Indicates whether a resource is a member of a group in the identity store.",
+  "type": "object",
+  "properties": {
+    "GroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for a group in the identity store."
+        }
+      ]
+    },
+    "MemberId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MemberId"
+        },
+        {
+          "description": "An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group."
+        }
+      ]
+    },
+    "MembershipExists": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveBooleanType"
+        },
+        {
+          "description": "Indicates whether a membership relation exists or not."
+        }
+      ]
+    }
+  }
+}

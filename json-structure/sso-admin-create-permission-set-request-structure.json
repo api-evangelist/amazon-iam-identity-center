@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-create-permission-set-request-structure.json",
+  "name": "CreatePermissionSetRequest",
+  "description": "CreatePermissionSetRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetName"
+        },
+        {
+          "description": "The name of the <a>PermissionSet</a>."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetDescription"
+        },
+        {
+          "description": "The description of the <a>PermissionSet</a>."
+        }
+      ]
+    },
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "SessionDuration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Duration"
+        },
+        {
+          "description": "The length of time that the application user sessions are valid in the ISO-8601 standard."
+        }
+      ]
+    },
+    "RelayState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RelayState"
+        },
+        {
+          "description": "Used to redirect users within the application during the federation authentication process."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "The tags to attach to the new <a>PermissionSet</a>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "InstanceArn"
+  ]
+}

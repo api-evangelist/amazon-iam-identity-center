@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-describe-group-request-schema.json",
+  "title": "DescribeGroupRequest",
+  "description": "DescribeGroupRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created."
+        }
+      ]
+    },
+    "GroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for a group in the identity store."
+        }
+      ]
+    }
+  },
+  "required": [
+    "IdentityStoreId",
+    "GroupId"
+  ]
+}

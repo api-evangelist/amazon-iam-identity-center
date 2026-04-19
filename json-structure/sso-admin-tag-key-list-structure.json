@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-tag-key-list-structure.json",
+  "name": "TagKeyList",
+  "description": "TagKeyList schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+    "minLength": 1,
+    "maxLength": 128
+  }
+}

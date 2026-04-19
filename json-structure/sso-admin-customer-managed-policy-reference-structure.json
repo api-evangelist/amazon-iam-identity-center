@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-customer-managed-policy-reference-structure.json",
+  "name": "CustomerManagedPolicyReference",
+  "description": "Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ManagedPolicyName"
+        },
+        {
+          "description": "The name of the IAM policy that you have configured in each account where you want to deploy your permission set."
+        }
+      ]
+    },
+    "Path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ManagedPolicyPath"
+        },
+        {
+          "description": "The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names\">Friendly names and paths</a> in the <i>IAM User Guide</i>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

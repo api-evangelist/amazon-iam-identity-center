@@ -1,0 +1,11 @@
+{
+  "Status": "ENABLED",
+  "RequestId": "id-abc123",
+  "FailureReason": "example-value",
+  "TargetId": "id-abc123",
+  "TargetType": "CUSTOM",
+  "PermissionSetArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "PrincipalType": "CUSTOM",
+  "PrincipalId": "id-abc123",
+  "CreatedDate": "example-value"
+}

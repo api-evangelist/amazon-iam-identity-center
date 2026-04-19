@@ -1,0 +1,6 @@
+{
+  "AccountId": "id-abc123",
+  "PermissionSetArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "PrincipalType": "CUSTOM",
+  "PrincipalId": "id-abc123"
+}

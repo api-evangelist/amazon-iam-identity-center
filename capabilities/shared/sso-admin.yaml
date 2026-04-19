@@ -1,0 +1,134 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: AWS IAM Identity Center SSO Admin API
+  description: Manages permission sets, account assignments, instances, and SSO configurations for centralized identity and access management.
+  tags:
+    - AWS
+    - IAM
+    - Identity Management
+    - Single Sign-On
+    - Access Control
+  created: "2026-04-19"
+  modified: "2026-04-19"
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: sso-admin
+      baseUri: https://sso.amazonaws.com
+      description: AWS SSO Admin REST API
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "{{AWS_ACCESS_KEY_ID}}"
+        placement: header
+      resources:
+        - name: instances
+          path: /instances
+          description: SSO instances
+          operations:
+            - name: list-instances
+              method: GET
+              description: List SSO instances
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: permission-sets
+          path: /instances/{instanceArn}/permission-sets
+          description: Permission sets
+          operations:
+            - name: list-permission-sets
+              method: GET
+              description: List permission sets
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-permission-set
+              method: POST
+              description: Create a permission set
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: account-assignments
+          path: /instances/{instanceArn}/account-assignments
+          description: Account assignments
+          operations:
+            - name: create-account-assignment
+              method: POST
+              description: Assign access to an account
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: delete-account-assignment
+              method: DELETE
+              description: Remove account assignment
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: sso-admin-rest
+      resources:
+        - path: /v1/permission-sets
+          name: permission-sets
+          description: Manage permission sets
+          operations:
+            - method: GET
+              name: list-permission-sets
+              description: List all permission sets
+              call: "sso-admin.list-permission-sets"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9100
+      namespace: sso-admin-mcp
+      transport: http
+      tools:
+        - name: list-instances
+          description: List all SSO instances
+          hints:
+            readOnly: true
+          call: "sso-admin.list-instances"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-permission-sets
+          description: List permission sets for an SSO instance
+          hints:
+            readOnly: true
+          call: "sso-admin.list-permission-sets"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-permission-set
+          description: Create a new permission set
+          hints:
+            readOnly: false
+          call: "sso-admin.create-permission-set"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-account-assignment
+          description: Assign a permission set to a user or group for an AWS account
+          hints:
+            readOnly: false
+          call: "sso-admin.create-account-assignment"
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-update-instance-access-control-attribute-configuration-request-structure.json",
+  "name": "UpdateInstanceAccessControlAttributeConfigurationRequest",
+  "description": "UpdateInstanceAccessControlAttributeConfigurationRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed."
+        }
+      ]
+    },
+    "InstanceAccessControlAttributeConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceAccessControlAttributeConfiguration"
+        },
+        {
+          "description": "Updates the attributes for your ABAC configuration."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "InstanceAccessControlAttributeConfiguration"
+  ]
+}

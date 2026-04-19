@@ -1,0 +1,4 @@
+{
+  "Name": "example-name",
+  "Arn": "arn:aws:sso:::instance/ssoins-abc123"
+}

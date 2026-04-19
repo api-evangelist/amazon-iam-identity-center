@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-emails-schema.json",
+  "title": "Emails",
+  "description": "Emails schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "Value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing an email address. For example, \"johndoe@amazon.com.\""
+          }
+        ]
+      },
+      "Type": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string representing the type of address. For example, \"Work.\""
+          }
+        ]
+      },
+      "Primary": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveBooleanType"
+          },
+          {
+            "description": "A Boolean value representing whether this is the primary email address for the associated resource."
+          }
+        ]
+      }
+    },
+    "description": "The email address associated with the user."
+  }
+}

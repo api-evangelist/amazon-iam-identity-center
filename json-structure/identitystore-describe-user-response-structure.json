@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-describe-user-response-structure.json",
+  "name": "DescribeUserResponse",
+  "description": "DescribeUserResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "UserName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UserName"
+        },
+        {
+          "description": "A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store."
+        }
+      ]
+    },
+    "UserId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for a user in the identity store."
+        }
+      ]
+    },
+    "ExternalIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalIds"
+        },
+        {
+          "description": "A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the user."
+        }
+      ]
+    },
+    "DisplayName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The display name of the user."
+        }
+      ]
+    },
+    "NickName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "An alternative descriptive name for the user."
+        }
+      ]
+    },
+    "ProfileUrl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A URL link for the user's profile."
+        }
+      ]
+    },
+    "Emails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Emails"
+        },
+        {
+          "description": "The email address of the user."
+        }
+      ]
+    },
+    "Addresses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Addresses"
+        },
+        {
+          "description": "The physical address of the user."
+        }
+      ]
+    },
+    "PhoneNumbers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PhoneNumbers"
+        },
+        {
+          "description": "A list of <code>PhoneNumber</code> objects associated with a user."
+        }
+      ]
+    },
+    "UserType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string indicating the type of user."
+        }
+      ]
+    },
+    "Title": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string containing the title of the user."
+        }
+      ]
+    },
+    "PreferredLanguage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The preferred language of the user."
+        }
+      ]
+    },
+    "Locale": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string containing the geographical region or location of the user."
+        }
+      ]
+    },
+    "Timezone": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The time zone for a user."
+        }
+      ]
+    },
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store."
+        }
+      ]
+    }
+  },
+  "required": [
+    "UserId",
+    "IdentityStoreId"
+  ]
+}

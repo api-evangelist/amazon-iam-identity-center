@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-get-group-id-request-structure.json",
+  "name": "GetGroupIdRequest",
+  "description": "GetGroupIdRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store."
+        }
+      ]
+    },
+    "AlternateIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlternateIdentifier"
+        },
+        {
+          "description": "A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "IdentityStoreId",
+    "AlternateIdentifier"
+  ]
+}

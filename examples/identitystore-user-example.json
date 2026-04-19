@@ -1,0 +1,18 @@
+{
+  "UserName": "example-name",
+  "UserId": "id-abc123",
+  "ExternalIds": "id-abc123",
+  "Name": "example-name",
+  "DisplayName": "example-name",
+  "NickName": "example-name",
+  "ProfileUrl": "example-value",
+  "Emails": "user@example.com",
+  "Addresses": "example-value",
+  "PhoneNumbers": "example-value",
+  "UserType": "CUSTOM",
+  "Title": "example-value",
+  "PreferredLanguage": "example-value",
+  "Locale": "example-value",
+  "Timezone": "example-value",
+  "IdentityStoreId": "id-abc123"
+}

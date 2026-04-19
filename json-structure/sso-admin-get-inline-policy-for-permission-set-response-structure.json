@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-get-inline-policy-for-permission-set-response-structure.json",
+  "name": "GetInlinePolicyForPermissionSetResponse",
+  "description": "GetInlinePolicyForPermissionSetResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InlinePolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetPolicyDocument"
+        },
+        {
+          "description": "The inline policy that is attached to the permission set."
+        }
+      ]
+    }
+  }
+}

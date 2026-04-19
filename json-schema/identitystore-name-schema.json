@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-name-schema.json",
+  "title": "Name",
+  "description": "The full name of the user.",
+  "type": "object",
+  "properties": {
+    "Formatted": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string containing a formatted version of the name for display."
+        }
+      ]
+    },
+    "FamilyName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The family name of the user."
+        }
+      ]
+    },
+    "GivenName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The given name of the user."
+        }
+      ]
+    },
+    "MiddleName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The middle name of the user."
+        }
+      ]
+    },
+    "HonorificPrefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The honorific prefix of the user. For example, \"Dr.\""
+        }
+      ]
+    },
+    "HonorificSuffix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The honorific suffix of the user. For example, \"M.D.\""
+        }
+      ]
+    }
+  }
+}

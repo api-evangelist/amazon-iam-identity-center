@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-alternate-identifier-schema.json",
+  "title": "AlternateIdentifier",
+  "description": "A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute.",
+  "type": "object",
+  "properties": {
+    "ExternalId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalId"
+        },
+        {
+          "description": "The identifier issued to this resource by an external identity provider."
+        }
+      ]
+    },
+    "UniqueAttribute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UniqueAttribute"
+        },
+        {
+          "description": "An entity attribute that's unique to a specific entity."
+        }
+      ]
+    }
+  }
+}

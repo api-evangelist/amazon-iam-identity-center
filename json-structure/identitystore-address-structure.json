@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-address-structure.json",
+  "name": "Address",
+  "description": "The address associated with the specified user.",
+  "type": "object",
+  "properties": {
+    "StreetAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The street of the address."
+        }
+      ]
+    },
+    "Locality": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string of the address locality."
+        }
+      ]
+    },
+    "Region": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The region of the address."
+        }
+      ]
+    },
+    "PostalCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The postal code of the address."
+        }
+      ]
+    },
+    "Country": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "The country of the address."
+        }
+      ]
+    },
+    "Formatted": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string containing a formatted version of the address for display."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string representing the type of address. For example, \"Home.\""
+        }
+      ]
+    },
+    "Primary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveBooleanType"
+        },
+        {
+          "description": "A Boolean value representing whether this is the primary address for the associated resource."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-create-group-membership-request-schema.json",
+  "title": "CreateGroupMembershipRequest",
+  "description": "CreateGroupMembershipRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store."
+        }
+      ]
+    },
+    "GroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for a group in the identity store."
+        }
+      ]
+    },
+    "MemberId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MemberId"
+        },
+        {
+          "description": "An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group."
+        }
+      ]
+    }
+  },
+  "required": [
+    "IdentityStoreId",
+    "GroupId",
+    "MemberId"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-list-permission-sets-provisioned-to-account-request-structure.json",
+  "name": "ListPermissionSetsProvisionedToAccountRequest",
+  "description": "ListPermissionSetsProvisionedToAccountRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The identifier of the AWS account from which to list the assignments."
+        }
+      ]
+    },
+    "ProvisioningStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProvisioningStatus"
+        },
+        {
+          "description": "The status object for the permission set provisioning operation."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResults"
+        },
+        {
+          "description": "The maximum number of results to display for the assignment."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "AccountId"
+  ]
+}

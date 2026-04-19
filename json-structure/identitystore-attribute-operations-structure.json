@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-attribute-operations-structure.json",
+  "name": "AttributeOperations",
+  "description": "AttributeOperations schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "AttributePath"
+    ],
+    "properties": {
+      "AttributePath": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AttributePath"
+          },
+          {
+            "description": "A string representation of the path to a given attribute or sub-attribute. Supports JMESPath."
+          }
+        ]
+      },
+      "AttributeValue": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AttributeValue"
+          },
+          {
+            "description": "The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI."
+          }
+        ]
+      }
+    },
+    "description": "An operation that applies to the requested group. This operation might add, replace, or remove an attribute."
+  }
+}

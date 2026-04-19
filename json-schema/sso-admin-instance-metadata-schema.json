@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-instance-metadata-schema.json",
+  "title": "InstanceMetadata",
+  "description": "Provides information about the IAM Identity Center instance.",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Id"
+        },
+        {
+          "description": "The identifier of the identity store that is connected to the IAM Identity Center instance."
+        }
+      ]
+    }
+  }
+}

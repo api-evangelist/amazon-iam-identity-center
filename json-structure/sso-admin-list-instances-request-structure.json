@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-list-instances-request-structure.json",
+  "name": "ListInstancesRequest",
+  "description": "ListInstancesRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResults"
+        },
+        {
+          "description": "The maximum number of results to display for the instance."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-member-id-structure.json",
+  "name": "MemberId",
+  "description": "An object containing the identifier of a group member.",
+  "type": "object",
+  "properties": {
+    "UserId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "An object containing the identifiers of resources that can be members."
+        }
+      ]
+    }
+  }
+}

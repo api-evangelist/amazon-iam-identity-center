@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-account-assignment-schema.json",
+  "title": "AccountAssignment",
+  "description": "<p>The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.</p> <note> <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p> </note>",
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The identifier of the AWS account."
+        }
+      ]
+    },
+    "PermissionSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetArn"
+        },
+        {
+          "description": "The ARN of the permission set. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "PrincipalType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PrincipalType"
+        },
+        {
+          "description": "The entity type for which the assignment will be created."
+        }
+      ]
+    },
+    "PrincipalId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PrincipalId"
+        },
+        {
+          "description": "An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href=\"/singlesignon/latest/IdentityStoreAPIReference/welcome.html\">IAM Identity Center Identity Store API Reference</a>."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-instance-access-control-attribute-configuration-status-schema.json",
+  "title": "InstanceAccessControlAttributeConfigurationStatus",
+  "description": "InstanceAccessControlAttributeConfigurationStatus schema from AWS IAM Identity Center",
+  "type": "string",
+  "enum": [
+    "ENABLED",
+    "CREATION_IN_PROGRESS",
+    "CREATION_FAILED"
+  ]
+}

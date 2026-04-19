@@ -1,0 +1,119 @@
+vocabulary: "1.0.0"
+info:
+  provider: Amazon IAM Identity Center
+  description: Vocabulary for AWS IAM Identity Center covering identity management, SSO, permission sets, and account assignments.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: sso-admin
+      version: "2020-07-20"
+      baseUrl: https://sso.amazonaws.com
+      status: active
+    - namespace: identitystore
+      version: "2020-06-15"
+      baseUrl: https://identitystore.amazonaws.com
+      status: active
+  resources:
+    - name: users
+      api: identitystore
+      actions: [list, create, delete, get, update]
+    - name: groups
+      api: identitystore
+      actions: [list, create, delete, get, update]
+    - name: group-memberships
+      api: identitystore
+      actions: [list, create, delete, get]
+    - name: instances
+      api: sso-admin
+      actions: [list, create, delete]
+    - name: permission-sets
+      api: sso-admin
+      actions: [list, create, delete, get, update]
+    - name: account-assignments
+      api: sso-admin
+      actions: [list, create, delete]
+    - name: managed-policies
+      api: sso-admin
+      actions: [list, attach, detach]
+  actions:
+    - name: list
+      methods: [GET]
+      pattern: read
+    - name: get
+      methods: [GET]
+      pattern: read
+    - name: create
+      methods: [POST]
+      pattern: write
+    - name: delete
+      methods: [DELETE]
+      pattern: destructive
+    - name: update
+      methods: [PUT, PATCH]
+      pattern: write
+    - name: attach
+      methods: [PUT, POST]
+      pattern: write
+    - name: detach
+      methods: [DELETE]
+      pattern: destructive
+  enums:
+    principal-type:
+      - USER
+      - GROUP
+    provisioning-status:
+      - PROVISIONING_SUCCESS
+      - PROVISIONING_FAILURE
+    instance-status:
+      - ACTIVE
+      - CREATE_IN_PROGRESS
+      - DELETE_IN_PROGRESS
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        placement: header
+capability:
+  workflows:
+    - name: Identity and Access Management
+      file: capabilities/identity-access-management.yaml
+      apis: [sso-admin, identitystore]
+      toolCount: 9
+      personas: [IT Administrator, IAM Administrator]
+  personas:
+    - id: it-administrator
+      name: IT Administrator
+      description: Manages workforce identities and provisions access to AWS accounts
+    - id: iam-administrator
+      name: IAM Administrator
+      description: Configures permission sets and account assignments
+  domains:
+    - name: Identity Management
+      description: Managing workforce user and group identities
+    - name: Access Provisioning
+      description: Assigning AWS account access to users and groups
+  namespaces:
+    - name: sso-admin
+      type: consumed
+      port: null
+    - name: identitystore
+      type: consumed
+      port: null
+    - name: identity-access-api
+      type: rest
+      port: 8080
+    - name: identity-access-mcp
+      type: mcp
+      port: 9090
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+crossReference:
+  - resource: users
+    operations: [listusers, createuser, deleteuser, describeuser]
+    workflows: [Identity and Access Management]
+    personas: [IT Administrator]
+  - resource: permission-sets
+    operations: [listpermissionsets, createpermissionset, deletepermissionset]
+    workflows: [Identity and Access Management]
+    personas: [IAM Administrator]

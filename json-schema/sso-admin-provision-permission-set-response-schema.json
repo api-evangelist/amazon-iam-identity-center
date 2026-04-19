@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-provision-permission-set-response-schema.json",
+  "title": "ProvisionPermissionSetResponse",
+  "description": "ProvisionPermissionSetResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "PermissionSetProvisioningStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetProvisioningStatus"
+        },
+        {
+          "description": "The status object for the permission set provisioning operation."
+        }
+      ]
+    }
+  }
+}

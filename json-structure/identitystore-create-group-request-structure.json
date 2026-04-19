@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-create-group-request-structure.json",
+  "name": "CreateGroupRequest",
+  "description": "CreateGroupRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store."
+        }
+      ]
+    },
+    "DisplayName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroupDisplayName"
+        },
+        {
+          "description": "A string containing the name of the group. This value is commonly displayed when the group is referenced. \"Administrator\" and \"AWSAdministrators\" are reserved names and can't be used for users or groups."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string containing the description of the group."
+        }
+      ]
+    }
+  },
+  "required": [
+    "IdentityStoreId"
+  ]
+}

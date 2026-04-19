@@ -1,0 +1,157 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: Amazon IAM Identity Center - Identity and Access Management
+  description: Unified capability for IT administrators to manage workforce identities, provision access to AWS accounts, and configure SSO for enterprise applications.
+  tags:
+    - AWS
+    - IAM
+    - Identity Management
+    - Single Sign-On
+    - Access Control
+    - Workforce Identity
+  created: "2026-04-19"
+  modified: "2026-04-19"
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+capability:
+  consumes:
+    - import: sso-admin
+      location: ./shared/sso-admin.yaml
+    - import: identitystore
+      location: ./shared/identitystore.yaml
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: identity-access-api
+      description: Unified REST API for identity and access management.
+      resources:
+        - path: /v1/users
+          name: users
+          description: Manage workforce users
+          operations:
+            - method: GET
+              name: list-users
+              description: List users in the identity store
+              call: "identitystore.list-users"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/groups
+          name: groups
+          description: Manage user groups
+          operations:
+            - method: GET
+              name: list-groups
+              description: List groups in the identity store
+              call: "identitystore.list-groups"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/permission-sets
+          name: permission-sets
+          description: Manage permission sets for AWS account access
+          operations:
+            - method: GET
+              name: list-permission-sets
+              description: List all permission sets
+              call: "sso-admin.list-permission-sets"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/account-assignments
+          name: account-assignments
+          description: Manage AWS account access assignments
+          operations:
+            - method: POST
+              name: create-account-assignment
+              description: Assign access to a user or group for an AWS account
+              call: "sso-admin.create-account-assignment"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9090
+      namespace: identity-access-mcp
+      transport: http
+      description: MCP server for AI-assisted identity and access management.
+      tools:
+        - name: list-users
+          description: List workforce users in the identity store
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "identitystore.list-users"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-user
+          description: Create a new workforce user in IAM Identity Center
+          hints:
+            readOnly: false
+          call: "identitystore.create-user"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-groups
+          description: List user groups in the identity store
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "identitystore.list-groups"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-group
+          description: Create a new group for organizing users
+          hints:
+            readOnly: false
+          call: "identitystore.create-group"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-instances
+          description: List SSO instances in the account
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "sso-admin.list-instances"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-permission-sets
+          description: List permission sets for assigning AWS account access
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "sso-admin.list-permission-sets"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-permission-set
+          description: Create a permission set defining what access a user gets to an AWS account
+          hints:
+            readOnly: false
+          call: "sso-admin.create-permission-set"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: assign-account-access
+          description: Assign a permission set to a user or group for an AWS account
+          hints:
+            readOnly: false
+          call: "sso-admin.create-account-assignment"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: remove-account-access
+          description: Remove a user or group's access to an AWS account
+          hints:
+            readOnly: false
+            destructive: true
+          call: "sso-admin.delete-account-assignment"
+          outputParameters:
+            - type: object
+              mapping: "$."

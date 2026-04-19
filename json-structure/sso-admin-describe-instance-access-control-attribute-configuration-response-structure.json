@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-describe-instance-access-control-attribute-configuration-response-structure.json",
+  "name": "DescribeInstanceAccessControlAttributeConfigurationResponse",
+  "description": "DescribeInstanceAccessControlAttributeConfigurationResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceAccessControlAttributeConfigurationStatus"
+        },
+        {
+          "description": "The status of the attribute configuration process."
+        }
+      ]
+    },
+    "StatusReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceAccessControlAttributeConfigurationStatusReason"
+        },
+        {
+          "description": "Provides more details about the current status of the specified attribute."
+        }
+      ]
+    },
+    "InstanceAccessControlAttributeConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceAccessControlAttributeConfiguration"
+        },
+        {
+          "description": "Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration."
+        }
+      ]
+    }
+  }
+}

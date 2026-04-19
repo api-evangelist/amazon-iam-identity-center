@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-list-instances-response-structure.json",
+  "name": "ListInstancesResponse",
+  "description": "ListInstancesResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "Instances": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceList"
+        },
+        {
+          "description": "Lists the IAM Identity Center instances that the caller has access to."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-put-permissions-boundary-to-permission-set-response-structure.json",
+  "name": "PutPermissionsBoundaryToPermissionSetResponse",
+  "description": "PutPermissionsBoundaryToPermissionSetResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {}
+}

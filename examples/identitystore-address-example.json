@@ -1,0 +1,10 @@
+{
+  "StreetAddress": "example-value",
+  "Locality": "example-value",
+  "Region": "example-value",
+  "PostalCode": "example-value",
+  "Country": "example-value",
+  "Formatted": "example-value",
+  "Type": "CUSTOM",
+  "Primary": "example-value"
+}

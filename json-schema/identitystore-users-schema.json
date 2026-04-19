@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-users-schema.json",
+  "title": "Users",
+  "description": "Users schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "UserId",
+      "IdentityStoreId"
+    ],
+    "properties": {
+      "UserName": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UserName"
+          },
+          {
+            "description": "A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store."
+          }
+        ]
+      },
+      "UserId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ResourceId"
+          },
+          {
+            "description": "The identifier for a user in the identity store."
+          }
+        ]
+      },
+      "ExternalIds": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ExternalIds"
+          },
+          {
+            "description": "A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider."
+          }
+        ]
+      },
+      "Name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Name"
+          },
+          {
+            "description": "An object containing the name of the user."
+          }
+        ]
+      },
+      "DisplayName": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing the name of the user that is formatted for display when the user is referenced. For example, \"John Doe.\""
+          }
+        ]
+      },
+      "NickName": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing an alternate name for the user."
+          }
+        ]
+      },
+      "ProfileUrl": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing a URL that might be associated with the user."
+          }
+        ]
+      },
+      "Emails": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Emails"
+          },
+          {
+            "description": "A list of <code>Email</code> objects containing email addresses associated with the user."
+          }
+        ]
+      },
+      "Addresses": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Addresses"
+          },
+          {
+            "description": "A list of <code>Address</code> objects containing addresses associated with the user."
+          }
+        ]
+      },
+      "PhoneNumbers": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PhoneNumbers"
+          },
+          {
+            "description": "A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user."
+          }
+        ]
+      },
+      "UserType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case."
+          }
+        ]
+      },
+      "Title": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case."
+          }
+        ]
+      },
+      "PreferredLanguage": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing the preferred language of the user. For example, \"American English\" or \"en-us.\""
+          }
+        ]
+      },
+      "Locale": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing the geographical region or location of the user."
+          }
+        ]
+      },
+      "Timezone": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SensitiveStringType"
+          },
+          {
+            "description": "A string containing the time zone of the user."
+          }
+        ]
+      },
+      "IdentityStoreId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/IdentityStoreId"
+          },
+          {
+            "description": "The globally unique identifier for the identity store."
+          }
+        ]
+      }
+    },
+    "description": "A user object that contains the metadata and attributes for a specified user."
+  }
+}

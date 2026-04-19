@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-list-account-assignments-request-schema.json",
+  "title": "ListAccountAssignmentsRequest",
+  "description": "ListAccountAssignmentsRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetId"
+        },
+        {
+          "description": "The identifier of the AWS account from which to list the assignments."
+        }
+      ]
+    },
+    "PermissionSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetArn"
+        },
+        {
+          "description": "The ARN of the permission set from which to list assignments."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResults"
+        },
+        {
+          "description": "The maximum number of results to display for the assignment."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "AccountId",
+    "PermissionSetArn"
+  ]
+}

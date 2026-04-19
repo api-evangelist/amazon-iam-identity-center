@@ -1,0 +1,16 @@
+{
+  "IdentityStoreId": "id-abc123",
+  "UserName": "example-name",
+  "Name": "example-name",
+  "DisplayName": "example-name",
+  "NickName": "example-name",
+  "ProfileUrl": "example-value",
+  "Emails": "user@example.com",
+  "Addresses": "example-value",
+  "PhoneNumbers": "example-value",
+  "UserType": "CUSTOM",
+  "Title": "example-value",
+  "PreferredLanguage": "example-value",
+  "Locale": "example-value",
+  "Timezone": "example-value"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-detach-customer-managed-policy-reference-from-permission-set-request-structure.json",
+  "name": "DetachCustomerManagedPolicyReferenceFromPermissionSetRequest",
+  "description": "DetachCustomerManagedPolicyReferenceFromPermissionSetRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. "
+        }
+      ]
+    },
+    "PermissionSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetArn"
+        },
+        {
+          "description": "The ARN of the <code>PermissionSet</code>."
+        }
+      ]
+    },
+    "CustomerManagedPolicyReference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerManagedPolicyReference"
+        },
+        {
+          "description": "Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "PermissionSetArn",
+    "CustomerManagedPolicyReference"
+  ]
+}

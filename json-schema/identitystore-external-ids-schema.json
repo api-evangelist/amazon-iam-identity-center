@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-external-ids-schema.json",
+  "title": "ExternalIds",
+  "description": "ExternalIds schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "Issuer",
+      "Id"
+    ],
+    "properties": {
+      "Issuer": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ExternalIdIssuer"
+          },
+          {
+            "description": "The issuer for an external identifier."
+          }
+        ]
+      },
+      "Id": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ExternalIdIdentifier"
+          },
+          {
+            "description": "The identifier issued to this resource by an external identity provider."
+          }
+        ]
+      }
+    },
+    "description": "The identifier issued to this resource by an external identity provider."
+  }
+}

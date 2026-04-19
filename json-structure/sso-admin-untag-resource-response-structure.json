@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-untag-resource-response-structure.json",
+  "name": "UntagResourceResponse",
+  "description": "UntagResourceResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {}
+}

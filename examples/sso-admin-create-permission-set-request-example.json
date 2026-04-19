@@ -1,0 +1,8 @@
+{
+  "Name": "example-name",
+  "Description": "example-value",
+  "InstanceArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "SessionDuration": "example-value",
+  "RelayState": "example-value",
+  "Tags": "example-value"
+}

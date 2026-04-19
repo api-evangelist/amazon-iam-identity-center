@@ -1,0 +1,8 @@
+{
+  "Name": "example-name",
+  "PermissionSetArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "Description": "example-value",
+  "CreatedDate": "example-value",
+  "SessionDuration": "example-value",
+  "RelayState": "example-value"
+}

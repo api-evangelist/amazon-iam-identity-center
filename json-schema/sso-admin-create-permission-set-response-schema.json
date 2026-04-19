@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-create-permission-set-response-schema.json",
+  "title": "CreatePermissionSetResponse",
+  "description": "CreatePermissionSetResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "PermissionSet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSet"
+        },
+        {
+          "description": "Defines the level of access on an AWS account."
+        }
+      ]
+    }
+  }
+}

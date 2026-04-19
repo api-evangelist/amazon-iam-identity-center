@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-create-instance-access-control-attribute-configuration-request-structure.json",
+  "name": "CreateInstanceAccessControlAttributeConfigurationRequest",
+  "description": "CreateInstanceAccessControlAttributeConfigurationRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed."
+        }
+      ]
+    },
+    "InstanceAccessControlAttributeConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceAccessControlAttributeConfiguration"
+        },
+        {
+          "description": "Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "InstanceAccessControlAttributeConfiguration"
+  ]
+}

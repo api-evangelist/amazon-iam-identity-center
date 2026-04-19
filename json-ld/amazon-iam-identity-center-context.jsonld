@@ -1,0 +1,523 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amzn": "https://amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AccessControlAttribute": "amzn:AccessControlAttribute",
+    "AccessControlAttributeValue": "amzn:AccessControlAttributeValue",
+    "AccountAssignment": "amzn:AccountAssignment",
+    "AccountAssignmentOperationStatus": "amzn:AccountAssignmentOperationStatus",
+    "AccountAssignmentOperationStatusMetadata": "amzn:AccountAssignmentOperationStatusMetadata",
+    "Address": "amzn:Address",
+    "AlternateIdentifier": {
+      "@id": "amzn:AlternateIdentifier",
+      "@type": "xsd:string"
+    },
+    "AttachCustomerManagedPolicyReferenceToPermissionSetRequest": "amzn:AttachCustomerManagedPolicyReferenceToPermissionSetRequest",
+    "AttachCustomerManagedPolicyReferenceToPermissionSetResponse": "amzn:AttachCustomerManagedPolicyReferenceToPermissionSetResponse",
+    "AttachManagedPolicyToPermissionSetRequest": "amzn:AttachManagedPolicyToPermissionSetRequest",
+    "AttachManagedPolicyToPermissionSetResponse": "amzn:AttachManagedPolicyToPermissionSetResponse",
+    "AttachedManagedPolicy": "amzn:AttachedManagedPolicy",
+    "AttributeOperation": "amzn:AttributeOperation",
+    "AttributeValue": {
+      "@id": "amzn:AttributeValue",
+      "@type": "xsd:string"
+    },
+    "CreateAccountAssignmentRequest": "amzn:CreateAccountAssignmentRequest",
+    "CreateAccountAssignmentResponse": "amzn:CreateAccountAssignmentResponse",
+    "CreateGroupMembershipRequest": "amzn:CreateGroupMembershipRequest",
+    "CreateGroupMembershipResponse": "amzn:CreateGroupMembershipResponse",
+    "CreateGroupRequest": "amzn:CreateGroupRequest",
+    "CreateGroupResponse": "amzn:CreateGroupResponse",
+    "CreateInstanceAccessControlAttributeConfigurationRequest": "amzn:CreateInstanceAccessControlAttributeConfigurationRequest",
+    "CreateInstanceAccessControlAttributeConfigurationResponse": "amzn:CreateInstanceAccessControlAttributeConfigurationResponse",
+    "CreatePermissionSetRequest": "amzn:CreatePermissionSetRequest",
+    "CreatePermissionSetResponse": "amzn:CreatePermissionSetResponse",
+    "CreateUserRequest": "amzn:CreateUserRequest",
+    "CreateUserResponse": "amzn:CreateUserResponse",
+    "CustomerManagedPolicyReference": {
+      "@id": "amzn:CustomerManagedPolicyReference",
+      "@type": "xsd:string"
+    },
+    "DeleteAccountAssignmentRequest": "amzn:DeleteAccountAssignmentRequest",
+    "DeleteAccountAssignmentResponse": "amzn:DeleteAccountAssignmentResponse",
+    "DeleteGroupMembershipRequest": "amzn:DeleteGroupMembershipRequest",
+    "DeleteGroupMembershipResponse": "amzn:DeleteGroupMembershipResponse",
+    "DeleteGroupRequest": "amzn:DeleteGroupRequest",
+    "DeleteGroupResponse": "amzn:DeleteGroupResponse",
+    "DeleteInlinePolicyFromPermissionSetRequest": "amzn:DeleteInlinePolicyFromPermissionSetRequest",
+    "DeleteInlinePolicyFromPermissionSetResponse": "amzn:DeleteInlinePolicyFromPermissionSetResponse",
+    "DeleteInstanceAccessControlAttributeConfigurationRequest": "amzn:DeleteInstanceAccessControlAttributeConfigurationRequest",
+    "DeleteInstanceAccessControlAttributeConfigurationResponse": "amzn:DeleteInstanceAccessControlAttributeConfigurationResponse",
+    "DeletePermissionSetRequest": "amzn:DeletePermissionSetRequest",
+    "DeletePermissionSetResponse": "amzn:DeletePermissionSetResponse",
+    "DeletePermissionsBoundaryFromPermissionSetRequest": "amzn:DeletePermissionsBoundaryFromPermissionSetRequest",
+    "DeletePermissionsBoundaryFromPermissionSetResponse": "amzn:DeletePermissionsBoundaryFromPermissionSetResponse",
+    "DeleteUserRequest": "amzn:DeleteUserRequest",
+    "DeleteUserResponse": "amzn:DeleteUserResponse",
+    "DescribeAccountAssignmentCreationStatusRequest": "amzn:DescribeAccountAssignmentCreationStatusRequest",
+    "DescribeAccountAssignmentCreationStatusResponse": "amzn:DescribeAccountAssignmentCreationStatusResponse",
+    "DescribeAccountAssignmentDeletionStatusRequest": "amzn:DescribeAccountAssignmentDeletionStatusRequest",
+    "DescribeAccountAssignmentDeletionStatusResponse": "amzn:DescribeAccountAssignmentDeletionStatusResponse",
+    "DescribeGroupMembershipRequest": "amzn:DescribeGroupMembershipRequest",
+    "DescribeGroupMembershipResponse": "amzn:DescribeGroupMembershipResponse",
+    "DescribeGroupRequest": "amzn:DescribeGroupRequest",
+    "DescribeGroupResponse": "amzn:DescribeGroupResponse",
+    "DescribeInstanceAccessControlAttributeConfigurationRequest": "amzn:DescribeInstanceAccessControlAttributeConfigurationRequest",
+    "DescribeInstanceAccessControlAttributeConfigurationResponse": "amzn:DescribeInstanceAccessControlAttributeConfigurationResponse",
+    "DescribePermissionSetProvisioningStatusRequest": "amzn:DescribePermissionSetProvisioningStatusRequest",
+    "DescribePermissionSetProvisioningStatusResponse": "amzn:DescribePermissionSetProvisioningStatusResponse",
+    "DescribePermissionSetRequest": "amzn:DescribePermissionSetRequest",
+    "DescribePermissionSetResponse": "amzn:DescribePermissionSetResponse",
+    "DescribeUserRequest": "amzn:DescribeUserRequest",
+    "DescribeUserResponse": "amzn:DescribeUserResponse",
+    "DetachCustomerManagedPolicyReferenceFromPermissionSetRequest": "amzn:DetachCustomerManagedPolicyReferenceFromPermissionSetRequest",
+    "DetachCustomerManagedPolicyReferenceFromPermissionSetResponse": "amzn:DetachCustomerManagedPolicyReferenceFromPermissionSetResponse",
+    "DetachManagedPolicyFromPermissionSetRequest": "amzn:DetachManagedPolicyFromPermissionSetRequest",
+    "DetachManagedPolicyFromPermissionSetResponse": "amzn:DetachManagedPolicyFromPermissionSetResponse",
+    "Email": "amzn:Email",
+    "ExternalId": {
+      "@id": "amzn:ExternalId",
+      "@type": "xsd:string"
+    },
+    "Filter": {
+      "@id": "amzn:Filter",
+      "@type": "xsd:string"
+    },
+    "GetGroupIdRequest": "amzn:GetGroupIdRequest",
+    "GetGroupIdResponse": "amzn:GetGroupIdResponse",
+    "GetGroupMembershipIdRequest": "amzn:GetGroupMembershipIdRequest",
+    "GetGroupMembershipIdResponse": "amzn:GetGroupMembershipIdResponse",
+    "GetInlinePolicyForPermissionSetRequest": "amzn:GetInlinePolicyForPermissionSetRequest",
+    "GetInlinePolicyForPermissionSetResponse": "amzn:GetInlinePolicyForPermissionSetResponse",
+    "GetPermissionsBoundaryForPermissionSetRequest": "amzn:GetPermissionsBoundaryForPermissionSetRequest",
+    "GetPermissionsBoundaryForPermissionSetResponse": "amzn:GetPermissionsBoundaryForPermissionSetResponse",
+    "GetUserIdRequest": "amzn:GetUserIdRequest",
+    "GetUserIdResponse": "amzn:GetUserIdResponse",
+    "Group": "amzn:Group",
+    "GroupMembership": "amzn:GroupMembership",
+    "GroupMembershipExistenceResult": "amzn:GroupMembershipExistenceResult",
+    "InstanceAccessControlAttributeConfiguration": {
+      "@id": "amzn:InstanceAccessControlAttributeConfiguration",
+      "@type": "xsd:string"
+    },
+    "InstanceMetadata": "amzn:InstanceMetadata",
+    "IsMemberInGroupsRequest": "amzn:IsMemberInGroupsRequest",
+    "IsMemberInGroupsResponse": "amzn:IsMemberInGroupsResponse",
+    "ListAccountAssignmentCreationStatusRequest": "amzn:ListAccountAssignmentCreationStatusRequest",
+    "ListAccountAssignmentCreationStatusResponse": "amzn:ListAccountAssignmentCreationStatusResponse",
+    "ListAccountAssignmentDeletionStatusRequest": "amzn:ListAccountAssignmentDeletionStatusRequest",
+    "ListAccountAssignmentDeletionStatusResponse": "amzn:ListAccountAssignmentDeletionStatusResponse",
+    "ListAccountAssignmentsRequest": "amzn:ListAccountAssignmentsRequest",
+    "ListAccountAssignmentsResponse": "amzn:ListAccountAssignmentsResponse",
+    "ListAccountsForProvisionedPermissionSetRequest": "amzn:ListAccountsForProvisionedPermissionSetRequest",
+    "ListAccountsForProvisionedPermissionSetResponse": "amzn:ListAccountsForProvisionedPermissionSetResponse",
+    "ListCustomerManagedPolicyReferencesInPermissionSetRequest": "amzn:ListCustomerManagedPolicyReferencesInPermissionSetRequest",
+    "ListCustomerManagedPolicyReferencesInPermissionSetResponse": "amzn:ListCustomerManagedPolicyReferencesInPermissionSetResponse",
+    "ListGroupMembershipsForMemberRequest": "amzn:ListGroupMembershipsForMemberRequest",
+    "ListGroupMembershipsForMemberResponse": "amzn:ListGroupMembershipsForMemberResponse",
+    "ListGroupMembershipsRequest": "amzn:ListGroupMembershipsRequest",
+    "ListGroupMembershipsResponse": "amzn:ListGroupMembershipsResponse",
+    "ListGroupsRequest": "amzn:ListGroupsRequest",
+    "ListGroupsResponse": "amzn:ListGroupsResponse",
+    "ListInstancesRequest": "amzn:ListInstancesRequest",
+    "ListInstancesResponse": "amzn:ListInstancesResponse",
+    "ListManagedPoliciesInPermissionSetRequest": "amzn:ListManagedPoliciesInPermissionSetRequest",
+    "ListManagedPoliciesInPermissionSetResponse": "amzn:ListManagedPoliciesInPermissionSetResponse",
+    "ListPermissionSetProvisioningStatusRequest": "amzn:ListPermissionSetProvisioningStatusRequest",
+    "ListPermissionSetProvisioningStatusResponse": "amzn:ListPermissionSetProvisioningStatusResponse",
+    "ListPermissionSetsProvisionedToAccountRequest": "amzn:ListPermissionSetsProvisionedToAccountRequest",
+    "ListPermissionSetsProvisionedToAccountResponse": "amzn:ListPermissionSetsProvisionedToAccountResponse",
+    "ListPermissionSetsRequest": "amzn:ListPermissionSetsRequest",
+    "ListPermissionSetsResponse": "amzn:ListPermissionSetsResponse",
+    "ListTagsForResourceRequest": "amzn:ListTagsForResourceRequest",
+    "ListTagsForResourceResponse": "amzn:ListTagsForResourceResponse",
+    "ListUsersRequest": "amzn:ListUsersRequest",
+    "ListUsersResponse": "amzn:ListUsersResponse",
+    "MemberId": {
+      "@id": "amzn:MemberId",
+      "@type": "xsd:string"
+    },
+    "Name": {
+      "@id": "amzn:Name",
+      "@type": "xsd:string"
+    },
+    "OperationStatusFilter": "amzn:OperationStatusFilter",
+    "PermissionSet": {
+      "@id": "amzn:PermissionSet",
+      "@type": "xsd:string"
+    },
+    "PermissionSetProvisioningStatus": {
+      "@id": "amzn:PermissionSetProvisioningStatus",
+      "@type": "xsd:string"
+    },
+    "PermissionSetProvisioningStatusMetadata": "amzn:PermissionSetProvisioningStatusMetadata",
+    "PermissionsBoundary": {
+      "@id": "amzn:PermissionsBoundary",
+      "@type": "xsd:string"
+    },
+    "PhoneNumber": "amzn:PhoneNumber",
+    "ProvisionPermissionSetRequest": "amzn:ProvisionPermissionSetRequest",
+    "ProvisionPermissionSetResponse": "amzn:ProvisionPermissionSetResponse",
+    "PutInlinePolicyToPermissionSetRequest": "amzn:PutInlinePolicyToPermissionSetRequest",
+    "PutInlinePolicyToPermissionSetResponse": "amzn:PutInlinePolicyToPermissionSetResponse",
+    "PutPermissionsBoundaryToPermissionSetRequest": "amzn:PutPermissionsBoundaryToPermissionSetRequest",
+    "PutPermissionsBoundaryToPermissionSetResponse": "amzn:PutPermissionsBoundaryToPermissionSetResponse",
+    "Tag": "amzn:Tag",
+    "TagResourceRequest": "amzn:TagResourceRequest",
+    "TagResourceResponse": "amzn:TagResourceResponse",
+    "UniqueAttribute": {
+      "@id": "amzn:UniqueAttribute",
+      "@type": "xsd:string"
+    },
+    "UntagResourceRequest": "amzn:UntagResourceRequest",
+    "UntagResourceResponse": "amzn:UntagResourceResponse",
+    "UpdateGroupRequest": "amzn:UpdateGroupRequest",
+    "UpdateGroupResponse": "amzn:UpdateGroupResponse",
+    "UpdateInstanceAccessControlAttributeConfigurationRequest": "amzn:UpdateInstanceAccessControlAttributeConfigurationRequest",
+    "UpdateInstanceAccessControlAttributeConfigurationResponse": "amzn:UpdateInstanceAccessControlAttributeConfigurationResponse",
+    "UpdatePermissionSetRequest": "amzn:UpdatePermissionSetRequest",
+    "UpdatePermissionSetResponse": "amzn:UpdatePermissionSetResponse",
+    "UpdateUserRequest": "amzn:UpdateUserRequest",
+    "UpdateUserResponse": "amzn:UpdateUserResponse",
+    "User": "amzn:User",
+    "AccessControlAttributes": {
+      "@id": "amzn:AccessControlAttributes",
+      "@type": "xsd:string"
+    },
+    "AccountAssignmentCreationRequestId": {
+      "@id": "amzn:AccountAssignmentCreationRequestId",
+      "@type": "xsd:string"
+    },
+    "AccountAssignmentCreationStatus": {
+      "@id": "amzn:AccountAssignmentCreationStatus",
+      "@type": "xsd:string"
+    },
+    "AccountAssignmentDeletionRequestId": {
+      "@id": "amzn:AccountAssignmentDeletionRequestId",
+      "@type": "xsd:string"
+    },
+    "AccountAssignmentDeletionStatus": {
+      "@id": "amzn:AccountAssignmentDeletionStatus",
+      "@type": "xsd:string"
+    },
+    "AccountAssignments": {
+      "@id": "amzn:AccountAssignments",
+      "@type": "xsd:string"
+    },
+    "AccountAssignmentsCreationStatus": {
+      "@id": "amzn:AccountAssignmentsCreationStatus",
+      "@type": "xsd:string"
+    },
+    "AccountAssignmentsDeletionStatus": {
+      "@id": "amzn:AccountAssignmentsDeletionStatus",
+      "@type": "xsd:string"
+    },
+    "AccountId": {
+      "@id": "amzn:AccountId",
+      "@type": "xsd:string"
+    },
+    "AccountIds": {
+      "@id": "amzn:AccountIds",
+      "@type": "xsd:string"
+    },
+    "Addresses": {
+      "@id": "amzn:Addresses",
+      "@type": "xsd:string"
+    },
+    "Arn": {
+      "@id": "amzn:Arn",
+      "@type": "xsd:string"
+    },
+    "AttachedManagedPolicies": {
+      "@id": "amzn:AttachedManagedPolicies",
+      "@type": "xsd:string"
+    },
+    "AttributePath": {
+      "@id": "amzn:AttributePath",
+      "@type": "xsd:string"
+    },
+    "Country": {
+      "@id": "amzn:Country",
+      "@type": "xsd:string"
+    },
+    "CreatedDate": {
+      "@id": "amzn:CreatedDate",
+      "@type": "xsd:string"
+    },
+    "CustomerManagedPolicyReferences": {
+      "@id": "amzn:CustomerManagedPolicyReferences",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "amzn:Description",
+      "@type": "xsd:string"
+    },
+    "DisplayName": {
+      "@id": "amzn:DisplayName",
+      "@type": "xsd:string"
+    },
+    "Emails": {
+      "@id": "amzn:Emails",
+      "@type": "xsd:string"
+    },
+    "ExternalIds": {
+      "@id": "amzn:ExternalIds",
+      "@type": "xsd:string"
+    },
+    "FailureReason": {
+      "@id": "amzn:FailureReason",
+      "@type": "xsd:string"
+    },
+    "FamilyName": {
+      "@id": "amzn:FamilyName",
+      "@type": "xsd:string"
+    },
+    "Filters": {
+      "@id": "amzn:Filters",
+      "@type": "xsd:string"
+    },
+    "Formatted": {
+      "@id": "amzn:Formatted",
+      "@type": "xsd:string"
+    },
+    "GivenName": {
+      "@id": "amzn:GivenName",
+      "@type": "xsd:string"
+    },
+    "GroupId": {
+      "@id": "amzn:GroupId",
+      "@type": "xsd:string"
+    },
+    "GroupIds": {
+      "@id": "amzn:GroupIds",
+      "@type": "xsd:string"
+    },
+    "GroupMemberships": {
+      "@id": "amzn:GroupMemberships",
+      "@type": "xsd:string"
+    },
+    "Groups": {
+      "@id": "amzn:Groups",
+      "@type": "xsd:string"
+    },
+    "HonorificPrefix": {
+      "@id": "amzn:HonorificPrefix",
+      "@type": "xsd:string"
+    },
+    "HonorificSuffix": {
+      "@id": "amzn:HonorificSuffix",
+      "@type": "xsd:string"
+    },
+    "Id": {
+      "@id": "amzn:Id",
+      "@type": "xsd:string"
+    },
+    "IdentityStoreId": {
+      "@id": "amzn:IdentityStoreId",
+      "@type": "xsd:string"
+    },
+    "InlinePolicy": {
+      "@id": "amzn:InlinePolicy",
+      "@type": "xsd:string"
+    },
+    "InstanceArn": {
+      "@id": "amzn:InstanceArn",
+      "@type": "xsd:string"
+    },
+    "Instances": {
+      "@id": "amzn:Instances",
+      "@type": "xsd:string"
+    },
+    "Issuer": {
+      "@id": "amzn:Issuer",
+      "@type": "xsd:string"
+    },
+    "Key": {
+      "@id": "amzn:Key",
+      "@type": "xsd:string"
+    },
+    "Locale": {
+      "@id": "amzn:Locale",
+      "@type": "xsd:string"
+    },
+    "Locality": {
+      "@id": "amzn:Locality",
+      "@type": "xsd:string"
+    },
+    "ManagedPolicyArn": {
+      "@id": "amzn:ManagedPolicyArn",
+      "@type": "xsd:string"
+    },
+    "MaxResults": {
+      "@id": "amzn:MaxResults",
+      "@type": "xsd:string"
+    },
+    "MembershipExists": {
+      "@id": "amzn:MembershipExists",
+      "@type": "xsd:string"
+    },
+    "MembershipId": {
+      "@id": "amzn:MembershipId",
+      "@type": "xsd:string"
+    },
+    "MiddleName": {
+      "@id": "amzn:MiddleName",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "amzn:NextToken",
+      "@type": "xsd:string"
+    },
+    "NickName": {
+      "@id": "amzn:NickName",
+      "@type": "xsd:string"
+    },
+    "Operations": {
+      "@id": "amzn:Operations",
+      "@type": "xsd:string"
+    },
+    "Path": {
+      "@id": "amzn:Path",
+      "@type": "xsd:string"
+    },
+    "PermissionSetArn": {
+      "@id": "amzn:PermissionSetArn",
+      "@type": "xsd:string"
+    },
+    "PermissionSets": {
+      "@id": "amzn:PermissionSets",
+      "@type": "xsd:string"
+    },
+    "PermissionSetsProvisioningStatus": {
+      "@id": "amzn:PermissionSetsProvisioningStatus",
+      "@type": "xsd:string"
+    },
+    "PhoneNumbers": {
+      "@id": "amzn:PhoneNumbers",
+      "@type": "xsd:string"
+    },
+    "PostalCode": {
+      "@id": "amzn:PostalCode",
+      "@type": "xsd:string"
+    },
+    "PreferredLanguage": {
+      "@id": "amzn:PreferredLanguage",
+      "@type": "xsd:string"
+    },
+    "Primary": {
+      "@id": "amzn:Primary",
+      "@type": "xsd:string"
+    },
+    "PrincipalId": {
+      "@id": "amzn:PrincipalId",
+      "@type": "xsd:string"
+    },
+    "PrincipalType": {
+      "@id": "amzn:PrincipalType",
+      "@type": "xsd:string"
+    },
+    "ProfileUrl": {
+      "@id": "amzn:ProfileUrl",
+      "@type": "xsd:string"
+    },
+    "ProvisionPermissionSetRequestId": {
+      "@id": "amzn:ProvisionPermissionSetRequestId",
+      "@type": "xsd:string"
+    },
+    "ProvisioningStatus": {
+      "@id": "amzn:ProvisioningStatus",
+      "@type": "xsd:string"
+    },
+    "Region": {
+      "@id": "amzn:Region",
+      "@type": "xsd:string"
+    },
+    "RelayState": {
+      "@id": "amzn:RelayState",
+      "@type": "xsd:string"
+    },
+    "RequestId": {
+      "@id": "amzn:RequestId",
+      "@type": "xsd:string"
+    },
+    "ResourceArn": {
+      "@id": "amzn:ResourceArn",
+      "@type": "xsd:string"
+    },
+    "Results": {
+      "@id": "amzn:Results",
+      "@type": "xsd:string"
+    },
+    "SessionDuration": {
+      "@id": "amzn:SessionDuration",
+      "@type": "xsd:string"
+    },
+    "Source": {
+      "@id": "amzn:Source",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "amzn:Status",
+      "@type": "xsd:string"
+    },
+    "StatusReason": {
+      "@id": "amzn:StatusReason",
+      "@type": "xsd:string"
+    },
+    "StreetAddress": {
+      "@id": "amzn:StreetAddress",
+      "@type": "xsd:string"
+    },
+    "TagKeys": {
+      "@id": "amzn:TagKeys",
+      "@type": "xsd:string"
+    },
+    "Tags": {
+      "@id": "amzn:Tags",
+      "@type": "xsd:string"
+    },
+    "TargetId": {
+      "@id": "amzn:TargetId",
+      "@type": "xsd:string"
+    },
+    "TargetType": {
+      "@id": "amzn:TargetType",
+      "@type": "xsd:string"
+    },
+    "Timezone": {
+      "@id": "amzn:Timezone",
+      "@type": "xsd:string"
+    },
+    "Title": {
+      "@id": "amzn:Title",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "amzn:Type",
+      "@type": "xsd:string"
+    },
+    "UserId": {
+      "@id": "amzn:UserId",
+      "@type": "xsd:string"
+    },
+    "UserName": {
+      "@id": "amzn:UserName",
+      "@type": "xsd:string"
+    },
+    "UserType": {
+      "@id": "amzn:UserType",
+      "@type": "xsd:string"
+    },
+    "Users": {
+      "@id": "amzn:Users",
+      "@type": "xsd:string"
+    },
+    "Value": {
+      "@id": "amzn:Value",
+      "@type": "xsd:string"
+    }
+  }
+}

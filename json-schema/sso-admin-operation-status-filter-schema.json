@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-operation-status-filter-schema.json",
+  "title": "OperationStatusFilter",
+  "description": "Filters he operation status list based on the passed attribute value.",
+  "type": "object",
+  "properties": {
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusValues"
+        },
+        {
+          "description": "Filters the list operations result based on the status attribute."
+        }
+      ]
+    }
+  }
+}

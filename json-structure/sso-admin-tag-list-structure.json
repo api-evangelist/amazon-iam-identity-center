@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-tag-list-structure.json",
+  "name": "TagList",
+  "description": "TagList schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "Key",
+      "Value"
+    ],
+    "properties": {
+      "Key": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TagKey"
+          },
+          {
+            "description": "The key for the tag."
+          }
+        ]
+      },
+      "Value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TagValue"
+          },
+          {
+            "description": "The value of the tag."
+          }
+        ]
+      }
+    },
+    "description": "A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts."
+  }
+}

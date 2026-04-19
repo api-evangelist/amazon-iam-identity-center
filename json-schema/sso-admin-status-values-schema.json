@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-status-values-schema.json",
+  "title": "StatusValues",
+  "description": "StatusValues schema from AWS IAM Identity Center",
+  "type": "string",
+  "enum": [
+    "IN_PROGRESS",
+    "FAILED",
+    "SUCCEEDED"
+  ]
+}

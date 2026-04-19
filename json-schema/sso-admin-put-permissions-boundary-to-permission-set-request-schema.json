@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-put-permissions-boundary-to-permission-set-request-schema.json",
+  "title": "PutPermissionsBoundaryToPermissionSetRequest",
+  "description": "PutPermissionsBoundaryToPermissionSetRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. "
+        }
+      ]
+    },
+    "PermissionSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetArn"
+        },
+        {
+          "description": "The ARN of the <code>PermissionSet</code>."
+        }
+      ]
+    },
+    "PermissionsBoundary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionsBoundary"
+        },
+        {
+          "description": "The permissions boundary that you want to attach to a <code>PermissionSet</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "PermissionSetArn",
+    "PermissionsBoundary"
+  ]
+}

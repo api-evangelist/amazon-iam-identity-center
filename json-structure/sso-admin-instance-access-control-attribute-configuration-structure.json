@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-instance-access-control-attribute-configuration-structure.json",
+  "name": "InstanceAccessControlAttributeConfiguration",
+  "description": "Specifies the attributes to add to your attribute-based access control (ABAC) configuration.",
+  "type": "object",
+  "properties": {
+    "AccessControlAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccessControlAttributeList"
+        },
+        {
+          "description": "Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AccessControlAttributes"
+  ]
+}

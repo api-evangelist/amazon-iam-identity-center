@@ -1,0 +1,6 @@
+{
+  "IdentityStoreId": "id-abc123",
+  "GroupId": "id-abc123",
+  "MaxResults": "example-value",
+  "NextToken": "example-value"
+}

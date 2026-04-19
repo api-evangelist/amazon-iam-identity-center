@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-update-group-request-structure.json",
+  "name": "UpdateGroupRequest",
+  "description": "UpdateGroupRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store."
+        }
+      ]
+    },
+    "GroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for a group in the identity store."
+        }
+      ]
+    },
+    "Operations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AttributeOperations"
+        },
+        {
+          "description": "A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute."
+        }
+      ]
+    }
+  },
+  "required": [
+    "IdentityStoreId",
+    "GroupId",
+    "Operations"
+  ]
+}

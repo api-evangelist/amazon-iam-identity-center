@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-permissions-boundary-structure.json",
+  "name": "PermissionsBoundary",
+  "description": "<p>Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html\">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html\">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p> </important>",
+  "type": "object",
+  "properties": {
+    "CustomerManagedPolicyReference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerManagedPolicyReference"
+        },
+        {
+          "description": "Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set."
+        }
+      ]
+    },
+    "ManagedPolicyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ManagedPolicyArn"
+        },
+        {
+          "description": "The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary."
+        }
+      ]
+    }
+  }
+}

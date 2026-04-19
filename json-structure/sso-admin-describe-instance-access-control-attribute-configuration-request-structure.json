@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-describe-instance-access-control-attribute-configuration-request-structure.json",
+  "name": "DescribeInstanceAccessControlAttributeConfigurationRequest",
+  "description": "DescribeInstanceAccessControlAttributeConfigurationRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn"
+  ]
+}

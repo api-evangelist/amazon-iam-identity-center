@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-permission-set-list-structure.json",
+  "name": "PermissionSetList",
+  "description": "PermissionSetList schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}",
+    "minLength": 10,
+    "maxLength": 1224
+  }
+}

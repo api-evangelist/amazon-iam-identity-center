@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-unique-attribute-schema.json",
+  "title": "UniqueAttribute",
+  "description": "An entity attribute that's unique to a specific entity.",
+  "type": "object",
+  "properties": {
+    "AttributePath": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AttributePath"
+        },
+        {
+          "description": "A string representation of the path to a given attribute or sub-attribute. Supports JMESPath."
+        }
+      ]
+    },
+    "AttributeValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AttributeValue"
+        },
+        {
+          "description": "The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AttributePath",
+    "AttributeValue"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-account-list-schema.json",
+  "title": "AccountList",
+  "description": "AccountList schema from AWS IAM Identity Center",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "\\d{12}",
+    "minLength": 12,
+    "maxLength": 12
+  }
+}

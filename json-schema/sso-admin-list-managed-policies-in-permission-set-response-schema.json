@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-list-managed-policies-in-permission-set-response-schema.json",
+  "title": "ListManagedPoliciesInPermissionSetResponse",
+  "description": "ListManagedPoliciesInPermissionSetResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "AttachedManagedPolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AttachedManagedPolicyList"
+        },
+        {
+          "description": "An array of the <a>AttachedManagedPolicy</a> data type object."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls."
+        }
+      ]
+    }
+  }
+}

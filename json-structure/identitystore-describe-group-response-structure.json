@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-describe-group-response-structure.json",
+  "name": "DescribeGroupResponse",
+  "description": "DescribeGroupResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "GroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for a group in the identity store."
+        }
+      ]
+    },
+    "DisplayName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroupDisplayName"
+        },
+        {
+          "description": "The group\u2019s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store."
+        }
+      ]
+    },
+    "ExternalIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalIds"
+        },
+        {
+          "description": "A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitiveStringType"
+        },
+        {
+          "description": "A string containing a description of the group."
+        }
+      ]
+    },
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GroupId",
+    "IdentityStoreId"
+  ]
+}

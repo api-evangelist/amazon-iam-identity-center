@@ -1,0 +1,6 @@
+{
+  "InstanceArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "MaxResults": "example-value",
+  "NextToken": "example-value",
+  "Filter": "example-value"
+}

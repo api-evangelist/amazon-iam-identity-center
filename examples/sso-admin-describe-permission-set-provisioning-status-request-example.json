@@ -1,0 +1,4 @@
+{
+  "InstanceArn": "arn:aws:sso:::instance/ssoins-abc123",
+  "ProvisionPermissionSetRequestId": "id-abc123"
+}

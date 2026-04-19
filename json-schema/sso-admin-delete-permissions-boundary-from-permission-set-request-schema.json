@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-delete-permissions-boundary-from-permission-set-request-schema.json",
+  "title": "DeletePermissionsBoundaryFromPermissionSetRequest",
+  "description": "DeletePermissionsBoundaryFromPermissionSetRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. "
+        }
+      ]
+    },
+    "PermissionSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetArn"
+        },
+        {
+          "description": "The ARN of the <code>PermissionSet</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "PermissionSetArn"
+  ]
+}

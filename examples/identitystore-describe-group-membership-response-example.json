@@ -1,0 +1,8 @@
+{
+  "IdentityStoreId": "id-abc123",
+  "MembershipId": "id-abc123",
+  "GroupId": "id-abc123",
+  "MemberId": {
+    "UserId": "id-abc123"
+  }
+}

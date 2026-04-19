@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-update-permission-set-request-schema.json",
+  "title": "UpdatePermissionSetRequest",
+  "description": "UpdatePermissionSetRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "PermissionSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetArn"
+        },
+        {
+          "description": "The ARN of the permission set."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionSetDescription"
+        },
+        {
+          "description": "The description of the <a>PermissionSet</a>."
+        }
+      ]
+    },
+    "SessionDuration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Duration"
+        },
+        {
+          "description": "The length of time that the application user sessions are valid for in the ISO-8601 standard."
+        }
+      ]
+    },
+    "RelayState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RelayState"
+        },
+        {
+          "description": "Used to redirect users within the application during the federation authentication process."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "PermissionSetArn"
+  ]
+}

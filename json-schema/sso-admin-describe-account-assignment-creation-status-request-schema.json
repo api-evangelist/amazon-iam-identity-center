@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/sso-admin-describe-account-assignment-creation-status-request-schema.json",
+  "title": "DescribeAccountAssignmentCreationStatusRequest",
+  "description": "DescribeAccountAssignmentCreationStatusRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "AccountAssignmentCreationRequestId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUId"
+        },
+        {
+          "description": "The identifier that is used to track the request operation progress."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "AccountAssignmentCreationRequestId"
+  ]
+}

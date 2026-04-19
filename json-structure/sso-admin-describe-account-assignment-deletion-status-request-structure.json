@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/sso-admin-describe-account-assignment-deletion-status-request-structure.json",
+  "name": "DescribeAccountAssignmentDeletionStatusRequest",
+  "description": "DescribeAccountAssignmentDeletionStatusRequest schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "InstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceArn"
+        },
+        {
+          "description": "The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>."
+        }
+      ]
+    },
+    "AccountAssignmentDeletionRequestId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUId"
+        },
+        {
+          "description": "The identifier that is used to track the request operation progress."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InstanceArn",
+    "AccountAssignmentDeletionRequestId"
+  ]
+}

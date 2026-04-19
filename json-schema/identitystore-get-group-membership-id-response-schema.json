@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-schema/identitystore-get-group-membership-id-response-schema.json",
+  "title": "GetGroupMembershipIdResponse",
+  "description": "GetGroupMembershipIdResponse schema from AWS IAM Identity Center",
+  "type": "object",
+  "properties": {
+    "MembershipId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for a <code>GroupMembership</code> in an identity store."
+        }
+      ]
+    },
+    "IdentityStoreId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityStoreId"
+        },
+        {
+          "description": "The globally unique identifier for the identity store."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MembershipId",
+    "IdentityStoreId"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/json-structure/identitystore-external-id-structure.json",
+  "name": "ExternalId",
+  "description": "The identifier issued to this resource by an external identity provider.",
+  "type": "object",
+  "properties": {
+    "Issuer": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalIdIssuer"
+        },
+        {
+          "description": "The issuer for an external identifier."
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalIdIdentifier"
+        },
+        {
+          "description": "The identifier issued to this resource by an external identity provider."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Issuer",
+    "Id"
+  ]
+}
