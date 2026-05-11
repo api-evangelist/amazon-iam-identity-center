@@ -133,6 +133,17 @@ common:
         description: Federate with Azure AD for identity synchronization and SSO.
       - name: AWS Organizations
         description: Manage access across all accounts in an AWS Organization from a single SSO configuration.
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace
+integrations:
+  - name: Agent Mode
+  - name: Sign in
+  - name: Become a Channel Partner
+  - name: Resources
+  - name: Sell in AWS Marketplace
+  - name: 'Why AWS Marketplace?'
+  - name: Get started in AWS Marketplace
+  - name: Manage Your Account
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
