@@ -1,0 +1,1000 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AWS SSO Identity Store
+  description: 'AWS SSO Identity Store. 19 operations. Lead operation: Amazon IAM Identity Center Create Group. Self-contained
+    Naftiko capability covering one Amazon Iam Identity Center business surface.'
+  tags:
+  - Amazon Iam Identity Center
+  - AWS SSO Identity Store
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_IAM_IDENTITY_CENTER_API_KEY: AMAZON_IAM_IDENTITY_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: identitystore
+    baseUri: http://identitystore.{region}.amazonaws.com
+    description: AWS SSO Identity Store business capability. Self-contained, no shared references.
+    resources:
+    - name: '#X-Amz-Target=AWSIdentityStore.CreateGroup'
+      path: /#X-Amz-Target=AWSIdentityStore.CreateGroup
+      operations:
+      - name: creategroup
+        method: POST
+        description: Amazon IAM Identity Center Create Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.CreateGroupMembership'
+      path: /#X-Amz-Target=AWSIdentityStore.CreateGroupMembership
+      operations:
+      - name: creategroupmembership
+        method: POST
+        description: Amazon IAM Identity Center Create Group Membership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.CreateUser'
+      path: /#X-Amz-Target=AWSIdentityStore.CreateUser
+      operations:
+      - name: createuser
+        method: POST
+        description: Amazon IAM Identity Center Create User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.DeleteGroup'
+      path: /#X-Amz-Target=AWSIdentityStore.DeleteGroup
+      operations:
+      - name: deletegroup
+        method: POST
+        description: Amazon IAM Identity Center Delete Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.DeleteGroupMembership'
+      path: /#X-Amz-Target=AWSIdentityStore.DeleteGroupMembership
+      operations:
+      - name: deletegroupmembership
+        method: POST
+        description: Amazon IAM Identity Center Delete Group Membership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.DeleteUser'
+      path: /#X-Amz-Target=AWSIdentityStore.DeleteUser
+      operations:
+      - name: deleteuser
+        method: POST
+        description: Amazon IAM Identity Center Delete User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.DescribeGroup'
+      path: /#X-Amz-Target=AWSIdentityStore.DescribeGroup
+      operations:
+      - name: describegroup
+        method: POST
+        description: Amazon IAM Identity Center Describe Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.DescribeGroupMembership'
+      path: /#X-Amz-Target=AWSIdentityStore.DescribeGroupMembership
+      operations:
+      - name: describegroupmembership
+        method: POST
+        description: Amazon IAM Identity Center Describe Group Membership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.DescribeUser'
+      path: /#X-Amz-Target=AWSIdentityStore.DescribeUser
+      operations:
+      - name: describeuser
+        method: POST
+        description: Amazon IAM Identity Center Describe User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.GetGroupId'
+      path: /#X-Amz-Target=AWSIdentityStore.GetGroupId
+      operations:
+      - name: getgroupid
+        method: POST
+        description: Amazon IAM Identity Center Get Group Id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.GetGroupMembershipId'
+      path: /#X-Amz-Target=AWSIdentityStore.GetGroupMembershipId
+      operations:
+      - name: getgroupmembershipid
+        method: POST
+        description: Amazon IAM Identity Center Get Group Membership Id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.GetUserId'
+      path: /#X-Amz-Target=AWSIdentityStore.GetUserId
+      operations:
+      - name: getuserid
+        method: POST
+        description: Amazon IAM Identity Center Get User Id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.IsMemberInGroups'
+      path: /#X-Amz-Target=AWSIdentityStore.IsMemberInGroups
+      operations:
+      - name: ismemberingroups
+        method: POST
+        description: Amazon IAM Identity Center Is Member in Groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.ListGroupMemberships'
+      path: /#X-Amz-Target=AWSIdentityStore.ListGroupMemberships
+      operations:
+      - name: listgroupmemberships
+        method: POST
+        description: Amazon IAM Identity Center List Group Memberships
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.ListGroupMembershipsForMember'
+      path: /#X-Amz-Target=AWSIdentityStore.ListGroupMembershipsForMember
+      operations:
+      - name: listgroupmembershipsformember
+        method: POST
+        description: Amazon IAM Identity Center List Group Memberships for Member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.ListGroups'
+      path: /#X-Amz-Target=AWSIdentityStore.ListGroups
+      operations:
+      - name: listgroups
+        method: POST
+        description: Amazon IAM Identity Center List Groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.ListUsers'
+      path: /#X-Amz-Target=AWSIdentityStore.ListUsers
+      operations:
+      - name: listusers
+        method: POST
+        description: Amazon IAM Identity Center List Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.UpdateGroup'
+      path: /#X-Amz-Target=AWSIdentityStore.UpdateGroup
+      operations:
+      - name: updategroup
+        method: POST
+        description: Amazon IAM Identity Center Update Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIdentityStore.UpdateUser'
+      path: /#X-Amz-Target=AWSIdentityStore.UpdateUser
+      operations:
+      - name: updateuser
+        method: POST
+        description: Amazon IAM Identity Center Update User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_IAM_IDENTITY_CENTER_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: identitystore-rest
+    port: 8080
+    description: REST adapter for AWS SSO Identity Store. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/x-amz-target-awsidentitystore-creategroup
+      name: x-amz-target-awsidentitystore-creategroup
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.CreateGroup.'
+      operations:
+      - method: POST
+        name: creategroup
+        description: Amazon IAM Identity Center Create Group
+        call: identitystore.creategroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-creategroupmembership
+      name: x-amz-target-awsidentitystore-creategroupmembership
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.CreateGroupMembership.'
+      operations:
+      - method: POST
+        name: creategroupmembership
+        description: Amazon IAM Identity Center Create Group Membership
+        call: identitystore.creategroupmembership
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-createuser
+      name: x-amz-target-awsidentitystore-createuser
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.CreateUser.'
+      operations:
+      - method: POST
+        name: createuser
+        description: Amazon IAM Identity Center Create User
+        call: identitystore.createuser
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-deletegroup
+      name: x-amz-target-awsidentitystore-deletegroup
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.DeleteGroup.'
+      operations:
+      - method: POST
+        name: deletegroup
+        description: Amazon IAM Identity Center Delete Group
+        call: identitystore.deletegroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-deletegroupmembership
+      name: x-amz-target-awsidentitystore-deletegroupmembership
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.DeleteGroupMembership.'
+      operations:
+      - method: POST
+        name: deletegroupmembership
+        description: Amazon IAM Identity Center Delete Group Membership
+        call: identitystore.deletegroupmembership
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-deleteuser
+      name: x-amz-target-awsidentitystore-deleteuser
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.DeleteUser.'
+      operations:
+      - method: POST
+        name: deleteuser
+        description: Amazon IAM Identity Center Delete User
+        call: identitystore.deleteuser
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-describegroup
+      name: x-amz-target-awsidentitystore-describegroup
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.DescribeGroup.'
+      operations:
+      - method: POST
+        name: describegroup
+        description: Amazon IAM Identity Center Describe Group
+        call: identitystore.describegroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-describegroupmembership
+      name: x-amz-target-awsidentitystore-describegroupmembership
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.DescribeGroupMembership.'
+      operations:
+      - method: POST
+        name: describegroupmembership
+        description: Amazon IAM Identity Center Describe Group Membership
+        call: identitystore.describegroupmembership
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-describeuser
+      name: x-amz-target-awsidentitystore-describeuser
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.DescribeUser.'
+      operations:
+      - method: POST
+        name: describeuser
+        description: Amazon IAM Identity Center Describe User
+        call: identitystore.describeuser
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-getgroupid
+      name: x-amz-target-awsidentitystore-getgroupid
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.GetGroupId.'
+      operations:
+      - method: POST
+        name: getgroupid
+        description: Amazon IAM Identity Center Get Group Id
+        call: identitystore.getgroupid
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-getgroupmembershipid
+      name: x-amz-target-awsidentitystore-getgroupmembershipid
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.GetGroupMembershipId.'
+      operations:
+      - method: POST
+        name: getgroupmembershipid
+        description: Amazon IAM Identity Center Get Group Membership Id
+        call: identitystore.getgroupmembershipid
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-getuserid
+      name: x-amz-target-awsidentitystore-getuserid
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.GetUserId.'
+      operations:
+      - method: POST
+        name: getuserid
+        description: Amazon IAM Identity Center Get User Id
+        call: identitystore.getuserid
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-ismemberingroups
+      name: x-amz-target-awsidentitystore-ismemberingroups
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.IsMemberInGroups.'
+      operations:
+      - method: POST
+        name: ismemberingroups
+        description: Amazon IAM Identity Center Is Member in Groups
+        call: identitystore.ismemberingroups
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-listgroupmemberships
+      name: x-amz-target-awsidentitystore-listgroupmemberships
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.ListGroupMemberships.'
+      operations:
+      - method: POST
+        name: listgroupmemberships
+        description: Amazon IAM Identity Center List Group Memberships
+        call: identitystore.listgroupmemberships
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-listgroupmembershipsformember
+      name: x-amz-target-awsidentitystore-listgroupmembershipsformember
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.ListGroupMembershipsForMember.'
+      operations:
+      - method: POST
+        name: listgroupmembershipsformember
+        description: Amazon IAM Identity Center List Group Memberships for Member
+        call: identitystore.listgroupmembershipsformember
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-listgroups
+      name: x-amz-target-awsidentitystore-listgroups
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.ListGroups.'
+      operations:
+      - method: POST
+        name: listgroups
+        description: Amazon IAM Identity Center List Groups
+        call: identitystore.listgroups
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-listusers
+      name: x-amz-target-awsidentitystore-listusers
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.ListUsers.'
+      operations:
+      - method: POST
+        name: listusers
+        description: Amazon IAM Identity Center List Users
+        call: identitystore.listusers
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-updategroup
+      name: x-amz-target-awsidentitystore-updategroup
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.UpdateGroup.'
+      operations:
+      - method: POST
+        name: updategroup
+        description: Amazon IAM Identity Center Update Group
+        call: identitystore.updategroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsidentitystore-updateuser
+      name: x-amz-target-awsidentitystore-updateuser
+      description: 'REST surface for #X-Amz-Target=AWSIdentityStore.UpdateUser.'
+      operations:
+      - method: POST
+        name: updateuser
+        description: Amazon IAM Identity Center Update User
+        call: identitystore.updateuser
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: identitystore-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AWS SSO Identity Store. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-iam-identity-center-create
+      description: Amazon IAM Identity Center Create Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.creategroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-create-2
+      description: Amazon IAM Identity Center Create Group Membership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.creategroupmembership
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-create-3
+      description: Amazon IAM Identity Center Create User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.createuser
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-delete
+      description: Amazon IAM Identity Center Delete Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.deletegroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-delete-2
+      description: Amazon IAM Identity Center Delete Group Membership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.deletegroupmembership
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-delete-3
+      description: Amazon IAM Identity Center Delete User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.deleteuser
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-describe
+      description: Amazon IAM Identity Center Describe Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.describegroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-describe-2
+      description: Amazon IAM Identity Center Describe Group Membership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.describegroupmembership
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-describe-3
+      description: Amazon IAM Identity Center Describe User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.describeuser
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-get
+      description: Amazon IAM Identity Center Get Group Id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: identitystore.getgroupid
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-get-2
+      description: Amazon IAM Identity Center Get Group Membership Id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: identitystore.getgroupmembershipid
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-get-3
+      description: Amazon IAM Identity Center Get User Id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: identitystore.getuserid
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-is
+      description: Amazon IAM Identity Center Is Member in Groups
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.ismemberingroups
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-list
+      description: Amazon IAM Identity Center List Group Memberships
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: identitystore.listgroupmemberships
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-list-2
+      description: Amazon IAM Identity Center List Group Memberships for Member
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: identitystore.listgroupmembershipsformember
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-list-3
+      description: Amazon IAM Identity Center List Groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: identitystore.listgroups
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-list-4
+      description: Amazon IAM Identity Center List Users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: identitystore.listusers
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-update
+      description: Amazon IAM Identity Center Update Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.updategroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-iam-identity-center-update-2
+      description: Amazon IAM Identity Center Update User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: identitystore.updateuser
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
