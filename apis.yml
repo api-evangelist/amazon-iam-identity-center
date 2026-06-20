@@ -5,7 +5,7 @@ description: AWS IAM Identity Center (successor to AWS Single Sign-On) is where 
   Center, or bring them from Microsoft Active Directory, and then use IAM Identity Center to manage user access to AWS accounts
   and business applications with single sign-on.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Access Control
 - Authentication
