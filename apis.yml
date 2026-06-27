@@ -38,7 +38,7 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/sso-admin.yaml
 - aid: amazon-iam-identity-center:aws-identitystore-api
   name: AWS IAM Identity Center Identity Store API
@@ -55,7 +55,7 @@ apis:
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
   - type: OpenAPI
     url: openapi/amazon-iam-identity-center-identitystore-openapi-original.yml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/identitystore.yaml
 common:
 - type: Portal
@@ -76,7 +76,7 @@ common:
   url: https://github.com/aws
 - type: Console
   url: https://console.aws.amazon.com/singlesignon/
-- type: SignUp
+- type: Signup
   url: https://portal.aws.amazon.com/billing/signup
 - type: Login
   url: https://signin.aws.amazon.com/
