@@ -58,6 +58,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/identitystore.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-iam-identity-center-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-iam-identity-center-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-iam-identity-center-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-iam-identity-center-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/iam/identity-center/
 - type: Website
