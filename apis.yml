@@ -58,6 +58,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/identitystore.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-iam-identity-center-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-iam-identity-center-trust-center.yml
 - type: VulnerabilityDisclosure
