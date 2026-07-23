@@ -1,0 +1,347 @@
+openapi: 3.0.0
+info:
+  version: 2020-06-15
+  x-release: v4
+  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=SWBExternalService.ListPermissionSetProvisioningStatus API'
+  description: <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: identitystore
+  x-aws-signingName: identitystore
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/identitystore-2020-06-15.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://identitystore.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The IdentityStore multi-region endpoint
+- url: https://identitystore.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The IdentityStore multi-region endpoint
+- url: http://identitystore.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The IdentityStore endpoint for China (Beijing) and China (Ningxia)
+- url: https://identitystore.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The IdentityStore endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=SWBExternalService.ListPermissionSetProvisioningStatus'
+paths:
+  /#X-Amz-Target=SWBExternalService.ListPermissionSetProvisioningStatus:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListPermissionSetProvisioningStatus
+      description: Lists the status of the permission set provisioning requests for a specified IAM Identity Center instance.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPermissionSetProvisioningStatusResponse'
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '484':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListPermissionSetProvisioningStatusRequest'
+      parameters:
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - SWBExternalService.ListPermissionSetProvisioningStatus
+      summary: Amazon IAM Identity Center List Permission Set Provisioning Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=SWBExternalService.ListPermissionSetProvisioningStatus'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    StatusValues:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - FAILED
+      - SUCCEEDED
+    Token:
+      type: string
+      pattern: ^[-a-zA-Z0-9+=/_]*
+      maxLength: 2048
+    ListPermissionSetProvisioningStatusRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: ListPermissionSetProvisioningStatusRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the assignment.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/OperationStatusFilter'
+          - description: Filters results based on the passed attribute value.
+    PermissionSetProvisioningStatusList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PermissionSetProvisioningStatusMetadata'
+    UUId:
+      type: string
+      pattern: \b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b
+      minLength: 36
+      maxLength: 36
+    AccessDeniedException: {}
+    PermissionSetProvisioningStatusMetadata:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/StatusValues'
+          - description: The status of the permission set provisioning process.
+        RequestId:
+          allOf:
+          - $ref: '#/components/schemas/UUId'
+          - description: The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.
+        CreatedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date that the permission set was created.
+      description: Provides information about the permission set provisioning status.
+    OperationStatusFilter:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/StatusValues'
+          - description: Filters the list operations result based on the status attribute.
+      description: Filters he operation status list based on the passed attribute value.
+    ResourceNotFoundException: {}
+    ListPermissionSetProvisioningStatusResponse:
+      type: object
+      properties:
+        PermissionSetsProvisioningStatus:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetProvisioningStatusList'
+          - description: The status object for the permission set provisioning operation.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    InstanceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      minLength: 10
+      maxLength: 1224
+    ThrottlingException: {}
+    Date:
+      type: string
+      format: date-time
+    ValidationException: {}
+    MaxResults:
+      type: integer
+      minimum: 1
+      maximum: 100
+    InternalServerException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/identitystore/
+x-hasEquivalentPaths: true

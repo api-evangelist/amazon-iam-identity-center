@@ -1,0 +1,334 @@
+openapi: 3.0.0
+info:
+  version: 2020-06-15
+  x-release: v4
+  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration API'
+  description: <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: identitystore
+  x-aws-signingName: identitystore
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/identitystore-2020-06-15.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://identitystore.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The IdentityStore multi-region endpoint
+- url: https://identitystore.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The IdentityStore multi-region endpoint
+- url: http://identitystore.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The IdentityStore endpoint for China (Beijing) and China (Ningxia)
+- url: https://identitystore.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The IdentityStore endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration'
+paths:
+  /#X-Amz-Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateInstanceAccessControlAttributeConfiguration
+      description: <p>Enables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p> <note> <p>After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code> to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.</p> </note>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateInstanceAccessControlAttributeConfigurationResponse'
+        '480':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '484':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '485':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateInstanceAccessControlAttributeConfigurationRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - SWBExternalService.CreateInstanceAccessControlAttributeConfiguration
+      summary: Amazon IAM Identity Center Create Instance Access Control Attribute Configuration
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration'
+components:
+  schemas:
+    AccessControlAttribute:
+      type: object
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/AccessControlAttributeKey'
+          - description: The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/AccessControlAttributeValue'
+          - description: The value used for mapping a specified attribute to an identity source.
+      description: These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.
+    CreateInstanceAccessControlAttributeConfigurationRequest:
+      type: object
+      required:
+      - InstanceArn
+      - InstanceAccessControlAttributeConfiguration
+      title: CreateInstanceAccessControlAttributeConfigurationRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
+        InstanceAccessControlAttributeConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
+          - description: Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.
+    AccessDeniedException: {}
+    AccessControlAttributeValueSource:
+      type: string
+      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@\[\]\{\}\$\\"]*'
+      minLength: 0
+      maxLength: 256
+    AccessControlAttributeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccessControlAttribute'
+      minItems: 0
+      maxItems: 50
+    ResourceNotFoundException: {}
+    InstanceAccessControlAttributeConfiguration:
+      type: object
+      required:
+      - AccessControlAttributes
+      properties:
+        AccessControlAttributes:
+          allOf:
+          - $ref: '#/components/schemas/AccessControlAttributeList'
+          - description: Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
+      description: Specifies the attributes to add to your attribute-based access control (ABAC) configuration.
+    CreateInstanceAccessControlAttributeConfigurationResponse:
+      type: object
+      properties: {}
+    ConflictException: {}
+    AccessControlAttributeValue:
+      type: object
+      required:
+      - Source
+      properties:
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/AccessControlAttributeValueSourceList'
+          - description: The identity source to use when mapping a specified attribute to IAM Identity Center.
+      description: The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.
+    AccessControlAttributeValueSourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccessControlAttributeValueSource'
+      minItems: 1
+      maxItems: 1
+    InstanceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      minLength: 10
+      maxLength: 1224
+    ThrottlingException: {}
+    ValidationException: {}
+    InternalServerException: {}
+    AccessControlAttributeKey:
+      type: string
+      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@]+'
+      minLength: 1
+      maxLength: 128
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/identitystore/
+x-hasEquivalentPaths: true

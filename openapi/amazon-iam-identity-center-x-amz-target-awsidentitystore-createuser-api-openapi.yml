@@ -1,0 +1,475 @@
+openapi: 3.0.0
+info:
+  version: 2020-06-15
+  x-release: v4
+  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateUser API'
+  description: <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: identitystore
+  x-aws-signingName: identitystore
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/identitystore-2020-06-15.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://identitystore.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The IdentityStore multi-region endpoint
+- url: https://identitystore.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The IdentityStore multi-region endpoint
+- url: http://identitystore.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The IdentityStore endpoint for China (Beijing) and China (Ningxia)
+- url: https://identitystore.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The IdentityStore endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSIdentityStore.CreateUser'
+paths:
+  /#X-Amz-Target=AWSIdentityStore.CreateUser:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateUser
+      description: Creates a user within the specified identity store.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateUserResponse'
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '485':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '486':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSIdentityStore.CreateUser
+      summary: Amazon IAM Identity Center Create User
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSIdentityStore.CreateUser'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    Emails:
+      type: array
+      items:
+        $ref: '#/components/schemas/Email'
+      minItems: 1
+      maxItems: 1
+    UserName:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
+      minLength: 1
+      maxLength: 128
+      format: password
+    ServiceQuotaExceededException: {}
+    AccessDeniedException: {}
+    Email:
+      type: object
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing an email address. For example, "johndoe@amazon.com."
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string representing the type of address. For example, "Work."
+        Primary:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: A Boolean value representing whether this is the primary email address for the associated resource.
+      description: The email address associated with the user.
+    Address:
+      type: object
+      properties:
+        StreetAddress:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The street of the address.
+        Locality:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string of the address locality.
+        Region:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The region of the address.
+        PostalCode:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The postal code of the address.
+        Country:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The country of the address.
+        Formatted:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a formatted version of the address for display.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string representing the type of address. For example, "Home."
+        Primary:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: A Boolean value representing whether this is the primary address for the associated resource.
+      description: The address associated with the specified user.
+    Addresses:
+      type: array
+      items:
+        $ref: '#/components/schemas/Address'
+      minItems: 1
+      maxItems: 1
+    SensitiveBooleanType:
+      type: boolean
+    ResourceNotFoundException: {}
+    ResourceId:
+      type: string
+      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
+      minLength: 1
+      maxLength: 47
+    Name:
+      type: object
+      properties:
+        Formatted:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a formatted version of the name for display.
+        FamilyName:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The family name of the user.
+        GivenName:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The given name of the user.
+        MiddleName:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The middle name of the user.
+        HonorificPrefix:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The honorific prefix of the user. For example, "Dr."
+        HonorificSuffix:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The honorific suffix of the user. For example, "M.D."
+      description: The full name of the user.
+    PhoneNumber:
+      type: object
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string representing the type of a phone number. For example, "Mobile."
+        Primary:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: A Boolean value representing whether this is the primary phone number for the associated resource.
+      description: The phone number associated with the user.
+    ConflictException: {}
+    PhoneNumbers:
+      type: array
+      items:
+        $ref: '#/components/schemas/PhoneNumber'
+      minItems: 1
+      maxItems: 1
+    SensitiveStringType:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+'
+      minLength: 1
+      maxLength: 1024
+      format: password
+    ThrottlingException: {}
+    ValidationException: {}
+    IdentityStoreId:
+      type: string
+      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 1
+      maxLength: 36
+    CreateUserRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      title: CreateUserRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        UserName:
+          allOf:
+          - $ref: '#/components/schemas/UserName'
+          - description: A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: An object containing the name of the user.
+        DisplayName:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: 'A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." '
+        NickName:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing an alternate name for the user.
+        ProfileUrl:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a URL that might be associated with the user.
+        Emails:
+          allOf:
+          - $ref: '#/components/schemas/Emails'
+          - description: A list of <code>Email</code> objects containing email addresses associated with the user.
+        Addresses:
+          allOf:
+          - $ref: '#/components/schemas/Addresses'
+          - description: A list of <code>Address</code> objects containing addresses associated with the user.
+        PhoneNumbers:
+          allOf:
+          - $ref: '#/components/schemas/PhoneNumbers'
+          - description: A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.
+        UserType:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.
+        Title:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.
+        PreferredLanguage:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing the preferred language of the user. For example, "American English" or "en-us."
+        Locale:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing the geographical region or location of the user.
+        Timezone:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing the time zone of the user.
+    CreateUserResponse:
+      type: object
+      required:
+      - UserId
+      - IdentityStoreId
+      properties:
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier of the newly created user in the identity store.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+    InternalServerException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/identitystore/
+x-hasEquivalentPaths: true
