@@ -5,7 +5,20 @@ description: AWS IAM Identity Center (successor to AWS Single Sign-On) is where 
   Center, or bring them from Microsoft Active Directory, and then use IAM Identity Center to manage user access to AWS accounts
   and business applications with single sign-on.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-iam-identity-center.png
 tags:
 - Access Control
 - Authentication
@@ -17,21 +30,22 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-iam-identity-center:aws-sso-admin-api
-  name: AWS IAM Identity Center SSO Admin API
-  description: Manages permission sets, account assignments, instances, and SSO configurations for centralized identity and
-    access management across AWS accounts and organizations.
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.CreateGroup API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.CreateGroup API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.creategroup.
   humanURL: https://aws.amazon.com/iam/identity-center/
   baseURL: https://sso.amazonaws.com
   tags:
-  - Access Control
-  - Identity Management
-  - Single Sign-On
+  - '#X Amz Target=AWSIdentityStore.CreateGroup'
   properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-sso-admin-openapi-original.yml
   - type: GettingStarted
     url: https://aws.amazon.com/iam/identity-center/getting-started/
   - type: Pricing
@@ -40,24 +54,1593 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/faqs/
   - type: X-NaftikoCapability
     url: capabilities/sso-admin.yaml
-- aid: amazon-iam-identity-center:aws-identitystore-api
-  name: AWS IAM Identity Center Identity Store API
-  description: Manages users, groups, and group memberships in the IAM Identity Center identity store, enabling programmatic
-    provisioning of workforce identities.
-  humanURL: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  baseURL: https://identitystore.amazonaws.com
-  tags:
-  - Groups
-  - Identity Management
-  - Users
-  properties:
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.CreateGroupMembership API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.CreateGroupMembership API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.creategroupmembership.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.CreateGroupMembership'
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-identitystore-openapi-original.yml
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.CreateUser API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.CreateUser API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.createuser.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.CreateUser'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DeleteGroup API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.DeleteGroup API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.deletegroup.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.DeleteGroup'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DeleteGroupMembership API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.DeleteGroupMembership API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.deletegroupmembership.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.DeleteGroupMembership'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DeleteUser API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.DeleteUser API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.deleteuser.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.DeleteUser'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DescribeGroup API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.DescribeGroup API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.describegroup.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.DescribeGroup'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DescribeGroupMembership API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.DescribeGroupMembership API from Amazon IAM Identity Center — 1
+    operation(s) for #x amz target=awsidentitystore.describegroupmembership.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.DescribeGroupMembership'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DescribeUser API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.DescribeUser API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.describeuser.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.DescribeUser'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.GetGroupId API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.GetGroupId API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.getgroupid.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.GetGroupId'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.GetGroupMembershipId API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.GetGroupMembershipId API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.getgroupmembershipid.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.GetGroupMembershipId'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.GetUserId API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.GetUserId API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.getuserid.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.GetUserId'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.IsMemberInGroups API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.IsMemberInGroups API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.ismemberingroups.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.IsMemberInGroups'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.ListGroupMemberships API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.ListGroupMemberships API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.listgroupmemberships.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.ListGroupMemberships'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.ListGroupMembershipsForMember API
+  description: >-
+    The #X Amz Target=AWSIdentityStore.ListGroupMembershipsForMember API from Amazon IAM Identity Center
+    — 1 operation(s) for #x amz target=awsidentitystore.listgroupmembershipsformember.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.ListGroupMembershipsForMember'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.ListGroups API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.ListGroups API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.listgroups.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.ListGroups'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.ListUsers API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.ListUsers API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.listusers.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.ListUsers'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.UpdateGroup API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.UpdateGroup API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.updategroup.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.UpdateGroup'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api
+  name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.UpdateUser API'
+  description: >-
+    The #X Amz Target=AWSIdentityStore.UpdateUser API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=awsidentitystore.updateuser.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIdentityStore.UpdateUser'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet API from
+    Amazon IAM Identity Center — 1 operation(s) for #x amz target=swbexternalservice.attachcustomermanagedpolicyreferencetopermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.AttachManagedPolicyToPermissionSet API
+  description: >-
+    The #X Amz Target=SWBExternalService.AttachManagedPolicyToPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.attachmanagedpolicytopermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.AttachManagedPolicyToPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.CreateAccountAssignment API'
+  description: >-
+    The #X Amz Target=SWBExternalService.CreateAccountAssignment API from Amazon IAM Identity Center —
+    1 operation(s) for #x amz target=swbexternalservice.createaccountassignment.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.CreateAccountAssignment'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration API from Amazon
+    IAM Identity Center — 1 operation(s) for #x amz target=swbexternalservice.createinstanceaccesscontrolattributeconfiguration.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.CreatePermissionSet API'
+  description: >-
+    The #X Amz Target=SWBExternalService.CreatePermissionSet API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.createpermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.CreatePermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.DeleteAccountAssignment API'
+  description: >-
+    The #X Amz Target=SWBExternalService.DeleteAccountAssignment API from Amazon IAM Identity Center —
+    1 operation(s) for #x amz target=swbexternalservice.deleteaccountassignment.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DeleteAccountAssignment'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DeleteInlinePolicyFromPermissionSet API
+  description: >-
+    The #X Amz Target=SWBExternalService.DeleteInlinePolicyFromPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.deleteinlinepolicyfrompermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DeleteInlinePolicyFromPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration API from Amazon
+    IAM Identity Center — 1 operation(s) for #x amz target=swbexternalservice.deleteinstanceaccesscontrolattributeconfiguration.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DeletePermissionsBoundaryFromPermissionSet
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.DeletePermissionsBoundaryFromPermissionSet API from Amazon IAM
+    Identity Center — 1 operation(s) for #x amz target=swbexternalservice.deletepermissionsboundaryfrompermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DeletePermissionsBoundaryFromPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.DeletePermissionSet API'
+  description: >-
+    The #X Amz Target=SWBExternalService.DeletePermissionSet API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.deletepermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DeletePermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DescribeAccountAssignmentCreationStatus
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.DescribeAccountAssignmentCreationStatus API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.describeaccountassignmentcreationstatus.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DescribeAccountAssignmentCreationStatus'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DescribeAccountAssignmentDeletionStatus
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.DescribeAccountAssignmentDeletionStatus API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.describeaccountassignmentdeletionstatus.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DescribeAccountAssignmentDeletionStatus'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration API from
+    Amazon IAM Identity Center — 1 operation(s) for #x amz target=swbexternalservice.describeinstanceaccesscontrolattributeconfiguration.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.DescribePermissionSet API'
+  description: >-
+    The #X Amz Target=SWBExternalService.DescribePermissionSet API from Amazon IAM Identity Center — 1
+    operation(s) for #x amz target=swbexternalservice.describepermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DescribePermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DescribePermissionSetProvisioningStatus
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.DescribePermissionSetProvisioningStatus API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.describepermissionsetprovisioningstatus.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DescribePermissionSetProvisioningStatus'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet API from
+    Amazon IAM Identity Center — 1 operation(s) for #x amz target=swbexternalservice.detachcustomermanagedpolicyreferencefrompermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.DetachManagedPolicyFromPermissionSet API
+  description: >-
+    The #X Amz Target=SWBExternalService.DetachManagedPolicyFromPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.detachmanagedpolicyfrompermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.DetachManagedPolicyFromPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.GetInlinePolicyForPermissionSet API
+  description: >-
+    The #X Amz Target=SWBExternalService.GetInlinePolicyForPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.getinlinepolicyforpermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.GetInlinePolicyForPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.GetPermissionsBoundaryForPermissionSet
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.GetPermissionsBoundaryForPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.getpermissionsboundaryforpermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.GetPermissionsBoundaryForPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListAccountAssignmentCreationStatus API
+  description: >-
+    The #X Amz Target=SWBExternalService.ListAccountAssignmentCreationStatus API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.listaccountassignmentcreationstatus.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListAccountAssignmentCreationStatus'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListAccountAssignmentDeletionStatus API
+  description: >-
+    The #X Amz Target=SWBExternalService.ListAccountAssignmentDeletionStatus API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.listaccountassignmentdeletionstatus.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListAccountAssignmentDeletionStatus'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListAccountAssignments API'
+  description: >-
+    The #X Amz Target=SWBExternalService.ListAccountAssignments API from Amazon IAM Identity Center —
+    1 operation(s) for #x amz target=swbexternalservice.listaccountassignments.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListAccountAssignments'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListAccountsForProvisionedPermissionSet
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.ListAccountsForProvisionedPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.listaccountsforprovisionedpermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListAccountsForProvisionedPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet API from Amazon
+    IAM Identity Center — 1 operation(s) for #x amz target=swbexternalservice.listcustomermanagedpolicyreferencesinpermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListInstances API'
+  description: >-
+    The #X Amz Target=SWBExternalService.ListInstances API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.listinstances.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListInstances'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListManagedPoliciesInPermissionSet API
+  description: >-
+    The #X Amz Target=SWBExternalService.ListManagedPoliciesInPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.listmanagedpoliciesinpermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListManagedPoliciesInPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListPermissionSetProvisioningStatus API
+  description: >-
+    The #X Amz Target=SWBExternalService.ListPermissionSetProvisioningStatus API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.listpermissionsetprovisioningstatus.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListPermissionSetProvisioningStatus'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListPermissionSets API'
+  description: >-
+    The #X Amz Target=SWBExternalService.ListPermissionSets API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.listpermissionsets.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListPermissionSets'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListPermissionSetsProvisionedToAccount
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.ListPermissionSetsProvisionedToAccount API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.listpermissionsetsprovisionedtoaccount.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListPermissionSetsProvisionedToAccount'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListTagsForResource API'
+  description: >-
+    The #X Amz Target=SWBExternalService.ListTagsForResource API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.listtagsforresource.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ListTagsForResource'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ProvisionPermissionSet API'
+  description: >-
+    The #X Amz Target=SWBExternalService.ProvisionPermissionSet API from Amazon IAM Identity Center —
+    1 operation(s) for #x amz target=swbexternalservice.provisionpermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.ProvisionPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.PutInlinePolicyToPermissionSet API
+  description: >-
+    The #X Amz Target=SWBExternalService.PutInlinePolicyToPermissionSet API from Amazon IAM Identity Center
+    — 1 operation(s) for #x amz target=swbexternalservice.putinlinepolicytopermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.PutInlinePolicyToPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.PutPermissionsBoundaryToPermissionSet
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.PutPermissionsBoundaryToPermissionSet API from Amazon IAM Identity
+    Center — 1 operation(s) for #x amz target=swbexternalservice.putpermissionsboundarytopermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.PutPermissionsBoundaryToPermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.TagResource API'
+  description: >-
+    The #X Amz Target=SWBExternalService.TagResource API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.tagresource.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.TagResource'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.UntagResource API'
+  description: >-
+    The #X Amz Target=SWBExternalService.UntagResource API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.untagresource.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.UntagResource'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api
+  name: >-
+    Amazon IAM Identity Center #X Amz Target=SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration
+    API
+  description: >-
+    The #X Amz Target=SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration API from Amazon
+    IAM Identity Center — 1 operation(s) for #x amz target=swbexternalservice.updateinstanceaccesscontrolattributeconfiguration.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: X-NaftikoCapability
+    url: capabilities/identitystore.yaml
+- aid: >-
+    amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api
+  name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.UpdatePermissionSet API'
+  description: >-
+    The #X Amz Target=SWBExternalService.UpdatePermissionSet API from Amazon IAM Identity Center — 1 operation(s)
+    for #x amz target=swbexternalservice.updatepermissionset.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - '#X Amz Target=SWBExternalService.UpdatePermissionSet'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/iam/identity-center/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/sso-admin.yaml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
   - type: X-NaftikoCapability
     url: capabilities/identitystore.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-iam-identity-center/overview
 - type: AgenticAccess
   url: agentic-access/amazon-iam-identity-center-agentic-access.yml
 - type: TrustCenter
