@@ -1,0 +1,746 @@
+{
+  "info": {
+    "_postman_id": "94d505ea-29bf-4838-bf99-3193a418bd54",
+    "name": "AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=SWBExternalService.ListAccountAssignments API",
+    "description": "<p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html\">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:51.000Z",
+    "updatedAt": "2026-07-28T10:27:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-94d505ea-29bf-4838-bf99-3193a418bd54"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+      "item": [
+        {
+          "name": "Amazon IAM Identity Center List Account Assignments",
+          "id": "8151dadc-cb53-4df8-8a79-65b90107d903",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "SWBExternalService.ListAccountAssignments"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"InstanceArn\": \"arn:aws-iso:sso:::instance/ins-f6xAiEUKCf5aR06c\",\n  \"AccountId\": \"257390357854\",\n  \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-jj4UtpBGt1r7DvRL/ps-pN5neKzviW-tAFOx\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"X8cAZ\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=SWBExternalService.ListAccountAssignments"
+            },
+            "description": "Lists the assignee of the specified AWS account with the specified permission set."
+          },
+          "response": [
+            {
+              "id": "c5a66acb-871e-4ef5-a555-7f191dcd9270",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.ListAccountAssignments"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws-iso:sso:::instance/ins-f6xAiEUKCf5aR06c\",\n  \"AccountId\": \"257390357854\",\n  \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-jj4UtpBGt1r7DvRL/ps-pN5neKzviW-tAFOx\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"X8cAZ\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.ListAccountAssignments"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"AccountAssignments\": [\n    {\n      \"AccountId\": \"372458594633\",\n      \"PermissionSetArn\": \"arn:aws-us-gov:sso:::permissionSet/ins-9A90PwyDjwVX1i9N/ps-2MBhtBW3CRi1WxKJ\",\n      \"PrincipalType\": \"GROUP\",\n      \"PrincipalId\": \"809493813c-1BCF4B36-baf9-5720-D56b-17cCC408b5Ff\"\n    },\n    {\n      \"AccountId\": \"779872175012\",\n      \"PermissionSetArn\": \"arn:aws-us-gov:sso:::permissionSet/ins-EDiWypm6jqiZ-gvY/ps-VJwzGcUhU5r6RzYJ\",\n      \"PrincipalType\": \"GROUP\",\n      \"PrincipalId\": \"9c02011b69-d17b7aAa-57AB-f80e-bE43-CdD6De3A26FD\"\n    }\n  ],\n  \"NextToken\": \"ify2n-2\"\n}",
+              "createdAt": "2026-07-28T10:27:52.000Z",
+              "updatedAt": "2026-07-28T10:27:52.000Z",
+              "uid": "35240-c5a66acb-871e-4ef5-a555-7f191dcd9270"
+            },
+            {
+              "id": "076d3ff6-5025-4bb2-bf47-3ab84ecf007a",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.ListAccountAssignments"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws-iso:sso:::instance/ins-f6xAiEUKCf5aR06c\",\n  \"AccountId\": \"257390357854\",\n  \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-jj4UtpBGt1r7DvRL/ps-pN5neKzviW-tAFOx\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"X8cAZ\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.ListAccountAssignments"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:52.000Z",
+              "updatedAt": "2026-07-28T10:27:52.000Z",
+              "uid": "35240-076d3ff6-5025-4bb2-bf47-3ab84ecf007a"
+            },
+            {
+              "id": "4617b926-8400-43ee-beed-fdba6b03aaa1",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.ListAccountAssignments"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws-iso:sso:::instance/ins-f6xAiEUKCf5aR06c\",\n  \"AccountId\": \"257390357854\",\n  \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-jj4UtpBGt1r7DvRL/ps-pN5neKzviW-tAFOx\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"X8cAZ\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.ListAccountAssignments"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:52.000Z",
+              "updatedAt": "2026-07-28T10:27:52.000Z",
+              "uid": "35240-4617b926-8400-43ee-beed-fdba6b03aaa1"
+            },
+            {
+              "id": "f4696b45-ba47-47f0-b46f-44f5a6f114a9",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.ListAccountAssignments"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws-iso:sso:::instance/ins-f6xAiEUKCf5aR06c\",\n  \"AccountId\": \"257390357854\",\n  \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-jj4UtpBGt1r7DvRL/ps-pN5neKzviW-tAFOx\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"X8cAZ\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.ListAccountAssignments"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:52.000Z",
+              "updatedAt": "2026-07-28T10:27:52.000Z",
+              "uid": "35240-f4696b45-ba47-47f0-b46f-44f5a6f114a9"
+            },
+            {
+              "id": "eccb758f-a723-45a5-b91e-4abb035d5540",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.ListAccountAssignments"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws-iso:sso:::instance/ins-f6xAiEUKCf5aR06c\",\n  \"AccountId\": \"257390357854\",\n  \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-jj4UtpBGt1r7DvRL/ps-pN5neKzviW-tAFOx\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"X8cAZ\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.ListAccountAssignments"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:52.000Z",
+              "updatedAt": "2026-07-28T10:27:52.000Z",
+              "uid": "35240-eccb758f-a723-45a5-b91e-4abb035d5540"
+            },
+            {
+              "id": "dc990acd-5131-424c-bfc9-28195886767e",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.ListAccountAssignments"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws-iso:sso:::instance/ins-f6xAiEUKCf5aR06c\",\n  \"AccountId\": \"257390357854\",\n  \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-jj4UtpBGt1r7DvRL/ps-pN5neKzviW-tAFOx\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"X8cAZ\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=SWBExternalService.ListAccountAssignments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.ListAccountAssignments"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:52.000Z",
+              "updatedAt": "2026-07-28T10:27:52.000Z",
+              "uid": "35240-dc990acd-5131-424c-bfc9-28195886767e"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:52.000Z",
+          "updatedAt": "2026-07-28T10:27:52.000Z",
+          "uid": "35240-8151dadc-cb53-4df8-8a79-65b90107d903"
+        }
+      ],
+      "id": "a1234d09-65ee-4a7c-a79e-9602378b6359",
+      "createdAt": "2026-07-28T10:27:52.000Z",
+      "updatedAt": "2026-07-28T10:27:52.000Z",
+      "uid": "35240-a1234d09-65ee-4a7c-a79e-9602378b6359"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://identitystore.{{region}}.amazonaws.com"
+    }
+  ]
+}

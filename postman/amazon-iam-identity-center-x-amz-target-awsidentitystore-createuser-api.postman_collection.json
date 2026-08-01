@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "1c5f7f81-9694-4eff-aa8a-e5679581401c",
+    "name": "AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateUser API",
+    "description": "<p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html\">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:26:24.000Z",
+    "updatedAt": "2026-07-28T10:26:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1c5f7f81-9694-4eff-aa8a-e5679581401c"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSIdentityStore.CreateUser",
+      "item": [
+        {
+          "name": "Amazon IAM Identity Center Create User",
+          "id": "2baf95ec-dc31-4da6-921b-0b519c7aca52",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSIdentityStore.CreateUser"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+            },
+            "description": "Creates a user within the specified identity store."
+          },
+          "response": [
+            {
+              "id": "7f347804-fb5a-4c16-a58c-d67cb6de3093",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"UserId\": \"aef4d4d877-0c3dCa3c-8baa-dbCB-d6Ef-c2a28661bbf9\",\n  \"IdentityStoreId\": \"d-7e932630a7\"\n}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-7f347804-fb5a-4c16-a58c-d67cb6de3093"
+            },
+            {
+              "id": "10c13ee4-8dc7-4715-acdf-e4fd844f0def",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-10c13ee4-8dc7-4715-acdf-e4fd844f0def"
+            },
+            {
+              "id": "1ac743cf-a674-49cb-ac94-a67d285ec880",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-1ac743cf-a674-49cb-ac94-a67d285ec880"
+            },
+            {
+              "id": "e9eeb7a2-5ef3-4a6d-9262-e7b36714cba7",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-e9eeb7a2-5ef3-4a6d-9262-e7b36714cba7"
+            },
+            {
+              "id": "9d90da66-ceef-421c-8f38-bfae792cceda",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-9d90da66-ceef-421c-8f38-bfae792cceda"
+            },
+            {
+              "id": "c65558a4-dcce-440e-99e2-ea7a1dc37709",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-c65558a4-dcce-440e-99e2-ea7a1dc37709"
+            },
+            {
+              "id": "24ad3ad6-8f1e-4921-a098-fa7f68fcebf4",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-24ad3ad6-8f1e-4921-a098-fa7f68fcebf4"
+            },
+            {
+              "id": "ea996710-8f43-4d53-926d-cdb0d1f68ace",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.CreateUser"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-cf4749485c\",\n  \"UserName\": \"LNSLp\",\n  \"Name\": {\n    \"Formatted\": \"S}\u00a0p {PPSL\",\n    \"FamilyName\": \"PSN{}\",\n    \"GivenName\": \"P}\",\n    \"MiddleName\": \"\\tNM \u3000L }\",\n    \"HonorificPrefix\": \"N\u00a0L\",\n    \"HonorificSuffix\": \"{\u3000SL PNL\"\n  },\n  \"DisplayName\": \"}N}S\u3000\\t\u00a0\",\n  \"NickName\": \"\\tLp\",\n  \"ProfileUrl\": \"L}LMSNpP{p\",\n  \"Emails\": [\n    {\n      \"Value\": \"p\",\n      \"Type\": \"\\tLLLL\u3000}M}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"Addresses\": [\n    {\n      \"StreetAddress\": \"  L{\",\n      \"Locality\": \"\u00a0\u00a0\",\n      \"Region\": \"} \\t\u3000P\",\n      \"PostalCode\": \"L\",\n      \"Country\": \"N\\t\",\n      \"Formatted\": \" \\tN\",\n      \"Type\": \"\\t \",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"PhoneNumbers\": [\n    {\n      \"Value\": \"S\u00a0\",\n      \"Type\": \"NL p{PPNM\\t}\",\n      \"Primary\": \"<boolean>\"\n    }\n  ],\n  \"UserType\": \"{\u00a0M}\u00a0\u00a0\",\n  \"Title\": \"NN\u00a0M\\t\u3000N{M M\",\n  \"PreferredLanguage\": \"p}\",\n  \"Locale\": \"\u3000SL P\\t\\t{{\u3000\u3000\",\n  \"Timezone\": \"ML p}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIdentityStore.CreateUser",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.CreateUser"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-ea996710-8f43-4d53-926d-cdb0d1f68ace"
+            }
+          ],
+          "createdAt": "2026-07-28T10:26:25.000Z",
+          "updatedAt": "2026-07-28T10:26:25.000Z",
+          "uid": "35240-2baf95ec-dc31-4da6-921b-0b519c7aca52"
+        }
+      ],
+      "id": "761236d8-583c-4d51-81e3-49bab2946371",
+      "createdAt": "2026-07-28T10:26:25.000Z",
+      "updatedAt": "2026-07-28T10:26:25.000Z",
+      "uid": "35240-761236d8-583c-4d51-81e3-49bab2946371"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://identitystore.{{region}}.amazonaws.com"
+    }
+  ]
+}

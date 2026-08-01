@@ -1,0 +1,750 @@
+{
+  "info": {
+    "_postman_id": "c12119ce-8ba3-4943-a0ba-896c80e8d3d6",
+    "name": "AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=SWBExternalService.DeleteAccountAssignment API",
+    "description": "<p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html\">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:35.000Z",
+    "updatedAt": "2026-07-28T10:27:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c12119ce-8ba3-4943-a0ba-896c80e8d3d6"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+      "item": [
+        {
+          "name": "Amazon IAM Identity Center Delete Account Assignment",
+          "id": "f8df272c-0c8f-4099-9720-4587216621a6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "SWBExternalService.DeleteAccountAssignment"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+            },
+            "description": "<p>Deletes a principal's access from a specified AWS account using a specified permission set.</p> <note> <p>After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of an assignment deletion request.</p> </note>"
+          },
+          "response": [
+            {
+              "id": "7d0fa0cb-32ff-4d2e-9174-d9f39b124d8e",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.DeleteAccountAssignment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"AccountAssignmentDeletionStatus\": {\n    \"Status\": \"IN_PROGRESS\",\n    \"RequestId\": \"48c0ae56-6da5-8bf6-6f29-c2fd3c0d6d87\",\n    \"FailureReason\": \"ZSSS{LNPLZ\",\n    \"TargetId\": \"488615255097\",\n    \"TargetType\": \"AWS_ACCOUNT\",\n    \"PermissionSetArn\": \"arn:aws-cn:sso:::permissionSet/ssoins-WburI-Plk6fXr4nA/ps-zNjJ0jxrX74H5ILu\",\n    \"PrincipalType\": \"USER\",\n    \"PrincipalId\": \"Efa7F4De-168c-Cc0D-654B-EFD68c8A82d1\",\n    \"CreatedDate\": \"<dateTime>\"\n  }\n}",
+              "createdAt": "2026-07-28T10:27:36.000Z",
+              "updatedAt": "2026-07-28T10:27:36.000Z",
+              "uid": "35240-7d0fa0cb-32ff-4d2e-9174-d9f39b124d8e"
+            },
+            {
+              "id": "08afad9f-6712-4f5a-a537-ad0fb2a03339",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.DeleteAccountAssignment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:36.000Z",
+              "updatedAt": "2026-07-28T10:27:36.000Z",
+              "uid": "35240-08afad9f-6712-4f5a-a537-ad0fb2a03339"
+            },
+            {
+              "id": "5bc3b4b5-e36e-428b-8c5d-b321f17bc068",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.DeleteAccountAssignment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:36.000Z",
+              "updatedAt": "2026-07-28T10:27:36.000Z",
+              "uid": "35240-5bc3b4b5-e36e-428b-8c5d-b321f17bc068"
+            },
+            {
+              "id": "ac1c7028-22d6-4cc6-a35d-dd88b84629d1",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.DeleteAccountAssignment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:36.000Z",
+              "updatedAt": "2026-07-28T10:27:36.000Z",
+              "uid": "35240-ac1c7028-22d6-4cc6-a35d-dd88b84629d1"
+            },
+            {
+              "id": "d00a18d5-1e7d-492e-ad74-782437c1560d",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.DeleteAccountAssignment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:36.000Z",
+              "updatedAt": "2026-07-28T10:27:36.000Z",
+              "uid": "35240-d00a18d5-1e7d-492e-ad74-782437c1560d"
+            },
+            {
+              "id": "d0aef4d9-7f93-48c8-a376-194ce3459c36",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.DeleteAccountAssignment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:36.000Z",
+              "updatedAt": "2026-07-28T10:27:36.000Z",
+              "uid": "35240-d0aef4d9-7f93-48c8-a376-194ce3459c36"
+            },
+            {
+              "id": "da67c74d-8dcc-42da-9757-231e2e409435",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SWBExternalService.DeleteAccountAssignment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InstanceArn\": \"arn:aws:sso:::instance/ins-16nRRMhS-eLOz3LR\",\n  \"TargetId\": \"541617695739\",\n  \"TargetType\": \"AWS_ACCOUNT\",\n  \"PermissionSetArn\": \"arn:aws-iso-b:sso:::permissionSet/ssoins-BLC9jvxHyy2mMHzO/ps-FSAAzEoUFQ.4dak4\",\n  \"PrincipalType\": \"USER\",\n  \"PrincipalId\": \"bdaddac583-e6CADc8B-5cB9-96E5-3FFd-c79CdE5b0b64\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=SWBExternalService.DeleteAccountAssignment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SWBExternalService.DeleteAccountAssignment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:36.000Z",
+              "updatedAt": "2026-07-28T10:27:36.000Z",
+              "uid": "35240-da67c74d-8dcc-42da-9757-231e2e409435"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:36.000Z",
+          "updatedAt": "2026-07-28T10:27:36.000Z",
+          "uid": "35240-f8df272c-0c8f-4099-9720-4587216621a6"
+        }
+      ],
+      "id": "876c4f68-a727-401f-9fb0-e6fc6710eddf",
+      "createdAt": "2026-07-28T10:27:36.000Z",
+      "updatedAt": "2026-07-28T10:27:36.000Z",
+      "uid": "35240-876c4f68-a727-401f-9fb0-e6fc6710eddf"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://identitystore.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,746 @@
+{
+  "info": {
+    "_postman_id": "b9632b0e-0aef-44b9-a1dc-62d0c0dec8c2",
+    "name": "AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.ListUsers API",
+    "description": "<p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html\">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:24.000Z",
+    "updatedAt": "2026-07-28T10:27:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b9632b0e-0aef-44b9-a1dc-62d0c0dec8c2"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSIdentityStore.ListUsers",
+      "item": [
+        {
+          "name": "Amazon IAM Identity Center List Users",
+          "id": "4b2629ad-87d0-446b-b3b0-5dbd074f21d2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSIdentityStore.ListUsers"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"IdentityStoreId\": \"d-b78cc7f39d\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"XVnK\",\n  \"Filters\": [\n    {\n      \"AttributePath\": \"p{L}}.p{L}.p{L}}}}}\",\n      \"AttributeValue\": \"pMp \u3000M \"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSIdentityStore.ListUsers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSIdentityStore.ListUsers"
+            },
+            "description": "Lists all users in the identity store. Returns a paginated list of complete <code>User</code> objects. Filtering for a <code>User</code> by the <code>UserName</code> attribute is deprecated. Instead, use the <code>GetUserId</code> API action."
+          },
+          "response": [
+            {
+              "id": "076b279f-5eb1-4f84-8f23-c90b7c4e6456",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.ListUsers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-b78cc7f39d\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"XVnK\",\n  \"Filters\": [\n    {\n      \"AttributePath\": \"p{L}}.p{L}.p{L}}}}}\",\n      \"AttributeValue\": \"pMp \u3000M \"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSIdentityStore.ListUsers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.ListUsers"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Users\": [\n    {\n      \"UserId\": \"4b3DA498-Db7d-E7f9-1Ba0-1636ff1eDdeb\",\n      \"IdentityStoreId\": \"d-f85dd2d9c2\",\n      \"UserName\": \"MP{pS{L}NSM\",\n      \"ExternalIds\": [\n        {\n          \"Issuer\": \"(?!(?i)(arn|aws):)M+\",\n          \"Id\": \"}ppLN\"\n        }\n      ],\n      \"Name\": {\n        \"Formatted\": \"\u3000M\\tP}M\u3000L\\t p\",\n        \"FamilyName\": \"\\t\u00a0PL\\t\",\n        \"GivenName\": \"N\",\n        \"MiddleName\": \"\u00a0{}S L\u00a0\u00a0P\",\n        \"HonorificPrefix\": \"MN\\t\u00a0p\",\n        \"HonorificSuffix\": \"N{L\"\n      },\n      \"DisplayName\": \"\u3000 L\",\n      \"NickName\": \"\\t \\tLPP\\t{}p\",\n      \"ProfileUrl\": \"p{N\u3000Np\\tN\",\n      \"Emails\": [\n        {\n          \"Value\": \"\u3000SM}pP\\tNNMM\",\n          \"Type\": \"  L}\\t\",\n          \"Primary\": \"<boolean>\"\n        }\n      ],\n      \"Addresses\": [\n        {\n          \"StreetAddress\": \"{L\",\n          \"Locality\": \"\\tNP{\u3000MN P\",\n          \"Region\": \"\u3000P\\tpP\",\n          \"PostalCode\": \"{S\u3000p\u00a0P\",\n          \"Country\": \"{L\\tN\",\n          \"Formatted\": \"MM\u3000\u00a0L\\t}pMNN\",\n          \"Type\": \"SLN{pS MLM\",\n          \"Primary\": \"<boolean>\"\n        }\n      ],\n      \"PhoneNumbers\": [\n        {\n          \"Value\": \"N\u3000\u00a0}\u00a0SP\u3000\",\n          \"Type\": \"{{P{P\",\n          \"Primary\": \"<boolean>\"\n        }\n      ],\n      \"UserType\": \"\\t PL\",\n      \"Title\": \"S\u3000S{\\tNNN\u3000  \",\n      \"PreferredLanguage\": \"LM\",\n      \"Locale\": \"PP\u00a0NNL\u3000\\t\",\n      \"Timezone\": \"NL}\\tM\u3000 \u00a0N\"\n    },\n    {\n      \"UserId\": \"BFBB21d9-8fEc-bF6d-7D9A-a4DAe9731DD8\",\n      \"IdentityStoreId\": \"50ce91a9-a991-40ad-88f6-a9fb3c68f839\",\n      \"UserName\": \"MSP{\",\n      \"ExternalIds\": [\n        {\n          \"Issuer\": \"(?!(?i)(arn|aws):)M+\",\n          \"Id\": \"LSL\"\n        }\n      ],\n      \"Name\": {\n        \"Formatted\": \"\\tPMPS\\t\u00a0\u00a0SLM\",\n        \"FamilyName\": \"\u3000N}{{ pN\",\n        \"GivenName\": \"P{\",\n        \"MiddleName\": \"NMMPM\u3000\\t}\",\n        \"HonorificPrefix\": \"{S LS\u3000\u3000\u00a0\",\n        \"HonorificSuffix\": \"\\t{P \u00a0M\"\n      },\n      \"DisplayName\": \"SM\u3000}{N }{L\\t\",\n      \"NickName\": \"}MpP{L\u3000PL M\",\n      \"ProfileUrl\": \"M\",\n      \"Emails\": [\n        {\n          \"Value\": \"{\u3000 LpML\u3000L\u00a0M\",\n          \"Type\": \"{\u3000\\t L\u00a0\u3000NM\",\n          \"Primary\": \"<boolean>\"\n        }\n      ],\n      \"Addresses\": [\n        {\n          \"StreetAddress\": \"}\u3000N}\u00a0\u00a0 }P\\tP\",\n          \"Locality\": \"}\",\n          \"Region\": \"L{\",\n          \"PostalCode\": \"pS \",\n          \"Country\": \"NPL\",\n          \"Formatted\": \"\u3000PNp\u00a0SM\",\n          \"Type\": \"\\t\\tM{NP\u00a0SM\",\n          \"Primary\": \"<boolean>\"\n        }\n      ],\n      \"PhoneNumbers\": [\n        {\n          \"Value\": \"\u3000\u00a0M\",\n          \"Type\": \"\\tMP  p\",\n          \"Primary\": \"<boolean>\"\n        }\n      ],\n      \"UserType\": \"p\u00a0\u3000\u00a0{\",\n      \"Title\": \"}  P\u00a0\u3000L \u3000\u00a0\",\n      \"PreferredLanguage\": \"P L\u3000\u00a0}\",\n      \"Locale\": \"M\\t\\tS\\t\u3000S}p\u00a0S\",\n      \"Timezone\": \"{pPL\"\n    }\n  ],\n  \"NextToken\": \"+EwgVAT\"\n}",
+              "createdAt": "2026-07-28T10:27:24.000Z",
+              "updatedAt": "2026-07-28T10:27:24.000Z",
+              "uid": "35240-076b279f-5eb1-4f84-8f23-c90b7c4e6456"
+            },
+            {
+              "id": "5c1dc4bf-ed6d-4776-aa84-68936e311e95",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.ListUsers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-b78cc7f39d\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"XVnK\",\n  \"Filters\": [\n    {\n      \"AttributePath\": \"p{L}}.p{L}.p{L}}}}}\",\n      \"AttributeValue\": \"pMp \u3000M \"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSIdentityStore.ListUsers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.ListUsers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:24.000Z",
+              "updatedAt": "2026-07-28T10:27:24.000Z",
+              "uid": "35240-5c1dc4bf-ed6d-4776-aa84-68936e311e95"
+            },
+            {
+              "id": "87c8d6f7-68cc-43dd-96dd-6685fc9260b8",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.ListUsers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-b78cc7f39d\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"XVnK\",\n  \"Filters\": [\n    {\n      \"AttributePath\": \"p{L}}.p{L}.p{L}}}}}\",\n      \"AttributeValue\": \"pMp \u3000M \"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSIdentityStore.ListUsers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.ListUsers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:24.000Z",
+              "updatedAt": "2026-07-28T10:27:24.000Z",
+              "uid": "35240-87c8d6f7-68cc-43dd-96dd-6685fc9260b8"
+            },
+            {
+              "id": "43051da5-aba3-4991-a443-8c6b3d10369f",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.ListUsers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-b78cc7f39d\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"XVnK\",\n  \"Filters\": [\n    {\n      \"AttributePath\": \"p{L}}.p{L}.p{L}}}}}\",\n      \"AttributeValue\": \"pMp \u3000M \"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSIdentityStore.ListUsers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.ListUsers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:24.000Z",
+              "updatedAt": "2026-07-28T10:27:24.000Z",
+              "uid": "35240-43051da5-aba3-4991-a443-8c6b3d10369f"
+            },
+            {
+              "id": "fdefa415-7087-4144-ba7e-02b5ab4e4b2c",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.ListUsers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-b78cc7f39d\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"XVnK\",\n  \"Filters\": [\n    {\n      \"AttributePath\": \"p{L}}.p{L}.p{L}}}}}\",\n      \"AttributeValue\": \"pMp \u3000M \"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSIdentityStore.ListUsers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.ListUsers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:24.000Z",
+              "updatedAt": "2026-07-28T10:27:24.000Z",
+              "uid": "35240-fdefa415-7087-4144-ba7e-02b5ab4e4b2c"
+            },
+            {
+              "id": "0f13e3f9-3b3b-472f-bd27-eb2d4dab1d40",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIdentityStore.ListUsers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"IdentityStoreId\": \"d-b78cc7f39d\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"XVnK\",\n  \"Filters\": [\n    {\n      \"AttributePath\": \"p{L}}.p{L}.p{L}}}}}\",\n      \"AttributeValue\": \"pMp \u3000M \"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSIdentityStore.ListUsers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSIdentityStore.ListUsers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:24.000Z",
+              "updatedAt": "2026-07-28T10:27:24.000Z",
+              "uid": "35240-0f13e3f9-3b3b-472f-bd27-eb2d4dab1d40"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:24.000Z",
+          "updatedAt": "2026-07-28T10:27:24.000Z",
+          "uid": "35240-4b2629ad-87d0-446b-b3b0-5dbd074f21d2"
+        }
+      ],
+      "id": "c26666bd-464c-47ef-920d-8bc4e8dbbce2",
+      "createdAt": "2026-07-28T10:27:24.000Z",
+      "updatedAt": "2026-07-28T10:27:24.000Z",
+      "uid": "35240-c26666bd-464c-47ef-920d-8bc4e8dbbce2"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://identitystore.{{region}}.amazonaws.com"
+    }
+  ]
+}
