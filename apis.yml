@@ -52,12 +52,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.CreateGroupMembership API'
@@ -80,12 +76,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.CreateUser API'
@@ -108,12 +100,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DeleteGroup API'
@@ -136,12 +124,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DeleteGroupMembership API'
@@ -164,12 +148,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DeleteUser API'
@@ -192,12 +172,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DescribeGroup API'
@@ -220,12 +196,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DescribeGroupMembership API'
@@ -248,12 +220,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.DescribeUser API'
@@ -276,12 +244,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.GetGroupId API'
@@ -304,12 +268,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.GetGroupMembershipId API'
@@ -332,12 +292,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.GetUserId API'
@@ -360,12 +316,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.IsMemberInGroups API'
@@ -388,12 +340,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.ListGroupMemberships API'
@@ -416,12 +364,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api
   name: >-
@@ -445,12 +389,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.ListGroups API'
@@ -473,12 +413,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.ListUsers API'
@@ -501,12 +437,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.UpdateGroup API'
@@ -529,12 +461,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api
   name: 'Amazon IAM Identity Center #X Amz Target=AWSIdentityStore.UpdateUser API'
@@ -557,12 +485,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api
   name: >-
@@ -587,12 +511,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api
   name: >-
@@ -616,12 +536,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.CreateAccountAssignment API'
@@ -644,12 +560,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api
   name: >-
@@ -674,12 +586,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.CreatePermissionSet API'
@@ -702,12 +610,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.DeleteAccountAssignment API'
@@ -730,12 +634,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api
   name: >-
@@ -759,12 +659,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api
   name: >-
@@ -789,12 +685,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api
   name: >-
@@ -819,12 +711,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.DeletePermissionSet API'
@@ -847,12 +735,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api
   name: >-
@@ -877,12 +761,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api
   name: >-
@@ -907,12 +787,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api
   name: >-
@@ -937,12 +813,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.DescribePermissionSet API'
@@ -965,12 +837,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api
   name: >-
@@ -995,12 +863,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api
   name: >-
@@ -1025,12 +889,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api
   name: >-
@@ -1054,12 +914,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api
   name: >-
@@ -1083,12 +939,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api
   name: >-
@@ -1113,12 +965,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api
   name: >-
@@ -1142,12 +990,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api
   name: >-
@@ -1171,12 +1015,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListAccountAssignments API'
@@ -1199,12 +1039,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api
   name: >-
@@ -1229,12 +1065,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api
   name: >-
@@ -1259,12 +1091,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListInstances API'
@@ -1287,12 +1115,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api
   name: >-
@@ -1316,12 +1140,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api
   name: >-
@@ -1345,12 +1165,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListPermissionSets API'
@@ -1373,12 +1189,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api
   name: >-
@@ -1403,12 +1215,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ListTagsForResource API'
@@ -1431,12 +1239,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.ProvisionPermissionSet API'
@@ -1459,12 +1263,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api
   name: >-
@@ -1488,12 +1288,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api
   name: >-
@@ -1518,12 +1314,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.TagResource API'
@@ -1546,12 +1338,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.UntagResource API'
@@ -1574,12 +1362,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api
   name: >-
@@ -1604,12 +1388,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 - aid: >-
     amazon-iam-identity-center:amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api
   name: 'Amazon IAM Identity Center #X Amz Target=SWBExternalService.UpdatePermissionSet API'
@@ -1632,12 +1412,8 @@ apis:
     url: https://aws.amazon.com/iam/identity-center/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/sso-admin.yaml
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-  - type: X-NaftikoCapability
-    url: capabilities/identitystore.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-iam-identity-center/overview
