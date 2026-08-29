@@ -1,0 +1,486 @@
+slug: amazon-iam-identity-center
+provider: Amazon IAM Identity Center
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 52
+edges:
+- tag: '#X Amz Target=SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.93
+  evidence: '"Attach Customer Managed Policy Reference to Permission Set"; schema "CustomerManagedPolicyReference",
+    "PermissionSetArn"'
+  reason: Attaches access policies to permission sets that define what identities may do — access rights
+    administration.
+- tag: '#X Amz Target=SWBExternalService.AttachManagedPolicyToPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.93
+  evidence: '"AttachManagedPolicyToPermissionSet  Amazon IAM Identity Center Attach Managed Policy to
+    Permission Set"; "ManagedPolicyArn"'
+  reason: Grants permissions by attaching managed policies to permission sets — core identity and access
+    management.
+- tag: '#X Amz Target=SWBExternalService.CreateAccountAssignment'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.93
+  evidence: '"CreateAccountAssignment"; schemas "PrincipalId", "PrincipalType", "PermissionSetArn"'
+  reason: Assigns a principal to a permission set on a target AWS account — access provisioning/entitlement
+    grant, i.e. IAM.
+- tag: '#X Amz Target=SWBExternalService.CreatePermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.93
+  evidence: '"CreatePermissionSet  Amazon IAM Identity Center Create Permission Set"; schemas "PermissionSet",
+    "PermissionSetName"'
+  reason: Creates the permission set construct that defines access rights granted to workforce identities
+    — IAM.
+- tag: '#X Amz Target=SWBExternalService.DeleteAccountAssignment'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.93
+  evidence: '"DeleteAccountAssignment"; schemas "PrincipalId", "PrincipalType", "PermissionSetArn"'
+  reason: Revokes a principal's access assignment to an account — access revocation within IAM.
+- tag: '#X Amz Target=AWSIdentityStore.ListUsers'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: '"ListUsers  Amazon IAM Identity Center List Users"; "The Identity Store service used by AWS
+    IAM Identity Center ... provides a single place to retrieve all of your identities (users and groups)"'
+  reason: Operation lists workforce user identities from the central identity store — directory/identity
+    administration, i.e. Identity & Access Management.
+- tag: '#X Amz Target=AWSIdentityStore.UpdateGroup'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: '"UpdateGroup  Amazon IAM Identity Center Update Group"; schemas "IdentityStoreId", "AttributeOperations"'
+  reason: Maintains identity-store groups used to grant access centrally — identity and access administration.
+- tag: '#X Amz Target=AWSIdentityStore.UpdateUser'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: '"UpdateUser  Amazon IAM Identity Center Update User"; "IdentityStoreId", "UpdateUserRequest"'
+  reason: Updates user identity records in the IAM Identity Center identity store — IAM lifecycle administration,
+    not HR employee records.
+- tag: '#X Amz Target=SWBExternalService.DeleteInlinePolicyFromPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: '"DeleteInlinePolicyFromPermissionSet  Amazon IAM Identity Center Delete Inline Policy from
+    Permission Set"'
+  reason: Removes access policy from a permission set — permission/entitlement administration.
+- tag: '#X Amz Target=SWBExternalService.DeletePermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: '"DeletePermissionSet  Amazon IAM Identity Center Delete Permission Set"; "PermissionSetArn"'
+  reason: Deletes a permission set defining access rights for workforce identities — IAM lifecycle.
+- tag: '#X Amz Target=SWBExternalService.ListAccountAssignments'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: 'ListAccountAssignments ... schemas: PrincipalId, PrincipalType, AccountAssignment, PermissionSetArn'
+  reason: Operation lists assignments of principals (users/groups) to AWS accounts via permission sets
+    — access rights administration, i.e. Identity & Access Management.
+- tag: '#X Amz Target=SWBExternalService.ListPermissionSets'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.92
+  evidence: ListPermissionSets ... PermissionSetList, PermissionSetArn
+  reason: Lists permission sets that define workforce access to AWS accounts — squarely Identity & Access
+    Management.
+- tag: '#X Amz Target=AWSIdentityStore.DeleteGroupMembership'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: POST /#X-Amz-Target=AWSIdentityStore.DeleteGroupMembership  DeleteGroupMembership; "provides
+    a single place to retrieve all of your identities (users and groups)"
+  reason: Identity store group membership removal is core Identity & Access Management.
+- tag: '#X Amz Target=AWSIdentityStore.DeleteUser'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: DeleteUser  Amazon IAM Identity Center Delete User; "manage user access to AWS accounts and
+    business applications"
+  reason: Deletion of workforce identity records in an SSO identity store is IAM lifecycle management.
+- tag: '#X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: '"Create Instance Access Control Attribute Configuration"; schemas "AccessControlAttributeList",
+    "AccessControlAttributeValueSource"'
+  reason: Configures attributes used for attribute-based access control decisions — access management
+    configuration.
+- tag: '#X Amz Target=SWBExternalService.DeletePermissionsBoundaryFromPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: DeletePermissionsBoundaryFromPermissionSet — "Delete Permissions Boundary from Permission
+    Set"; schemas PermissionSetArn, InstanceArn
+  reason: Operation manages the permissions boundary attached to an IAM Identity Center permission set
+    — i.e. administration of access rights for workforce identities across AWS accounts. That is Identity
+    & Access Management, not a generic technical plumbing concern.
+- tag: '#X Amz Target=SWBExternalService.DescribePermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: DescribePermissionSet — schemas PermissionSet, PermissionSetName, PermissionSetDescription,
+    RelayState
+  reason: Retrieves a permission set definition used to grant workforce users access to AWS accounts;
+    core IAM administration surface.
+- tag: '#X Amz Target=SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: DetachCustomerManagedPolicyReferenceFromPermissionSet — schemas CustomerManagedPolicyReference,
+    ManagedPolicyName, PermissionSetArn
+  reason: Detaches an IAM policy from a permission set, changing what access the set grants — authorisation
+    policy administration under Identity & Access Management.
+- tag: '#X Amz Target=SWBExternalService.DetachManagedPolicyFromPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: DetachManagedPolicyFromPermissionSet — schemas ManagedPolicyArn, PermissionSetArn
+  reason: Removes an AWS managed policy from a permission set, altering granted entitlements; Identity
+    & Access Management administration.
+- tag: '#X Amz Target=SWBExternalService.GetInlinePolicyForPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: GetInlinePolicyForPermissionSet — schema PermissionSetPolicyDocument
+  reason: Retrieves the inline authorisation policy document attached to a permission set — access policy
+    administration, Identity & Access Management.
+- tag: '#X Amz Target=SWBExternalService.GetPermissionsBoundaryForPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: GetPermissionsBoundaryForPermissionSet — schemas PermissionsBoundary, CustomerManagedPolicyReference
+  reason: Reads the permissions boundary constraining a permission set's granted access — privilege-limiting
+    control within Identity & Access Management.
+- tag: '#X Amz Target=SWBExternalService.ListAccountsForProvisionedPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: ListAccountsForProvisionedPermissionSet ... ProvisioningStatus, PermissionSetArn
+  reason: Enumerates where an access permission set is provisioned; core IAM/entitlement administration
+    for workforce identities.
+- tag: '#X Amz Target=SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: List Customer Managed Policy References in Permission Set ... CustomerManagedPolicyReferenceList
+  reason: Manages access policies attached to permission sets — access rights/permission administration
+    within IAM.
+- tag: '#X Amz Target=SWBExternalService.ListManagedPoliciesInPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: List Managed Policies in Permission Set ... AttachedManagedPolicyList, PermissionSetArn
+  reason: Inspects the access policies granted by a permission set — permission/entitlement administration
+    in identity and access management.
+- tag: '#X Amz Target=SWBExternalService.ListPermissionSetsProvisionedToAccount'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: List Permission Sets Provisioned to Account ... ProvisioningStatus, AccountId
+  reason: Reports which access permission sets are provisioned to an AWS account — access rights administration.
+- tag: '#X Amz Target=SWBExternalService.ProvisionPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: ProvisionPermissionSet ... ProvisionTargetType, PermissionSetProvisioningStatus, AccountId
+  reason: Provisions an access permission set to target AWS accounts — granting/administering access rights
+    (IAM).
+- tag: '#X Amz Target=SWBExternalService.PutInlinePolicyToPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: Put Inline Policy to Permission Set ... PermissionSetPolicyDocument
+  reason: Attaches an inline access-control policy document to a permission set — access permission configuration
+    in IAM, not corporate policy management.
+- tag: '#X Amz Target=SWBExternalService.PutPermissionsBoundaryToPermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: Put Permissions Boundary to Permission Set ... PermissionsBoundary, ManagedPolicyArn
+  reason: Sets the maximum permissions boundary for a permission set — access rights constraint administration
+    within IAM.
+- tag: '#X Amz Target=SWBExternalService.UpdatePermissionSet'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: UpdatePermissionSet  Amazon IAM Identity Center Update Permission Set ... PermissionSetArn,
+    RelayState, PermissionSetDescription
+  reason: Permission sets define what access federated workforce users receive across accounts — squarely
+    Identity & Access Management.
+- tag: '#X Amz Target=AWSIdentityStore.DescribeGroup'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: DescribeGroup  Amazon IAM Identity Center Describe Group; schema GroupDisplayName, IdentityStoreId
+  reason: Reads identity-store group definitions used for access management — IAM.
+- tag: '#X Amz Target=AWSIdentityStore.DescribeGroupMembership'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: DescribeGroupMembership  Amazon IAM Identity Center Describe Group Membership; schema MemberId
+  reason: Group membership inspection within the SSO identity store is IAM.
+- tag: '#X Amz Target=AWSIdentityStore.DescribeUser'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: DescribeUser  Amazon IAM Identity Center Describe User; schemas UserName, Emails, IdentityStoreId
+  reason: Retrieval of workforce identity attributes from the IAM Identity Center store; not customer
+    master data.
+- tag: '#X Amz Target=SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: '"Delete Instance Access Control Attribute Configuration"'
+  reason: Removes the ABAC attribute configuration governing access decisions — access management configuration.
+- tag: '#X Amz Target=AWSIdentityStore.CreateGroup'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.87
+  evidence: '"CreateGroup  Amazon IAM Identity Center Create Group"; description: "Identity Store service
+    used by AWS IAM Identity Center ... provides a single place to retrieve all of your identities (users
+    and groups)"'
+  reason: Creates identity-store groups used for centrally managing workforce access — identity and access
+    management.
+- tag: '#X Amz Target=AWSIdentityStore.CreateGroupMembership'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.87
+  evidence: '"CreateGroupMembership"; schemas MemberId, IdentityStoreId'
+  reason: Assigns users to identity-store groups that drive access entitlements — identity and access
+    management.
+- tag: '#X Amz Target=AWSIdentityStore.CreateUser'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.87
+  evidence: '"CreateUser  Amazon IAM Identity Center Create User"; schemas UserName, Emails, IdentityStoreId'
+  reason: Creates workforce user identities in the SSO identity store; user provisioning for access control,
+    not HR records.
+- tag: '#X Amz Target=AWSIdentityStore.IsMemberInGroups'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.87
+  evidence: IsMemberInGroups  Amazon IAM Identity Center Is Member in Groups; schema GroupMembershipExistenceResult
+  reason: Membership checks used for access decisions — IAM.
+- tag: '#X Amz Target=AWSIdentityStore.ListGroupMemberships'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.87
+  evidence: ListGroupMemberships  Amazon IAM Identity Center List Group Memberships; schema GroupMemberships
+  reason: Enumerates identity store group memberships — IAM administration.
+- tag: '#X Amz Target=AWSIdentityStore.ListGroupMembershipsForMember'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.87
+  evidence: ListGroupMembershipsForMember  Amazon IAM Identity Center List Group Memberships for Member
+  reason: Lists a member's group memberships in the SSO identity store — IAM.
+- tag: '#X Amz Target=AWSIdentityStore.ListGroups'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.87
+  evidence: ListGroups  Amazon IAM Identity Center List Groups; schemas Group, GroupDisplayName, IdentityStoreId
+  reason: Enumerates identity-store groups used to grant access centrally — IAM.
+- tag: '#X Amz Target=AWSIdentityStore.DeleteGroup'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: '"DeleteGroup  Amazon IAM Identity Center Delete Group"; schemas DeleteGroupRequest, IdentityStoreId'
+  reason: Lifecycle of identity-store access groups — identity and access management.
+- tag: '#X Amz Target=AWSIdentityStore.GetGroupId'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: GetGroupId  Amazon IAM Identity Center Get Group Id; schemas AlternateIdentifier, ExternalIdIssuer
+  reason: Resolves identity-store group identifiers for access management — IAM.
+- tag: '#X Amz Target=AWSIdentityStore.GetGroupMembershipId'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: GetGroupMembershipId  Amazon IAM Identity Center Get Group Membership Id; schema MemberId
+  reason: Identity store membership identifier lookup, part of IAM group/membership administration.
+- tag: '#X Amz Target=AWSIdentityStore.GetUserId'
+  spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: GetUserId  Amazon IAM Identity Center Get User Id; schemas AlternateIdentifier, IdentityStoreId
+  reason: Workforce identity identifier resolution in the SSO identity store — IAM.
+- tag: '#X Amz Target=SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: DescribeInstanceAccessControlAttributeConfiguration — schemas AccessControlAttribute, InstanceAccessControlAttributeConfiguration
+  reason: Reads the attribute-based access control configuration for the IAM Identity Center instance
+    — identity attributes used in authorisation decisions, squarely Identity & Access Management.
+- tag: '#X Amz Target=SWBExternalService.ListPermissionSetProvisioningStatus'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: List Permission Set Provisioning Status ... PermissionSetProvisioningStatusList
+  reason: Tracks provisioning of access permission sets to accounts — operational IAM provisioning, not
+    business subscription provisioning.
+- tag: '#X Amz Target=SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: 'UpdateInstanceAccessControlAttributeConfiguration ... schemas: AccessControlAttributeKey,
+    InstanceAccessControlAttributeConfiguration, AccessControlAttributeValueSource'
+  reason: Configures attribute-based access control attributes for the identity store instance — directly
+    identity and access management (ABAC configuration) for workforce identities.
+- tag: '#X Amz Target=SWBExternalService.DescribeAccountAssignmentCreationStatus'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: DescribeAccountAssignmentCreationStatus — schemas AccountAssignmentOperationStatus, PrincipalType,
+    PermissionSetArn
+  reason: Tracks the status of assigning a principal (user/group) a permission set on an AWS account —
+    access provisioning within IAM. Slightly lower confidence because the operation itself is status polling
+    rather than the grant.
+- tag: '#X Amz Target=SWBExternalService.DescribeAccountAssignmentDeletionStatus'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: DescribeAccountAssignmentDeletionStatus — schemas AccountAssignmentOperationStatus, PrincipalId,
+    PermissionSetArn
+  reason: Status of revoking a principal's permission-set assignment on an AWS account — access de-provisioning,
+    part of Identity & Access Management (joiners-movers-leavers).
+- tag: '#X Amz Target=SWBExternalService.DescribePermissionSetProvisioningStatus'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: DescribePermissionSetProvisioningStatus — schemas PermissionSetProvisioningStatus, AccountId,
+    PermissionSetArn
+  reason: Status of provisioning a permission set to an account — access provisioning workflow inside
+    IAM Identity Center. Status-polling nature lowers confidence slightly but the object governed is access
+    rights.
+- tag: '#X Amz Target=SWBExternalService.ListAccountAssignmentCreationStatus'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: ListAccountAssignmentCreationStatus — schemas AccountAssignmentOperationStatusList, OperationStatusFilter
+  reason: Lists in-flight/completed account assignment (access grant) operations for the IAM Identity
+    Center instance; part of access provisioning administration, though the operation is a status listing.
+- tag: '#X Amz Target=SWBExternalService.ListAccountAssignmentDeletionStatus'
+  spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: ListAccountAssignmentDeletionStatus — schemas AccountAssignmentOperationStatusList, OperationStatusFilter
+  reason: Lists access-revocation (assignment deletion) operations in IAM Identity Center — access de-provisioning
+    tracking under Identity & Access Management.

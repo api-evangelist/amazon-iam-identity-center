@@ -1451,6 +1451,9 @@ apis:
   - type: Documentation
     url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-iam-identity-center-capability-edges.yml
+  name: Amazon IAM Identity Center Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-iam-identity-center/overview
 - type: AgenticAccess
