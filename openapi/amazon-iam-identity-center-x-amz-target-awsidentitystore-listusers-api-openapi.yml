@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 2020-06-15
   x-release: v4
-  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.CreateGroup #X Amz Target=AWSIdentityStore.ListUsers API'
+  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.ListUsers API'
   description: <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/identitystore-2020-06-15.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -196,123 +197,20 @@ paths:
       tags:
       - '#X Amz Target=AWSIdentityStore.ListUsers'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    Filters:
+    ExternalIds:
       type: array
       items:
-        $ref: '#/components/schemas/Filter'
-      minItems: 0
-      maxItems: 1
-    Filter:
-      type: object
-      required:
-      - AttributePath
-      - AttributeValue
-      properties:
-        AttributePath:
-          allOf:
-          - $ref: '#/components/schemas/AttributePath'
-          - description: The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
-        AttributeValue:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: 'Represents the data for an attribute. Each attribute value is described as a name-value pair. '
-      description: A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.
-    Emails:
+        $ref: '#/components/schemas/ExternalId'
+      minItems: 1
+      maxItems: 10
+    Addresses:
       type: array
       items:
-        $ref: '#/components/schemas/Email'
+        $ref: '#/components/schemas/Address'
       minItems: 1
       maxItems: 1
-    ExternalIdIdentifier:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
-      minLength: 1
-      maxLength: 256
-      format: password
-    ExternalId:
-      type: object
-      required:
-      - Issuer
-      - Id
-      properties:
-        Issuer:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIdIssuer'
-          - description: The issuer for an external identifier.
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIdIdentifier'
-          - description: The identifier issued to this resource by an external identity provider.
-      description: The identifier issued to this resource by an external identity provider.
-    UserName:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
-      minLength: 1
-      maxLength: 128
-      format: password
-    NextToken:
-      type: string
-      pattern: '[-a-zA-Z0-9+=/:]*'
-      minLength: 1
-      maxLength: 65535
-    AccessDeniedException: {}
-    ListUsersResponse:
-      type: object
-      required:
-      - Users
-      properties:
-        Users:
-          allOf:
-          - $ref: '#/components/schemas/Users'
-          - description: A list of <code>User</code> objects in the identity store.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+    ResourceNotFoundException: {}
     Email:
       type: object
       properties:
@@ -329,6 +227,95 @@ components:
           - $ref: '#/components/schemas/SensitiveBooleanType'
           - description: A Boolean value representing whether this is the primary email address for the associated resource.
       description: The email address associated with the user.
+    ValidationException: {}
+    AttributePath:
+      type: string
+      pattern: \p{L}+(?:\.\p{L}+){0,2}
+      minLength: 1
+      maxLength: 255
+    Users:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+    ListUsersResponse:
+      type: object
+      required:
+      - Users
+      properties:
+        Users:
+          allOf:
+          - $ref: '#/components/schemas/Users'
+          - description: A list of <code>User</code> objects in the identity store.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+    ListUsersRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      title: ListUsersRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/Filters'
+          - deprecated: true
+            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. Using filters with ListUsers API is deprecated, please use GetGroupId API instead.
+    Filter:
+      type: object
+      required:
+      - AttributePath
+      - AttributeValue
+      properties:
+        AttributePath:
+          allOf:
+          - $ref: '#/components/schemas/AttributePath'
+          - description: The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
+        AttributeValue:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: 'Represents the data for an attribute. Each attribute value is described as a name-value pair. '
+      description: A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.
+    ExternalIdIssuer:
+      type: string
+      pattern: \(\?!\(\?i\)\(arn\|aws\):\)[\p\{L\}\p\{M\}\p\{S\}\p\{N\}\p\{P\}]\+
+      minLength: 1
+      maxLength: 100
+      format: password
+    UserName:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
+      minLength: 1
+      maxLength: 128
+      format: password
+    PhoneNumber:
+      type: object
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string representing the type of a phone number. For example, "Mobile."
+        Primary:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: A Boolean value representing whether this is the primary phone number for the associated resource.
+      description: The phone number associated with the user.
     Address:
       type: object
       properties:
@@ -365,26 +352,51 @@ components:
           - $ref: '#/components/schemas/SensitiveBooleanType'
           - description: A Boolean value representing whether this is the primary address for the associated resource.
       description: The address associated with the specified user.
-    ExternalIds:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExternalId'
-      minItems: 1
-      maxItems: 10
-    Addresses:
-      type: array
-      items:
-        $ref: '#/components/schemas/Address'
-      minItems: 1
-      maxItems: 1
-    SensitiveBooleanType:
-      type: boolean
-    ResourceNotFoundException: {}
+    IdentityStoreId:
+      type: string
+      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 1
+      maxLength: 36
+    MaxResults:
+      type: integer
+      minimum: 1
+      maximum: 100
+    AccessDeniedException: {}
     ResourceId:
       type: string
       pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
       minLength: 1
       maxLength: 47
+    NextToken:
+      type: string
+      pattern: '[-a-zA-Z0-9+=/:]*'
+      minLength: 1
+      maxLength: 65535
+    PhoneNumbers:
+      type: array
+      items:
+        $ref: '#/components/schemas/PhoneNumber'
+      minItems: 1
+      maxItems: 1
+    SensitiveStringType:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+'
+      minLength: 1
+      maxLength: 1024
+      format: password
+    InternalServerException: {}
+    Filters:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+      minItems: 0
+      maxItems: 1
+    Emails:
+      type: array
+      items:
+        $ref: '#/components/schemas/Email'
+      minItems: 1
+      maxItems: 1
     Name:
       type: object
       properties:
@@ -413,22 +425,23 @@ components:
           - $ref: '#/components/schemas/SensitiveStringType'
           - description: The honorific suffix of the user. For example, "M.D."
       description: The full name of the user.
-    PhoneNumber:
+    ExternalId:
       type: object
+      required:
+      - Issuer
+      - Id
       properties:
-        Value:
+        Issuer:
           allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
-        Type:
+          - $ref: '#/components/schemas/ExternalIdIssuer'
+          - description: The issuer for an external identifier.
+        Id:
           allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string representing the type of a phone number. For example, "Mobile."
-        Primary:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveBooleanType'
-          - description: A Boolean value representing whether this is the primary phone number for the associated resource.
-      description: The phone number associated with the user.
+          - $ref: '#/components/schemas/ExternalIdIdentifier'
+          - description: The identifier issued to this resource by an external identity provider.
+      description: The identifier issued to this resource by an external identity provider.
+    SensitiveBooleanType:
+      type: boolean
     User:
       type: object
       required:
@@ -500,68 +513,56 @@ components:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
       description: A user object that contains the metadata and attributes for a specified user.
-    Users:
-      type: array
-      items:
-        $ref: '#/components/schemas/User'
-    PhoneNumbers:
-      type: array
-      items:
-        $ref: '#/components/schemas/PhoneNumber'
-      minItems: 1
-      maxItems: 1
-    ExternalIdIssuer:
+    ExternalIdIdentifier:
       type: string
-      pattern: \(\?!\(\?i\)\(arn\|aws\):\)[\p\{L\}\p\{M\}\p\{S\}\p\{N\}\p\{P\}]\+
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
       minLength: 1
-      maxLength: 100
-      format: password
-    SensitiveStringType:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+'
-      minLength: 1
-      maxLength: 1024
+      maxLength: 256
       format: password
     ThrottlingException: {}
-    ValidationException: {}
-    MaxResults:
-      type: integer
-      minimum: 1
-      maximum: 100
-    IdentityStoreId:
-      type: string
-      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 1
-      maxLength: 36
-    AttributePath:
-      type: string
-      pattern: \p{L}+(?:\.\p{L}+){0,2}
-      minLength: 1
-      maxLength: 255
-    InternalServerException: {}
-    ListUsersRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      title: ListUsersRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/Filters'
-          - deprecated: true
-            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. Using filters with ListUsers API is deprecated, please use GetGroupId API instead.
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
