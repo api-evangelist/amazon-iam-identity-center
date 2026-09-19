@@ -37,6 +37,12 @@ tags:
 - Authentication
 - AWS
 - Identity Management
+- SSO
+tags_raw:
+- Access Control
+- Authentication
+- AWS
+- Identity Management
 - Single Sign-On
 url: https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center/refs/heads/main/apis.yml
 created: '2026-03-16'
