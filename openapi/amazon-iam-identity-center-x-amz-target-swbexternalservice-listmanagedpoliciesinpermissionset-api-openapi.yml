@@ -2,8 +2,8 @@ openapi: 3.2.0
 info:
   version: 2020-07-20
   x-release: v4
-  title: 'AWS Single Sign-On Admin #X Amz Target=SWBExternalService.ListManagedPoliciesInPermissionSet API'
-  description: <p>AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.</p> <note> <p>Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.</p> </note> <p>This reference guide provides information on single sign-on operations which could be used for access management of AWS accounts. For information about IAM Identity Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <p>Many operations in the IAM Identity Center APIs rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in IAM Identity Center, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity Store API Reference</a>.</p> <note> <p>AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other AWS services. For more information about the AWS SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p> </note>
+  title: 'AWS Single Sign-On Admin #X Amz…'
+  description: AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -197,33 +197,61 @@ paths:
       tags:
       - '#X Amz Target=SWBExternalService.ListManagedPoliciesInPermissionSet'
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    Token:
-      type: string
-      pattern: ^[-a-zA-Z0-9+=/_]*
-      maxLength: 2048
-    ListManagedPoliciesInPermissionSetResponse:
-      type: object
-      properties:
-        AttachedManagedPolicies:
-          allOf:
-          - $ref: '#/components/schemas/AttachedManagedPolicyList'
-          - description: An array of the <a>AttachedManagedPolicy</a> data type object.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    ResourceNotFoundException: {}
     ValidationException: {}
-    InstanceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
-      minLength: 10
-      maxLength: 1224
+    ResourceNotFoundException: {}
     MaxResults:
       type: integer
       minimum: 1
       maximum: 100
+    ManagedPolicyArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+
+      minLength: 20
+      maxLength: 2048
     AttachedManagedPolicyList:
       type: array
       items:
@@ -240,22 +268,27 @@ components:
           - $ref: '#/components/schemas/ManagedPolicyArn'
           - description: The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
       description: A structure that stores the details of the AWS managed policy.
-    AccessDeniedException: {}
-    InternalServerException: {}
-    ManagedPolicyArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+
-      minLength: 20
-      maxLength: 2048
-    Name:
-      type: string
-      minLength: 1
-      maxLength: 100
+    ListManagedPoliciesInPermissionSetResponse:
+      type: object
+      properties:
+        AttachedManagedPolicies:
+          allOf:
+          - $ref: '#/components/schemas/AttachedManagedPolicyList'
+          - description: An array of the <a>AttachedManagedPolicy</a> data type object.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
     PermissionSetArn:
       type: string
       pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}
       minLength: 10
       maxLength: 1224
+    ThrottlingException: {}
+    Name:
+      type: string
+      minLength: 1
+      maxLength: 100
     ListManagedPoliciesInPermissionSetRequest:
       type: object
       required:
@@ -279,50 +312,17 @@ components:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    ThrottlingException: {}
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
+    InstanceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      minLength: 10
+      maxLength: 1224
+    Token:
+      type: string
+      pattern: ^[-a-zA-Z0-9+=/_]*
+      maxLength: 2048
+    AccessDeniedException: {}
+    InternalServerException: {}
   securitySchemes:
     hmac:
       type: apiKey

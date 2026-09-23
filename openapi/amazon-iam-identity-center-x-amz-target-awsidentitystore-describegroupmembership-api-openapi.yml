@@ -2,8 +2,8 @@ openapi: 3.2.0
 info:
   version: 2020-06-15
   x-release: v4
-  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.DescribeGroupMembership API'
-  description: <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
+  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.Descri…'
+  description: The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups).
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -126,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DescribeGroupMembership
-      description: Retrieves membership metadata and attributes from <code>MembershipId</code> in an identity store.
+      description: Retrieves membership metadata and attributes from MembershipId in an identity store.
       responses:
         '200':
           description: Success
@@ -186,26 +186,14 @@ paths:
       - '#X Amz Target=AWSIdentityStore.DescribeGroupMembership'
 components:
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -216,20 +204,52 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    AccessDeniedException: {}
+    ValidationException: {}
+    ResourceId:
+      type: string
+      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
+      minLength: 1
+      maxLength: 47
+    IdentityStoreId:
+      type: string
+      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 1
+      maxLength: 36
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    MemberId:
+      type: object
+      properties:
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: An object containing the identifiers of resources that can be members.
+      description: An object containing the identifier of a group member.
     DescribeGroupMembershipResponse:
       type: object
       required:
@@ -252,13 +272,6 @@ components:
           - description: The identifier for a group in the identity store.
         MemberId:
           $ref: '#/components/schemas/MemberId'
-    ResourceNotFoundException: {}
-    ResourceId:
-      type: string
-      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
-      minLength: 1
-      maxLength: 47
-    ValidationException: {}
     DescribeGroupMembershipRequest:
       type: object
       required:
@@ -274,20 +287,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a <code>GroupMembership</code> in an identity store.
-    IdentityStoreId:
-      type: string
-      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 1
-      maxLength: 36
-    MemberId:
-      type: object
-      properties:
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: An object containing the identifiers of resources that can be members.
-      description: An object containing the identifier of a group member.
-    InternalServerException: {}
+    AccessDeniedException: {}
     ThrottlingException: {}
   securitySchemes:
     hmac:

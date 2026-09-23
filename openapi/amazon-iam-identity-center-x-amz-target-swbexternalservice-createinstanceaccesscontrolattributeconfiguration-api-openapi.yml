@@ -2,8 +2,8 @@ openapi: 3.2.0
 info:
   version: 2020-07-20
   x-release: v4
-  title: 'AWS Single Sign-On Admin #X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration API'
-  description: <p>AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.</p> <note> <p>Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.</p> </note> <p>This reference guide provides information on single sign-on operations which could be used for access management of AWS accounts. For information about IAM Identity Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <p>Many operations in the IAM Identity Center APIs rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in IAM Identity Center, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity Store API Reference</a>.</p> <note> <p>AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other AWS services. For more information about the AWS SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p> </note>
+  title: 'AWS Single Sign-On Admin #X Amz…'
+  description: AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -126,7 +126,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateInstanceAccessControlAttributeConfiguration
-      description: <p>Enables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p> <note> <p>After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code> to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.</p> </note>
+      description: 'Enables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see Attribute-Based Access Control in the IAM Identity Center User Guide.
+
+
+        After a successful response, call DescribeInstanceAccessControlAttributeConfiguration to validate that InstanceAccessControlAttributeConfiguration was created.'
       responses:
         '200':
           description: Success
@@ -184,56 +187,80 @@ paths:
           type: string
           enum:
           - SWBExternalService.CreateInstanceAccessControlAttributeConfiguration
-      summary: Amazon IAM Identity Center Create Instance Access Control Attribute Configuration
+      summary: Amazon IAM Identity Center Create Instance Access Control Attribute…
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
       tags:
       - '#X Amz Target=SWBExternalService.CreateInstanceAccessControlAttributeConfiguration'
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ConflictException: {}
-    ResourceNotFoundException: {}
-    ValidationException: {}
-    CreateInstanceAccessControlAttributeConfigurationResponse:
+    InstanceAccessControlAttributeConfiguration:
       type: object
-      properties: {}
-    AccessControlAttributeKey:
+      required:
+      - AccessControlAttributes
+      properties:
+        AccessControlAttributes:
+          allOf:
+          - $ref: '#/components/schemas/AccessControlAttributeList'
+          - description: Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
+      description: Specifies the attributes to add to your attribute-based access control (ABAC) configuration.
+    AccessControlAttributeValueSource:
       type: string
-      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@]+'
-      minLength: 1
-      maxLength: 128
-    InstanceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
-      minLength: 10
-      maxLength: 1224
+      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@\[\]\{\}\$\\"]*'
+      minLength: 0
+      maxLength: 256
+    ValidationException: {}
     AccessControlAttributeList:
       type: array
       items:
         $ref: '#/components/schemas/AccessControlAttribute'
       minItems: 0
       maxItems: 50
-    AccessControlAttributeValueSource:
-      type: string
-      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@\[\]\{\}\$\\"]*'
-      minLength: 0
-      maxLength: 256
-    CreateInstanceAccessControlAttributeConfigurationRequest:
-      type: object
-      required:
-      - InstanceArn
-      - InstanceAccessControlAttributeConfiguration
-      title: CreateInstanceAccessControlAttributeConfigurationRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
-        InstanceAccessControlAttributeConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
-          - description: Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.
+    ResourceNotFoundException: {}
     AccessControlAttribute:
       type: object
       required:
@@ -249,6 +276,34 @@ components:
           - $ref: '#/components/schemas/AccessControlAttributeValue'
           - description: The value used for mapping a specified attribute to an identity source.
       description: These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.
+    CreateInstanceAccessControlAttributeConfigurationRequest:
+      type: object
+      required:
+      - InstanceArn
+      - InstanceAccessControlAttributeConfiguration
+      title: CreateInstanceAccessControlAttributeConfigurationRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
+        InstanceAccessControlAttributeConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
+          - description: Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.
+    ConflictException: {}
+    ThrottlingException: {}
+    AccessControlAttributeValueSourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccessControlAttributeValueSource'
+      minItems: 1
+      maxItems: 1
+    InstanceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      minLength: 10
+      maxLength: 1224
     AccessControlAttributeValue:
       type: object
       required:
@@ -259,68 +314,16 @@ components:
           - $ref: '#/components/schemas/AccessControlAttributeValueSourceList'
           - description: The identity source to use when mapping a specified attribute to IAM Identity Center.
       description: The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.
-    AccessDeniedException: {}
-    AccessControlAttributeValueSourceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccessControlAttributeValueSource'
-      minItems: 1
-      maxItems: 1
-    InternalServerException: {}
-    InstanceAccessControlAttributeConfiguration:
+    AccessControlAttributeKey:
+      type: string
+      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@]+'
+      minLength: 1
+      maxLength: 128
+    CreateInstanceAccessControlAttributeConfigurationResponse:
       type: object
-      required:
-      - AccessControlAttributes
-      properties:
-        AccessControlAttributes:
-          allOf:
-          - $ref: '#/components/schemas/AccessControlAttributeList'
-          - description: Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
-      description: Specifies the attributes to add to your attribute-based access control (ABAC) configuration.
-    ThrottlingException: {}
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
+      properties: {}
+    AccessDeniedException: {}
+    InternalServerException: {}
   securitySchemes:
     hmac:
       type: apiKey

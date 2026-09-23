@@ -2,8 +2,8 @@ openapi: 3.2.0
 info:
   version: 2020-06-15
   x-release: v4
-  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.ListGroupMembershipsForMember API'
-  description: <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
+  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.ListGr…'
+  description: The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups).
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -126,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListGroupMembershipsForMember
-      description: For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code> objects and returns results in paginated form.
+      description: For the specified member in the specified identity store, returns the list of all GroupMembership objects and returns results in paginated form.
       responses:
         '200':
           description: Success
@@ -198,76 +198,6 @@ paths:
       - '#X Amz Target=AWSIdentityStore.ListGroupMembershipsForMember'
 components:
   schemas:
-    ResourceNotFoundException: {}
-    ValidationException: {}
-    MemberId:
-      type: object
-      properties:
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: An object containing the identifiers of resources that can be members.
-      description: An object containing the identifier of a group member.
-    GroupMemberships:
-      type: array
-      items:
-        $ref: '#/components/schemas/GroupMembership'
-    MaxResults:
-      type: integer
-      minimum: 1
-      maximum: 100
-    IdentityStoreId:
-      type: string
-      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 1
-      maxLength: 36
-    AccessDeniedException: {}
-    GroupMembership:
-      type: object
-      required:
-      - IdentityStoreId
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        MembershipId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a <code>GroupMembership</code> object in an identity store.
-        GroupId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a group in the identity store.
-        MemberId:
-          allOf:
-          - $ref: '#/components/schemas/MemberId'
-          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
-      description: Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.
-    ResourceId:
-      type: string
-      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
-      minLength: 1
-      maxLength: 47
-    NextToken:
-      type: string
-      pattern: '[-a-zA-Z0-9+=/:]*'
-      minLength: 1
-      maxLength: 65535
-    InternalServerException: {}
-    ListGroupMembershipsForMemberResponse:
-      type: object
-      required:
-      - GroupMemberships
-      properties:
-        GroupMemberships:
-          allOf:
-          - $ref: '#/components/schemas/GroupMemberships'
-          - description: A list of <code>GroupMembership</code> objects in the group for a specified member.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: 'The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page. '
     ListGroupMembershipsForMemberRequest:
       type: object
       required:
@@ -291,16 +221,86 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+    ValidationException: {}
+    ResourceNotFoundException: {}
+    MaxResults:
+      type: integer
+      minimum: 1
+      maximum: 100
+    ListGroupMembershipsForMemberResponse:
+      type: object
+      required:
+      - GroupMemberships
+      properties:
+        GroupMemberships:
+          allOf:
+          - $ref: '#/components/schemas/GroupMemberships'
+          - description: A list of <code>GroupMembership</code> objects in the group for a specified member.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: 'The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page. '
+    NextToken:
+      type: string
+      pattern: '[-a-zA-Z0-9+=/:]*'
+      minLength: 1
+      maxLength: 65535
     ThrottlingException: {}
+    ResourceId:
+      type: string
+      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
+      minLength: 1
+      maxLength: 47
+    GroupMembership:
+      type: object
+      required:
+      - IdentityStoreId
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        MembershipId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a <code>GroupMembership</code> object in an identity store.
+        GroupId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a group in the identity store.
+        MemberId:
+          allOf:
+          - $ref: '#/components/schemas/MemberId'
+          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
+      description: Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.
+    MemberId:
+      type: object
+      properties:
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: An object containing the identifiers of resources that can be members.
+      description: An object containing the identifier of a group member.
+    IdentityStoreId:
+      type: string
+      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 1
+      maxLength: 36
+    GroupMemberships:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroupMembership'
+    AccessDeniedException: {}
+    InternalServerException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -311,14 +311,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -329,8 +323,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

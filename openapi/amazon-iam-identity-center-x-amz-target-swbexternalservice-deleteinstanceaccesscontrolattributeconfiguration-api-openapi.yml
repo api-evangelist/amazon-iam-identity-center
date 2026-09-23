@@ -2,8 +2,8 @@ openapi: 3.2.0
 info:
   version: 2020-07-20
   x-release: v4
-  title: 'AWS Single Sign-On Admin #X Amz Target=SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration API'
-  description: <p>AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.</p> <note> <p>Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.</p> </note> <p>This reference guide provides information on single sign-on operations which could be used for access management of AWS accounts. For information about IAM Identity Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <p>Many operations in the IAM Identity Center APIs rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in IAM Identity Center, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity Store API Reference</a>.</p> <note> <p>AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other AWS services. For more information about the AWS SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p> </note>
+  title: 'AWS Single Sign-On Admin #X Amz…'
+  description: AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -126,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DeleteInstanceAccessControlAttributeConfiguration
-      description: Disables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.
+      description: Disables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see Attribute-Based Access Control in the IAM Identity Center User Guide.
       responses:
         '200':
           description: Success
@@ -184,65 +184,22 @@ paths:
           type: string
           enum:
           - SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration
-      summary: Amazon IAM Identity Center Delete Instance Access Control Attribute Configuration
+      summary: Amazon IAM Identity Center Delete Instance Access Control Attribute…
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
       tags:
       - '#X Amz Target=SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration'
 components:
-  schemas:
-    ConflictException: {}
-    AccessDeniedException: {}
-    ResourceNotFoundException: {}
-    ValidationException: {}
-    InstanceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
-      minLength: 10
-      maxLength: 1224
-    InternalServerException: {}
-    DeleteInstanceAccessControlAttributeConfigurationRequest:
-      type: object
-      required:
-      - InstanceArn
-      title: DeleteInstanceAccessControlAttributeConfigurationRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
-    DeleteInstanceAccessControlAttributeConfigurationResponse:
-      type: object
-      properties: {}
-    ThrottlingException: {}
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -259,6 +216,49 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ValidationException: {}
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    DeleteInstanceAccessControlAttributeConfigurationRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: DeleteInstanceAccessControlAttributeConfigurationRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
+    ConflictException: {}
+    DeleteInstanceAccessControlAttributeConfigurationResponse:
+      type: object
+      properties: {}
+    AccessDeniedException: {}
+    InstanceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      minLength: 10
+      maxLength: 1224
+    ThrottlingException: {}
   securitySchemes:
     hmac:
       type: apiKey

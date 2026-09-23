@@ -180,7 +180,8 @@
     "amazon-iam-identity-center-sso-admin-openapi-original.yml: declared missing tag: #X Amz Target=SWBExternalService.TagResource",
     "amazon-iam-identity-center-sso-admin-openapi-original.yml: declared missing tag: #X Amz Target=SWBExternalService.UntagResource",
     "amazon-iam-identity-center-sso-admin-openapi-original.yml: declared missing tag: #X Amz Target=SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration",
-    "amazon-iam-identity-center-sso-admin-openapi-original.yml: declared missing tag: #X Amz Target=SWBExternalService.UpdatePermissionSet"
+    "amazon-iam-identity-center-sso-admin-openapi-original.yml: declared missing tag: #X Amz Target=SWBExternalService.UpdatePermissionSet",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api-openapi.yml: previously refined output, superseded by openapi/_original/",

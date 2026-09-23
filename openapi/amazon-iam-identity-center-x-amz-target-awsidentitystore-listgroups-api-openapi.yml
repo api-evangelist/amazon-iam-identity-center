@@ -2,8 +2,8 @@ openapi: 3.2.0
 info:
   version: 2020-06-15
   x-release: v4
-  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.ListGroups API'
-  description: <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
+  title: 'AWS SSO Identity Store #X Amz Target=AWSIdentityStore.ListGr…'
+  description: The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups).
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -126,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListGroups
-      description: Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code> objects. Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute is deprecated. Instead, use the <code>GetGroupId</code> API action.
+      description: Lists all groups in the identity store. Returns a paginated list of complete Group objects. Filtering for a Group by the DisplayName attribute is deprecated. Instead, use the GetGroupId API action.
       responses:
         '200':
           description: Success
@@ -198,19 +198,6 @@ paths:
       - '#X Amz Target=AWSIdentityStore.ListGroups'
 components:
   schemas:
-    ExternalIds:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExternalId'
-      minItems: 1
-      maxItems: 10
-    ResourceNotFoundException: {}
-    ValidationException: {}
-    AttributePath:
-      type: string
-      pattern: \p{L}+(?:\.\p{L}+){0,2}
-      minLength: 1
-      maxLength: 255
     Filter:
       type: object
       required:
@@ -226,90 +213,7 @@ components:
           - $ref: '#/components/schemas/SensitiveStringType'
           - description: 'Represents the data for an attribute. Each attribute value is described as a name-value pair. '
       description: A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.
-    ExternalIdIssuer:
-      type: string
-      pattern: \(\?!\(\?i\)\(arn\|aws\):\)[\p\{L\}\p\{M\}\p\{S\}\p\{N\}\p\{P\}]\+
-      minLength: 1
-      maxLength: 100
-      format: password
-    ThrottlingException: {}
-    IdentityStoreId:
-      type: string
-      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 1
-      maxLength: 36
-    MaxResults:
-      type: integer
-      minimum: 1
-      maximum: 100
-    AccessDeniedException: {}
-    ResourceId:
-      type: string
-      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
-      minLength: 1
-      maxLength: 47
-    NextToken:
-      type: string
-      pattern: '[-a-zA-Z0-9+=/:]*'
-      minLength: 1
-      maxLength: 65535
-    SensitiveStringType:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+'
-      minLength: 1
-      maxLength: 1024
-      format: password
-    InternalServerException: {}
-    ListGroupsRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      title: ListGroupsRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/Filters'
-          - deprecated: true
-            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.Using filters with ListGroups API is deprecated, please use GetGroupId API instead.
-    Filters:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-      minItems: 0
-      maxItems: 1
-    GroupDisplayName:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  ]+'
-      minLength: 1
-      maxLength: 1024
-      format: password
-    ExternalId:
-      type: object
-      required:
-      - Issuer
-      - Id
-      properties:
-        Issuer:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIdIssuer'
-          - description: The issuer for an external identifier.
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIdIdentifier'
-          - description: The identifier issued to this resource by an external identity provider.
-      description: The identifier issued to this resource by an external identity provider.
+    ValidationException: {}
     Group:
       type: object
       required:
@@ -337,16 +241,59 @@ components:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
       description: A group object that contains the metadata and attributes for a specified group.
+    ResourceNotFoundException: {}
+    MaxResults:
+      type: integer
+      minimum: 1
+      maximum: 100
     Groups:
       type: array
       items:
         $ref: '#/components/schemas/Group'
-    ExternalIdIdentifier:
+    Filters:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+      minItems: 0
+      maxItems: 1
+    ExternalId:
+      type: object
+      required:
+      - Issuer
+      - Id
+      properties:
+        Issuer:
+          allOf:
+          - $ref: '#/components/schemas/ExternalIdIssuer'
+          - description: The issuer for an external identifier.
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/ExternalIdIdentifier'
+          - description: The identifier issued to this resource by an external identity provider.
+      description: The identifier issued to this resource by an external identity provider.
+    NextToken:
       type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
+      pattern: '[-a-zA-Z0-9+=/:]*'
       minLength: 1
-      maxLength: 256
+      maxLength: 65535
+    ExternalIdIssuer:
+      type: string
+      pattern: \(\?!\(\?i\)\(arn\|aws\):\)[\p\{L\}\p\{M\}\p\{S\}\p\{N\}\p\{P\}]\+
+      minLength: 1
+      maxLength: 100
       format: password
+    GroupDisplayName:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  ]+'
+      minLength: 1
+      maxLength: 1024
+      format: password
+    ThrottlingException: {}
+    ResourceId:
+      type: string
+      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
+      minLength: 1
+      maxLength: 47
     ListGroupsResponse:
       type: object
       required:
@@ -360,27 +307,62 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it1 is used in the API request to search for the next page.
+    ExternalIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ExternalId'
+      minItems: 1
+      maxItems: 10
+    IdentityStoreId:
+      type: string
+      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 1
+      maxLength: 36
+    AttributePath:
+      type: string
+      pattern: \p{L}+(?:\.\p{L}+){0,2}
+      minLength: 1
+      maxLength: 255
+    InternalServerException: {}
+    ExternalIdIdentifier:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
+      minLength: 1
+      maxLength: 256
+      format: password
+    ListGroupsRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      title: ListGroupsRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/Filters'
+          - deprecated: true
+            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.Using filters with ListGroups API is deprecated, please use GetGroupId API instead.
+    SensitiveStringType:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+'
+      minLength: 1
+      maxLength: 1024
+      format: password
+    AccessDeniedException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -391,14 +373,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

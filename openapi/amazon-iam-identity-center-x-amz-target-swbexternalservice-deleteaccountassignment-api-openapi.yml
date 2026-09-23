@@ -2,8 +2,8 @@ openapi: 3.2.0
 info:
   version: 2020-07-20
   x-release: v4
-  title: 'AWS Single Sign-On Admin #X Amz Target=SWBExternalService.DeleteAccountAssignment API'
-  description: <p>AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.</p> <note> <p>Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.</p> </note> <p>This reference guide provides information on single sign-on operations which could be used for access management of AWS accounts. For information about IAM Identity Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.</p> <p>Many operations in the IAM Identity Center APIs rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in IAM Identity Center, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity Store API Reference</a>.</p> <note> <p>AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other AWS services. For more information about the AWS SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p> </note>
+  title: 'AWS Single Sign-On Admin #X Amz…'
+  description: AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce identities and manage their access centrally across AWS accounts and applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -126,7 +126,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DeleteAccountAssignment
-      description: <p>Deletes a principal's access from a specified AWS account using a specified permission set.</p> <note> <p>After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of an assignment deletion request.</p> </note>
+      description: 'Deletes a principal''s access from a specified AWS account using a specified permission set.
+
+
+        After a successful response, call DescribeAccountAssignmentCreationStatus to describe the status of an assignment deletion request.'
       responses:
         '200':
           description: Success
@@ -191,37 +194,84 @@ paths:
       tags:
       - '#X Amz Target=SWBExternalService.DeleteAccountAssignment'
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ConflictException: {}
-    ResourceNotFoundException: {}
     ValidationException: {}
+    ResourceNotFoundException: {}
+    DeleteAccountAssignmentResponse:
+      type: object
+      properties:
+        AccountAssignmentDeletionStatus:
+          allOf:
+          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
+          - description: The status object for the account assignment deletion operation.
     TargetId:
       type: string
       pattern: \d{12}
       minLength: 12
       maxLength: 12
-    InstanceArn:
+    UUId:
       type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      pattern: \b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b
+      minLength: 36
+      maxLength: 36
+    PrincipalType:
+      type: string
+      enum:
+      - USER
+      - GROUP
+    ConflictException: {}
+    PermissionSetArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}
       minLength: 10
       maxLength: 1224
-    StatusValues:
+    ThrottlingException: {}
+    Date:
       type: string
-      enum:
-      - IN_PROGRESS
-      - FAILED
-      - SUCCEEDED
-    AccessDeniedException: {}
-    TargetType:
-      type: string
-      enum:
-      - AWS_ACCOUNT
-    InternalServerException: {}
-    PrincipalId:
-      type: string
-      pattern: ^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$
-      minLength: 1
-      maxLength: 47
+      format: date-time
     AccountAssignmentOperationStatus:
       type: object
       properties:
@@ -262,29 +312,11 @@ components:
           - $ref: '#/components/schemas/Date'
           - description: The date that the permission set was created.
       description: The status of the creation or deletion operation of an assignment that a principal needs to access an account.
-    PrincipalType:
+    PrincipalId:
       type: string
-      enum:
-      - USER
-      - GROUP
-    DeleteAccountAssignmentResponse:
-      type: object
-      properties:
-        AccountAssignmentDeletionStatus:
-          allOf:
-          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
-          - description: The status object for the account assignment deletion operation.
-    Date:
-      type: string
-      format: date-time
-    PermissionSetArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}
-      minLength: 10
-      maxLength: 1224
-    Reason:
-      type: string
-      pattern: '[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*'
+      pattern: ^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$
+      minLength: 1
+      maxLength: 47
     DeleteAccountAssignmentRequest:
       type: object
       required:
@@ -320,55 +352,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/PrincipalId'
           - description: An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.
-    UUId:
+    StatusValues:
       type: string
-      pattern: \b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b
-      minLength: 36
-      maxLength: 36
-    ThrottlingException: {}
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
+      enum:
+      - IN_PROGRESS
+      - FAILED
+      - SUCCEEDED
+    InstanceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      minLength: 10
+      maxLength: 1224
+    Reason:
+      type: string
+      pattern: '[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*'
+    TargetType:
+      type: string
+      enum:
+      - AWS_ACCOUNT
+    AccessDeniedException: {}
+    InternalServerException: {}
   securitySchemes:
     hmac:
       type: apiKey
