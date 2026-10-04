@@ -2958,13 +2958,58 @@ paths:
       - AWS Single Sign On Admin
 components:
   schemas:
-    PutInlinePolicyToPermissionSetRequest:
+    DescribeAccountAssignmentDeletionStatusRequest:
+      type: object
+      required:
+      - InstanceArn
+      - AccountAssignmentDeletionRequestId
+      title: DescribeAccountAssignmentDeletionStatusRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        AccountAssignmentDeletionRequestId:
+          allOf:
+          - $ref: '#/components/schemas/UUId'
+          - description: The identifier that is used to track the request operation progress.
+    CreatePermissionSetRequest:
+      type: object
+      required:
+      - Name
+      - InstanceArn
+      title: CreatePermissionSetRequest
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetName'
+          - description: The name of the <a>PermissionSet</a>.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetDescription'
+          - description: The description of the <a>PermissionSet</a>.
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        SessionDuration:
+          allOf:
+          - $ref: '#/components/schemas/Duration'
+          - description: The length of time that the application user sessions are valid in the ISO-8601 standard.
+        RelayState:
+          allOf:
+          - $ref: '#/components/schemas/RelayState'
+          - description: Used to redirect users within the application during the federation authentication process.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The tags to attach to the new <a>PermissionSet</a>.
+    DeletePermissionSetRequest:
       type: object
       required:
       - InstanceArn
       - PermissionSetArn
-      - InlinePolicy
-      title: PutInlinePolicyToPermissionSetRequest
+      title: DeletePermissionSetRequest
       properties:
         InstanceArn:
           allOf:
@@ -2973,29 +3018,201 @@ components:
         PermissionSetArn:
           allOf:
           - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set.
-        InlinePolicy:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetPolicyDocument'
-          - description: The inline policy to attach to a <a>PermissionSet</a>.
-    TagValue:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 0
-      maxLength: 256
-    DescribeAccountAssignmentDeletionStatusResponse:
+          - description: The ARN of the permission set that should be deleted.
+    InternalServerException: {}
+    ListAccountAssignmentsResponse:
       type: object
       properties:
-        AccountAssignmentDeletionStatus:
+        AccountAssignments:
+          allOf:
+          - $ref: '#/components/schemas/AccountAssignmentList'
+          - description: The list of assignments that match the input AWS account and permission set.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    CreateInstanceAccessControlAttributeConfigurationResponse:
+      type: object
+      properties: {}
+    DetachManagedPolicyFromPermissionSetResponse:
+      type: object
+      properties: {}
+    DeleteInlinePolicyFromPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      title: DeleteInlinePolicyFromPermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the permission set that will be used to remove access.
+    ListAccountAssignmentCreationStatusRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: ListAccountAssignmentCreationStatusRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the assignment.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/OperationStatusFilter'
+          - description: Filters results based on the passed attribute value.
+    ListAccountAssignmentCreationStatusResponse:
+      type: object
+      properties:
+        AccountAssignmentsCreationStatus:
+          allOf:
+          - $ref: '#/components/schemas/AccountAssignmentOperationStatusList'
+          - description: The status object for the account assignment creation operation.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    MaxResults:
+      type: integer
+      minimum: 1
+      maximum: 100
+    Tag:
+      type: object
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The key for the tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The value of the tag.
+      description: A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.
+    PrincipalType:
+      type: string
+      enum:
+      - USER
+      - GROUP
+    DescribeAccountAssignmentCreationStatusResponse:
+      type: object
+      properties:
+        AccountAssignmentCreationStatus:
           allOf:
           - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
-          - description: The status object for the account assignment deletion operation.
+          - description: The status object for the account assignment creation operation.
+    DescribePermissionSetProvisioningStatusResponse:
+      type: object
+      properties:
+        PermissionSetProvisioningStatus:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetProvisioningStatus'
+          - description: The status object for the permission set provisioning operation.
     InstanceAccessControlAttributeConfigurationStatus:
       type: string
       enum:
       - ENABLED
       - CREATION_IN_PROGRESS
       - CREATION_FAILED
+    PermissionSetArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}
+      minLength: 10
+      maxLength: 1224
+    PutInlinePolicyToPermissionSetResponse:
+      type: object
+      properties: {}
+    DetachManagedPolicyFromPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      - ManagedPolicyArn
+      title: DetachManagedPolicyFromPermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the <a>PermissionSet</a> from which the policy should be detached.
+        ManagedPolicyArn:
+          allOf:
+          - $ref: '#/components/schemas/ManagedPolicyArn'
+          - description: The AWS managed policy ARN to be detached from a permission set.
+    DescribeInstanceAccessControlAttributeConfigurationRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: DescribeInstanceAccessControlAttributeConfigurationRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
+    AccessDeniedException: {}
+    ProvisioningStatus:
+      type: string
+      enum:
+      - LATEST_PERMISSION_SET_PROVISIONED
+      - LATEST_PERMISSION_SET_NOT_PROVISIONED
+    UntagResourceRequest:
+      type: object
+      required:
+      - InstanceArn
+      - ResourceArn
+      - TagKeys
+      title: UntagResourceRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/TaggableResourceArn'
+          - description: The ARN of the resource with the tags to be listed.
+        TagKeys:
+          allOf:
+          - $ref: '#/components/schemas/TagKeyList'
+          - description: The keys of tags that are attached to the resource.
+    PutPermissionsBoundaryToPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      - PermissionsBoundary
+      title: PutPermissionsBoundaryToPermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: 'The ARN of the IAM Identity Center instance under which the operation will be executed. '
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the <code>PermissionSet</code>.
+        PermissionsBoundary:
+          allOf:
+          - $ref: '#/components/schemas/PermissionsBoundary'
+          - description: The permissions boundary that you want to attach to a <code>PermissionSet</code>.
     ProvisionPermissionSetRequest:
       type: object
       required:
@@ -3020,17 +3237,105 @@ components:
           allOf:
           - $ref: '#/components/schemas/ProvisionTargetType'
           - description: The entity type for which the assignment will be created.
+    ProvisionTargetType:
+      type: string
+      enum:
+      - AWS_ACCOUNT
+      - ALL_PROVISIONED_ACCOUNTS
+    AccountAssignmentOperationStatusMetadata:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/StatusValues'
+          - description: The status of the permission set provisioning process.
+        RequestId:
+          allOf:
+          - $ref: '#/components/schemas/UUId'
+          - description: The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.
+        CreatedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date that the permission set was created.
+      description: Provides information about the <a>AccountAssignment</a> creation request.
     PermissionSetName:
       type: string
       pattern: '[\w+=,.@-]+'
       minLength: 1
       maxLength: 32
-    DescribePermissionSetRequest:
+    UpdatePermissionSetResponse:
+      type: object
+      properties: {}
+    CustomerManagedPolicyReferenceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CustomerManagedPolicyReference'
+    ListInstancesRequest:
+      type: object
+      title: ListInstancesRequest
+      properties:
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the instance.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    PutPermissionsBoundaryToPermissionSetResponse:
+      type: object
+      properties: {}
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      minItems: 0
+      maxItems: 50
+    PermissionSetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PermissionSetArn'
+    ValidationException: {}
+    PermissionSet:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetName'
+          - description: The name of the permission set.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetDescription'
+          - description: The description of the <a>PermissionSet</a>.
+        CreatedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date that the permission set was created.
+        SessionDuration:
+          allOf:
+          - $ref: '#/components/schemas/Duration'
+          - description: The length of time that the application user sessions are valid for in the ISO-8601 standard.
+        RelayState:
+          allOf:
+          - $ref: '#/components/schemas/RelayState'
+          - description: Used to redirect users within the application during the federation authentication process.
+      description: An entity that contains IAM policies.
+    DeletePermissionSetResponse:
+      type: object
+      properties: {}
+    DetachCustomerManagedPolicyReferenceFromPermissionSetResponse:
+      type: object
+      properties: {}
+    ListAccountsForProvisionedPermissionSetRequest:
       type: object
       required:
       - InstanceArn
       - PermissionSetArn
-      title: DescribePermissionSetRequest
+      title: ListAccountsForProvisionedPermissionSetRequest
       properties:
         InstanceArn:
           allOf:
@@ -3039,66 +3344,124 @@ components:
         PermissionSetArn:
           allOf:
           - $ref: '#/components/schemas/PermissionSetArn'
-          - description: 'The ARN of the permission set. '
-    InstanceMetadata:
-      type: object
-      properties:
-        InstanceArn:
+          - description: The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
+        ProvisioningStatus:
           allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/Id'
-          - description: The identifier of the identity store that is connected to the IAM Identity Center instance.
-      description: Provides information about the IAM Identity Center instance.
-    TargetId:
-      type: string
-      pattern: \d{12}
-      minLength: 12
-      maxLength: 12
-    ListPermissionSetProvisioningStatusRequest:
-      type: object
-      required:
-      - InstanceArn
-      title: ListPermissionSetProvisioningStatusRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+          - $ref: '#/components/schemas/ProvisioningStatus'
+          - description: The permission set provisioning status for an AWS account.
         MaxResults:
           allOf:
           - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the assignment.
+          - description: The maximum number of results to display for the <a>PermissionSet</a>.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-        Filter:
+    DeleteAccountAssignmentResponse:
+      type: object
+      properties:
+        AccountAssignmentDeletionStatus:
           allOf:
-          - $ref: '#/components/schemas/OperationStatusFilter'
-          - description: Filters results based on the passed attribute value.
-    TagResourceRequest:
+          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
+          - description: The status object for the account assignment deletion operation.
+    ProvisionPermissionSetResponse:
+      type: object
+      properties:
+        PermissionSetProvisioningStatus:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetProvisioningStatus'
+          - description: The status object for the permission set provisioning operation.
+    StatusValues:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - FAILED
+      - SUCCEEDED
+    TagKeyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TagKey'
+      minItems: 1
+      maxItems: 50
+    DeletePermissionsBoundaryFromPermissionSetResponse:
+      type: object
+      properties: {}
+    GetInlinePolicyForPermissionSetRequest:
       type: object
       required:
       - InstanceArn
-      - ResourceArn
-      - Tags
-      title: TagResourceRequest
+      - PermissionSetArn
+      title: GetInlinePolicyForPermissionSetRequest
       properties:
         InstanceArn:
           allOf:
           - $ref: '#/components/schemas/InstanceArn'
           - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        ResourceArn:
+        PermissionSetArn:
           allOf:
-          - $ref: '#/components/schemas/TaggableResourceArn'
-          - description: The ARN of the resource with the tags to be listed.
-        Tags:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the permission set.
+    DeletePermissionsBoundaryFromPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      title: DeletePermissionsBoundaryFromPermissionSetRequest
+      properties:
+        InstanceArn:
           allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: A set of key-value pairs that are used to manage the resource.
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: 'The ARN of the IAM Identity Center instance under which the operation will be executed. '
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the <code>PermissionSet</code>.
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    DeleteInstanceAccessControlAttributeConfigurationResponse:
+      type: object
+      properties: {}
+    AttachManagedPolicyToPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      - ManagedPolicyArn
+      title: AttachManagedPolicyToPermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the <a>PermissionSet</a> that the managed policy should be attached to.
+        ManagedPolicyArn:
+          allOf:
+          - $ref: '#/components/schemas/ManagedPolicyArn'
+          - description: The AWS managed policy ARN to be attached to a permission set.
+    CreateAccountAssignmentResponse:
+      type: object
+      properties:
+        AccountAssignmentCreationStatus:
+          allOf:
+          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
+          - description: The status object for the account assignment creation operation.
+    AccessControlAttributeKey:
+      type: string
+      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@]+'
+      minLength: 1
+      maxLength: 128
+    InstanceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/InstanceMetadata'
+    AccountAssignmentOperationStatusList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccountAssignmentOperationStatusMetadata'
     CreateAccountAssignmentRequest:
       type: object
       required:
@@ -3134,83 +3497,88 @@ components:
           allOf:
           - $ref: '#/components/schemas/PrincipalId'
           - description: An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.
-    InstanceAccessControlAttributeConfigurationStatusReason:
-      type: string
-    ListAccountAssignmentDeletionStatusResponse:
+    ListPermissionSetsProvisionedToAccountResponse:
       type: object
       properties:
-        AccountAssignmentsDeletionStatus:
-          allOf:
-          - $ref: '#/components/schemas/AccountAssignmentOperationStatusList'
-          - description: The status object for the account assignment deletion operation.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    InstanceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/InstanceMetadata'
-    CustomerManagedPolicyReference:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
+        PermissionSets:
           allOf:
-          - $ref: '#/components/schemas/ManagedPolicyName'
-          - description: The name of the IAM policy that you have configured in each account where you want to deploy your permission set.
-        Path:
-          allOf:
-          - $ref: '#/components/schemas/ManagedPolicyPath'
-          - description: The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.
-      description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
-    UntagResourceResponse:
-      type: object
-      properties: {}
-    PermissionsBoundary:
+          - $ref: '#/components/schemas/PermissionSetList'
+          - description: Defines the level of access that an AWS account has.
+    PermissionSetProvisioningStatusMetadata:
       type: object
       properties:
-        CustomerManagedPolicyReference:
+        Status:
           allOf:
-          - $ref: '#/components/schemas/CustomerManagedPolicyReference'
-          - description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
-        ManagedPolicyArn:
+          - $ref: '#/components/schemas/StatusValues'
+          - description: The status of the permission set provisioning process.
+        RequestId:
           allOf:
-          - $ref: '#/components/schemas/ManagedPolicyArn'
-          - description: The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.
-      description: <p>Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p> </important>
-    ListAccountAssignmentCreationStatusResponse:
-      type: object
-      properties:
-        AccountAssignmentsCreationStatus:
-          allOf:
-          - $ref: '#/components/schemas/AccountAssignmentOperationStatusList'
-          - description: The status object for the account assignment creation operation.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    ResourceNotFoundException: {}
-    PermissionSet:
-      type: object
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetName'
-          - description: The name of the permission set.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetDescription'
-          - description: The description of the <a>PermissionSet</a>.
+          - $ref: '#/components/schemas/UUId'
+          - description: The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.
         CreatedDate:
           allOf:
           - $ref: '#/components/schemas/Date'
           - description: The date that the permission set was created.
+      description: Provides information about the permission set provisioning status.
+    AttachCustomerManagedPolicyReferenceToPermissionSetResponse:
+      type: object
+      properties: {}
+    UpdateInstanceAccessControlAttributeConfigurationRequest:
+      type: object
+      required:
+      - InstanceArn
+      - InstanceAccessControlAttributeConfiguration
+      title: UpdateInstanceAccessControlAttributeConfigurationRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
+        InstanceAccessControlAttributeConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
+          - description: Updates the attributes for your ABAC configuration.
+    DescribePermissionSetResponse:
+      type: object
+      properties:
+        PermissionSet:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSet'
+          - description: Describes the level of access on an AWS account.
+    ListManagedPoliciesInPermissionSetResponse:
+      type: object
+      properties:
+        AttachedManagedPolicies:
+          allOf:
+          - $ref: '#/components/schemas/AttachedManagedPolicyList'
+          - description: An array of the <a>AttachedManagedPolicy</a> data type object.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    UpdatePermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      title: UpdatePermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the permission set.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetDescription'
+          - description: The description of the <a>PermissionSet</a>.
         SessionDuration:
           allOf:
           - $ref: '#/components/schemas/Duration'
@@ -3219,166 +3587,93 @@ components:
           allOf:
           - $ref: '#/components/schemas/RelayState'
           - description: Used to redirect users within the application during the federation authentication process.
-      description: An entity that contains IAM policies.
-    ManagedPolicyArn:
+    RelayState:
       type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+
-      minLength: 20
-      maxLength: 2048
-    PutPermissionsBoundaryToPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      - PermissionsBoundary
-      title: PutPermissionsBoundaryToPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: 'The ARN of the IAM Identity Center instance under which the operation will be executed. '
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the <code>PermissionSet</code>.
-        PermissionsBoundary:
-          allOf:
-          - $ref: '#/components/schemas/PermissionsBoundary'
-          - description: The permissions boundary that you want to attach to a <code>PermissionSet</code>.
-    UpdateInstanceAccessControlAttributeConfigurationResponse:
-      type: object
-      properties: {}
-    AccountId:
-      type: string
-      pattern: \d{12}
-      minLength: 12
-      maxLength: 12
-    AccessControlAttributeValue:
-      type: object
-      required:
-      - Source
-      properties:
-        Source:
-          allOf:
-          - $ref: '#/components/schemas/AccessControlAttributeValueSourceList'
-          - description: The identity source to use when mapping a specified attribute to IAM Identity Center.
-      description: The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.
-    DeleteInstanceAccessControlAttributeConfigurationRequest:
-      type: object
-      required:
-      - InstanceArn
-      title: DeleteInstanceAccessControlAttributeConfigurationRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
-    AttachedManagedPolicy:
-      type: object
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the AWS managed policy.
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/ManagedPolicyArn'
-          - description: The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-      description: A structure that stores the details of the AWS managed policy.
-    PermissionSetDescription:
-      type: string
-      pattern: '[\u0009\u000A\u000D\u0020-\u007E\u00A0-\u00FF]*'
+      pattern: '[a-zA-Z0-9&$@#\\\/%?=~\-_''"|!:,.;*+\[\]\ \(\)\{\}]+'
       minLength: 1
-      maxLength: 700
-    GetPermissionsBoundaryForPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      title: GetPermissionsBoundaryForPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: 'The ARN of the IAM Identity Center instance under which the operation will be executed. '
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the <code>PermissionSet</code>.
-    DetachCustomerManagedPolicyReferenceFromPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      - CustomerManagedPolicyReference
-      title: DetachCustomerManagedPolicyReferenceFromPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: 'The ARN of the IAM Identity Center instance under which the operation will be executed. '
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the <code>PermissionSet</code>.
-        CustomerManagedPolicyReference:
-          allOf:
-          - $ref: '#/components/schemas/CustomerManagedPolicyReference'
-          - description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
-    CreateAccountAssignmentResponse:
+      maxLength: 240
+    ListTagsForResourceResponse:
       type: object
       properties:
-        AccountAssignmentCreationStatus:
+        Tags:
           allOf:
-          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
-          - description: The status object for the account assignment creation operation.
-    CreateInstanceAccessControlAttributeConfigurationResponse:
-      type: object
-      properties: {}
-    Tag:
-      type: object
-      required:
-      - Key
-      - Value
-      properties:
-        Key:
+          - $ref: '#/components/schemas/TagList'
+          - description: A set of key-value pairs that are used to manage the resource.
+        NextToken:
           allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: The key for the tag.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: The value of the tag.
-      description: A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.
-    DeletePermissionsBoundaryFromPermissionSetResponse:
-      type: object
-      properties: {}
-    TagKeyList:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    AccessControlAttributeValueSourceList:
       type: array
       items:
-        $ref: '#/components/schemas/TagKey'
+        $ref: '#/components/schemas/AccessControlAttributeValueSource'
       minItems: 1
-      maxItems: 50
-    UntagResourceRequest:
+      maxItems: 1
+    UUId:
+      type: string
+      pattern: \b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b
+      minLength: 36
+      maxLength: 36
+    DescribePermissionSetProvisioningStatusRequest:
       type: object
       required:
       - InstanceArn
-      - ResourceArn
-      - TagKeys
-      title: UntagResourceRequest
+      - ProvisionPermissionSetRequestId
+      title: DescribePermissionSetProvisioningStatusRequest
       properties:
         InstanceArn:
           allOf:
           - $ref: '#/components/schemas/InstanceArn'
           - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        ResourceArn:
+        ProvisionPermissionSetRequestId:
           allOf:
-          - $ref: '#/components/schemas/TaggableResourceArn'
-          - description: The ARN of the resource with the tags to be listed.
-        TagKeys:
+          - $ref: '#/components/schemas/UUId'
+          - description: The identifier that is provided by the <a>ProvisionPermissionSet</a> call to retrieve the current status of the provisioning workflow.
+    PrincipalId:
+      type: string
+      pattern: ^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$
+      minLength: 1
+      maxLength: 47
+    ListPermissionSetProvisioningStatusRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: ListPermissionSetProvisioningStatusRequest
+      properties:
+        InstanceArn:
           allOf:
-          - $ref: '#/components/schemas/TagKeyList'
-          - description: The keys of tags that are attached to the resource.
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the assignment.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/OperationStatusFilter'
+          - description: Filters results based on the passed attribute value.
+    ListPermissionSetsRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: ListPermissionSetsRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the assignment.
     ListCustomerManagedPolicyReferencesInPermissionSetRequest:
       type: object
       required:
@@ -3402,8 +3697,492 @@ components:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    InternalServerException: {}
-    ValidationException: {}
+    DescribePermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      title: DescribePermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: 'The ARN of the permission set. '
+    AccessControlAttributeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccessControlAttribute'
+      minItems: 0
+      maxItems: 50
+    PermissionSetPolicyDocument:
+      type: string
+      pattern: '[\u0009\u000A\u000D\u0020-\u00FF]+'
+      minLength: 1
+      maxLength: 10240
+    ListTagsForResourceRequest:
+      type: object
+      required:
+      - InstanceArn
+      - ResourceArn
+      title: ListTagsForResourceRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/TaggableResourceArn'
+          - description: The ARN of the resource with the tags to be listed.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    ThrottlingException: {}
+    AccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccountId'
+    AccessControlAttributeValueSource:
+      type: string
+      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@\[\]\{\}\$\\"]*'
+      minLength: 0
+      maxLength: 256
+    ListPermissionSetsProvisionedToAccountRequest:
+      type: object
+      required:
+      - InstanceArn
+      - AccountId
+      title: ListPermissionSetsProvisionedToAccountRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The identifier of the AWS account from which to list the assignments.
+        ProvisioningStatus:
+          allOf:
+          - $ref: '#/components/schemas/ProvisioningStatus'
+          - description: The status object for the permission set provisioning operation.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the assignment.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    GetInlinePolicyForPermissionSetResponse:
+      type: object
+      properties:
+        InlinePolicy:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetPolicyDocument'
+          - description: The inline policy that is attached to the permission set.
+    Name:
+      type: string
+      minLength: 1
+      maxLength: 100
+    ListPermissionSetsResponse:
+      type: object
+      properties:
+        PermissionSets:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetList'
+          - description: Defines the level of access on an AWS account.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    ConflictException: {}
+    DetachCustomerManagedPolicyReferenceFromPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      - CustomerManagedPolicyReference
+      title: DetachCustomerManagedPolicyReferenceFromPermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: 'The ARN of the IAM Identity Center instance under which the operation will be executed. '
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the <code>PermissionSet</code>.
+        CustomerManagedPolicyReference:
+          allOf:
+          - $ref: '#/components/schemas/CustomerManagedPolicyReference'
+          - description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
+    ResourceNotFoundException: {}
+    TagValue:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 0
+      maxLength: 256
+    ManagedPolicyArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+
+      minLength: 20
+      maxLength: 2048
+    DeleteInlinePolicyFromPermissionSetResponse:
+      type: object
+      properties: {}
+    CreateInstanceAccessControlAttributeConfigurationRequest:
+      type: object
+      required:
+      - InstanceArn
+      - InstanceAccessControlAttributeConfiguration
+      title: CreateInstanceAccessControlAttributeConfigurationRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
+        InstanceAccessControlAttributeConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
+          - description: Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.
+    InstanceAccessControlAttributeConfiguration:
+      type: object
+      required:
+      - AccessControlAttributes
+      properties:
+        AccessControlAttributes:
+          allOf:
+          - $ref: '#/components/schemas/AccessControlAttributeList'
+          - description: Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
+      description: Specifies the attributes to add to your attribute-based access control (ABAC) configuration.
+    PutInlinePolicyToPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      - InlinePolicy
+      title: PutInlinePolicyToPermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the permission set.
+        InlinePolicy:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetPolicyDocument'
+          - description: The inline policy to attach to a <a>PermissionSet</a>.
+    AccountAssignmentList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccountAssignment'
+    ListAccountAssignmentDeletionStatusRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: ListAccountAssignmentDeletionStatusRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the assignment.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/OperationStatusFilter'
+          - description: Filters results based on the passed attribute value.
+    Duration:
+      type: string
+      pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
+      minLength: 1
+      maxLength: 100
+    DescribeAccountAssignmentDeletionStatusResponse:
+      type: object
+      properties:
+        AccountAssignmentDeletionStatus:
+          allOf:
+          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
+          - description: The status object for the account assignment deletion operation.
+    AccessControlAttributeValue:
+      type: object
+      required:
+      - Source
+      properties:
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/AccessControlAttributeValueSourceList'
+          - description: The identity source to use when mapping a specified attribute to IAM Identity Center.
+      description: The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.
+    TaggableResourceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}
+      minLength: 10
+      maxLength: 2048
+    ListPermissionSetProvisioningStatusResponse:
+      type: object
+      properties:
+        PermissionSetsProvisioningStatus:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetProvisioningStatusList'
+          - description: The status object for the permission set provisioning operation.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    Reason:
+      type: string
+      pattern: '[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*'
+    TagResourceResponse:
+      type: object
+      properties: {}
+    AttachedManagedPolicyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AttachedManagedPolicy'
+    ListManagedPoliciesInPermissionSetRequest:
+      type: object
+      required:
+      - InstanceArn
+      - PermissionSetArn
+      title: ListManagedPoliciesInPermissionSetRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to display for the <a>PermissionSet</a>.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    InstanceMetadata:
+      type: object
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/Id'
+          - description: The identifier of the identity store that is connected to the IAM Identity Center instance.
+      description: Provides information about the IAM Identity Center instance.
+    PermissionSetDescription:
+      type: string
+      pattern: '[\u0009\u000A\u000D\u0020-\u007E\u00A0-\u00FF]*'
+      minLength: 1
+      maxLength: 700
+    TargetType:
+      type: string
+      enum:
+      - AWS_ACCOUNT
+    PermissionsBoundary:
+      type: object
+      properties:
+        CustomerManagedPolicyReference:
+          allOf:
+          - $ref: '#/components/schemas/CustomerManagedPolicyReference'
+          - description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
+        ManagedPolicyArn:
+          allOf:
+          - $ref: '#/components/schemas/ManagedPolicyArn'
+          - description: The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.
+      description: <p>Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p> </important>
+    DeleteInstanceAccessControlAttributeConfigurationRequest:
+      type: object
+      required:
+      - InstanceArn
+      title: DeleteInstanceAccessControlAttributeConfigurationRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
+    ListInstancesResponse:
+      type: object
+      properties:
+        Instances:
+          allOf:
+          - $ref: '#/components/schemas/InstanceList'
+          - description: Lists the IAM Identity Center instances that the caller has access to.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    Date:
+      type: string
+      format: date-time
+    PermissionSetProvisioningStatusList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PermissionSetProvisioningStatusMetadata'
+    InstanceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
+      minLength: 10
+      maxLength: 1224
+    ManagedPolicyName:
+      type: string
+      pattern: '[\w+=,.@-]+'
+      minLength: 1
+      maxLength: 128
+    CustomerManagedPolicyReference:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ManagedPolicyName'
+          - description: The name of the IAM policy that you have configured in each account where you want to deploy your permission set.
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/ManagedPolicyPath'
+          - description: The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.
+      description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
+    AttachManagedPolicyToPermissionSetResponse:
+      type: object
+      properties: {}
+    DeleteAccountAssignmentRequest:
+      type: object
+      required:
+      - InstanceArn
+      - TargetId
+      - TargetType
+      - PermissionSetArn
+      - PrincipalType
+      - PrincipalId
+      title: DeleteAccountAssignmentRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        TargetId:
+          allOf:
+          - $ref: '#/components/schemas/TargetId'
+          - description: TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
+        TargetType:
+          allOf:
+          - $ref: '#/components/schemas/TargetType'
+          - description: The entity type for which the assignment will be deleted.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the permission set that will be used to remove access.
+        PrincipalType:
+          allOf:
+          - $ref: '#/components/schemas/PrincipalType'
+          - description: The entity type for which the assignment will be deleted.
+        PrincipalId:
+          allOf:
+          - $ref: '#/components/schemas/PrincipalId'
+          - description: An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.
+    PermissionSetProvisioningStatus:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/StatusValues'
+          - description: The status of the permission set provisioning process.
+        RequestId:
+          allOf:
+          - $ref: '#/components/schemas/UUId'
+          - description: The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The identifier of the AWS account from which to list the assignments.
+        PermissionSetArn:
+          allOf:
+          - $ref: '#/components/schemas/PermissionSetArn'
+          - description: The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        FailureReason:
+          allOf:
+          - $ref: '#/components/schemas/Reason'
+          - description: The message that contains an error or exception in case of an operation failure.
+        CreatedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date that the permission set was created.
+      description: A structure that is used to provide the status of the provisioning operation for a specified permission set.
+    UpdateInstanceAccessControlAttributeConfigurationResponse:
+      type: object
+      properties: {}
+    Id:
+      type: string
+      pattern: ^[a-zA-Z0-9-]*
+      minLength: 1
+      maxLength: 64
+    ListAccountAssignmentDeletionStatusResponse:
+      type: object
+      properties:
+        AccountAssignmentsDeletionStatus:
+          allOf:
+          - $ref: '#/components/schemas/AccountAssignmentOperationStatusList'
+          - description: The status object for the account assignment deletion operation.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    AccountId:
+      type: string
+      pattern: \d{12}
+      minLength: 12
+      maxLength: 12
+    GetPermissionsBoundaryForPermissionSetResponse:
+      type: object
+      properties:
+        PermissionsBoundary:
+          allOf:
+          - $ref: '#/components/schemas/PermissionsBoundary'
+          - description: The permissions boundary attached to the specified permission set.
+    OperationStatusFilter:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/StatusValues'
+          - description: Filters the list operations result based on the status attribute.
+      description: Filters he operation status list based on the passed attribute value.
+    DescribeAccountAssignmentCreationStatusRequest:
+      type: object
+      required:
+      - InstanceArn
+      - AccountAssignmentCreationRequestId
+      title: DescribeAccountAssignmentCreationStatusRequest
+      properties:
+        InstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/InstanceArn'
+          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        AccountAssignmentCreationRequestId:
+          allOf:
+          - $ref: '#/components/schemas/UUId'
+          - description: The identifier that is used to track the request operation progress.
     AccountAssignmentOperationStatus:
       type: object
       properties:
@@ -3444,273 +4223,13 @@ components:
           - $ref: '#/components/schemas/Date'
           - description: The date that the permission set was created.
       description: The status of the creation or deletion operation of an assignment that a principal needs to access an account.
-    CreateInstanceAccessControlAttributeConfigurationRequest:
-      type: object
-      required:
-      - InstanceArn
-      - InstanceAccessControlAttributeConfiguration
-      title: CreateInstanceAccessControlAttributeConfigurationRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
-        InstanceAccessControlAttributeConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
-          - description: Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.
-    Reason:
-      type: string
-      pattern: '[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*'
-    OperationStatusFilter:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/StatusValues'
-          - description: Filters the list operations result based on the status attribute.
-      description: Filters he operation status list based on the passed attribute value.
-    DescribeInstanceAccessControlAttributeConfigurationRequest:
-      type: object
-      required:
-      - InstanceArn
-      title: DescribeInstanceAccessControlAttributeConfigurationRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
-    ManagedPolicyPath:
-      type: string
-      pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
-      minLength: 1
-      maxLength: 512
-    RelayState:
-      type: string
-      pattern: '[a-zA-Z0-9&$@#\\\/%?=~\-_''"|!:,.;*+\[\]\ \(\)\{\}]+'
-      minLength: 1
-      maxLength: 240
-    AttachManagedPolicyToPermissionSetResponse:
-      type: object
-      properties: {}
-    ListPermissionSetsProvisionedToAccountRequest:
-      type: object
-      required:
-      - InstanceArn
-      - AccountId
-      title: ListPermissionSetsProvisionedToAccountRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        AccountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The identifier of the AWS account from which to list the assignments.
-        ProvisioningStatus:
-          allOf:
-          - $ref: '#/components/schemas/ProvisioningStatus'
-          - description: The status object for the permission set provisioning operation.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the assignment.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    ListTagsForResourceRequest:
-      type: object
-      required:
-      - InstanceArn
-      - ResourceArn
-      title: ListTagsForResourceRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        ResourceArn:
-          allOf:
-          - $ref: '#/components/schemas/TaggableResourceArn'
-          - description: The ARN of the resource with the tags to be listed.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    DeletePermissionSetResponse:
-      type: object
-      properties: {}
-    ListPermissionSetsProvisionedToAccountResponse:
-      type: object
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-        PermissionSets:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetList'
-          - description: Defines the level of access that an AWS account has.
-    AttachManagedPolicyToPermissionSetRequest:
+    AttachCustomerManagedPolicyReferenceToPermissionSetRequest:
       type: object
       required:
       - InstanceArn
       - PermissionSetArn
-      - ManagedPolicyArn
-      title: AttachManagedPolicyToPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the <a>PermissionSet</a> that the managed policy should be attached to.
-        ManagedPolicyArn:
-          allOf:
-          - $ref: '#/components/schemas/ManagedPolicyArn'
-          - description: The AWS managed policy ARN to be attached to a permission set.
-    ListAccountAssignmentDeletionStatusRequest:
-      type: object
-      required:
-      - InstanceArn
-      title: ListAccountAssignmentDeletionStatusRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the assignment.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-        Filter:
-          allOf:
-          - $ref: '#/components/schemas/OperationStatusFilter'
-          - description: Filters results based on the passed attribute value.
-    ServiceQuotaExceededException: {}
-    PermissionSetPolicyDocument:
-      type: string
-      pattern: '[\u0009\u000A\u000D\u0020-\u00FF]+'
-      minLength: 1
-      maxLength: 10240
-    TagResourceResponse:
-      type: object
-      properties: {}
-    StatusValues:
-      type: string
-      enum:
-      - IN_PROGRESS
-      - FAILED
-      - SUCCEEDED
-    PermissionSetList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PermissionSetArn'
-    PermissionSetProvisioningStatusList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PermissionSetProvisioningStatusMetadata'
-    ListTagsForResourceResponse:
-      type: object
-      properties:
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: A set of key-value pairs that are used to manage the resource.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    AccessControlAttributeValueSourceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccessControlAttributeValueSource'
-      minItems: 1
-      maxItems: 1
-    ProvisionPermissionSetResponse:
-      type: object
-      properties:
-        PermissionSetProvisioningStatus:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetProvisioningStatus'
-          - description: The status object for the permission set provisioning operation.
-    TargetType:
-      type: string
-      enum:
-      - AWS_ACCOUNT
-    AccountAssignment:
-      type: object
-      properties:
-        AccountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The identifier of the AWS account.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PrincipalType:
-          allOf:
-          - $ref: '#/components/schemas/PrincipalType'
-          - description: The entity type for which the assignment will be created.
-        PrincipalId:
-          allOf:
-          - $ref: '#/components/schemas/PrincipalId'
-          - description: An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.
-      description: <p>The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.</p> <note> <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p> </note>
-    DescribePermissionSetProvisioningStatusResponse:
-      type: object
-      properties:
-        PermissionSetProvisioningStatus:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetProvisioningStatus'
-          - description: The status object for the permission set provisioning operation.
-    InstanceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}
-      minLength: 10
-      maxLength: 1224
-    ListAccountsForProvisionedPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      title: ListAccountsForProvisionedPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be listed.
-        ProvisioningStatus:
-          allOf:
-          - $ref: '#/components/schemas/ProvisioningStatus'
-          - description: The permission set provisioning status for an AWS account.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the <a>PermissionSet</a>.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    DeletePermissionsBoundaryFromPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      title: DeletePermissionsBoundaryFromPermissionSetRequest
+      - CustomerManagedPolicyReference
+      title: AttachCustomerManagedPolicyReferenceToPermissionSetRequest
       properties:
         InstanceArn:
           allOf:
@@ -3720,59 +4239,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/PermissionSetArn'
           - description: The ARN of the <code>PermissionSet</code>.
-    DetachManagedPolicyFromPermissionSetResponse:
-      type: object
-      properties: {}
-    AccessControlAttributeKey:
+        CustomerManagedPolicyReference:
+          allOf:
+          - $ref: '#/components/schemas/CustomerManagedPolicyReference'
+          - description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
+    ManagedPolicyPath:
       type: string
-      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@]+'
+      pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
       minLength: 1
-      maxLength: 128
-    UUId:
-      type: string
-      pattern: \b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b
-      minLength: 36
-      maxLength: 36
-    UpdatePermissionSetResponse:
-      type: object
-      properties: {}
-    GetPermissionsBoundaryForPermissionSetResponse:
-      type: object
-      properties:
-        PermissionsBoundary:
-          allOf:
-          - $ref: '#/components/schemas/PermissionsBoundary'
-          - description: The permissions boundary attached to the specified permission set.
-    DescribePermissionSetResponse:
-      type: object
-      properties:
-        PermissionSet:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSet'
-          - description: Describes the level of access on an AWS account.
-    TaggableResourceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}
-      minLength: 10
-      maxLength: 2048
-    AccessControlAttribute:
-      type: object
-      required:
-      - Key
-      - Value
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/AccessControlAttributeKey'
-          - description: The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/AccessControlAttributeValue'
-          - description: The value used for mapping a specified attribute to an identity source.
-      description: These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.
-    DetachCustomerManagedPolicyReferenceFromPermissionSetResponse:
-      type: object
-      properties: {}
+      maxLength: 512
     CreatePermissionSetResponse:
       type: object
       properties:
@@ -3780,68 +4255,24 @@ components:
           allOf:
           - $ref: '#/components/schemas/PermissionSet'
           - description: Defines the level of access on an AWS account.
+    AttachedManagedPolicy:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the AWS managed policy.
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/ManagedPolicyArn'
+          - description: The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+      description: A structure that stores the details of the AWS managed policy.
     Token:
       type: string
       pattern: ^[-a-zA-Z0-9+=/_]*
       maxLength: 2048
-    PutPermissionsBoundaryToPermissionSetResponse:
-      type: object
-      properties: {}
-    ListCustomerManagedPolicyReferencesInPermissionSetResponse:
-      type: object
-      properties:
-        CustomerManagedPolicyReferences:
-          allOf:
-          - $ref: '#/components/schemas/CustomerManagedPolicyReferenceList'
-          - description: Specifies the names and paths of the customer managed policies that you have attached to your permission set.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    DeleteInlinePolicyFromPermissionSetResponse:
-      type: object
-      properties: {}
-    PermissionSetArn:
+    InstanceAccessControlAttributeConfigurationStatusReason:
       type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}
-      minLength: 10
-      maxLength: 1224
-    PermissionSetProvisioningStatusMetadata:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/StatusValues'
-          - description: The status of the permission set provisioning process.
-        RequestId:
-          allOf:
-          - $ref: '#/components/schemas/UUId'
-          - description: The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.
-        CreatedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date that the permission set was created.
-      description: Provides information about the permission set provisioning status.
-    AccountAssignmentOperationStatusMetadata:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/StatusValues'
-          - description: The status of the permission set provisioning process.
-        RequestId:
-          allOf:
-          - $ref: '#/components/schemas/UUId'
-          - description: The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.
-        CreatedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date that the permission set was created.
-      description: Provides information about the <a>AccountAssignment</a> creation request.
-    Name:
-      type: string
-      minLength: 1
-      maxLength: 100
     ListAccountAssignmentsRequest:
       type: object
       required:
@@ -3870,188 +4301,33 @@ components:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    ListInstancesRequest:
-      type: object
-      title: ListInstancesRequest
-      properties:
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the instance.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    UpdateInstanceAccessControlAttributeConfigurationRequest:
-      type: object
-      required:
-      - InstanceArn
-      - InstanceAccessControlAttributeConfiguration
-      title: UpdateInstanceAccessControlAttributeConfigurationRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed.
-        InstanceAccessControlAttributeConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
-          - description: Updates the attributes for your ABAC configuration.
-    AccountAssignmentList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccountAssignment'
-    AccountList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccountId'
-    ConflictException: {}
-    ThrottlingException: {}
-    CustomerManagedPolicyReferenceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CustomerManagedPolicyReference'
-    ListAccountAssignmentsResponse:
-      type: object
-      properties:
-        AccountAssignments:
-          allOf:
-          - $ref: '#/components/schemas/AccountAssignmentList'
-          - description: The list of assignments that match the input AWS account and permission set.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    ListPermissionSetsRequest:
-      type: object
-      required:
-      - InstanceArn
-      title: ListPermissionSetsRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the assignment.
-    AttachCustomerManagedPolicyReferenceToPermissionSetResponse:
-      type: object
-      properties: {}
-    AccountAssignmentOperationStatusList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccountAssignmentOperationStatusMetadata'
-    ListManagedPoliciesInPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      title: ListManagedPoliciesInPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the <a>PermissionSet</a>.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    GetInlinePolicyForPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      title: GetInlinePolicyForPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set.
-    InstanceAccessControlAttributeConfiguration:
-      type: object
-      required:
-      - AccessControlAttributes
-      properties:
-        AccessControlAttributes:
-          allOf:
-          - $ref: '#/components/schemas/AccessControlAttributeList'
-          - description: Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.
-      description: Specifies the attributes to add to your attribute-based access control (ABAC) configuration.
-    DescribeAccountAssignmentDeletionStatusRequest:
-      type: object
-      required:
-      - InstanceArn
-      - AccountAssignmentDeletionRequestId
-      title: DescribeAccountAssignmentDeletionStatusRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        AccountAssignmentDeletionRequestId:
-          allOf:
-          - $ref: '#/components/schemas/UUId'
-          - description: The identifier that is used to track the request operation progress.
-    AccessControlAttributeValueSource:
+    TagKey:
       type: string
-      pattern: '[\p{L}\p{Z}\p{N}_.:\/=+\-@\[\]\{\}\$\\"]*'
-      minLength: 0
-      maxLength: 256
-    DescribeAccountAssignmentCreationStatusRequest:
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    TargetId:
+      type: string
+      pattern: \d{12}
+      minLength: 12
+      maxLength: 12
+    ListCustomerManagedPolicyReferencesInPermissionSetResponse:
       type: object
-      required:
-      - InstanceArn
-      - AccountAssignmentCreationRequestId
-      title: DescribeAccountAssignmentCreationStatusRequest
       properties:
-        InstanceArn:
+        CustomerManagedPolicyReferences:
           allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        AccountAssignmentCreationRequestId:
+          - $ref: '#/components/schemas/CustomerManagedPolicyReferenceList'
+          - description: Specifies the names and paths of the customer managed policies that you have attached to your permission set.
+        NextToken:
           allOf:
-          - $ref: '#/components/schemas/UUId'
-          - description: The identifier that is used to track the request operation progress.
-    DeleteInlinePolicyFromPermissionSetRequest:
+          - $ref: '#/components/schemas/Token'
+          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
+    GetPermissionsBoundaryForPermissionSetRequest:
       type: object
       required:
       - InstanceArn
       - PermissionSetArn
-      title: DeleteInlinePolicyFromPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set that will be used to remove access.
-    AttachCustomerManagedPolicyReferenceToPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      - CustomerManagedPolicyReference
-      title: AttachCustomerManagedPolicyReferenceToPermissionSetRequest
+      title: GetPermissionsBoundaryForPermissionSetRequest
       properties:
         InstanceArn:
           allOf:
@@ -4061,98 +4337,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/PermissionSetArn'
           - description: The ARN of the <code>PermissionSet</code>.
-        CustomerManagedPolicyReference:
-          allOf:
-          - $ref: '#/components/schemas/CustomerManagedPolicyReference'
-          - description: Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
-    ProvisioningStatus:
-      type: string
-      enum:
-      - LATEST_PERMISSION_SET_PROVISIONED
-      - LATEST_PERMISSION_SET_NOT_PROVISIONED
-    Id:
-      type: string
-      pattern: ^[a-zA-Z0-9-]*
-      minLength: 1
-      maxLength: 64
-    DeleteInstanceAccessControlAttributeConfigurationResponse:
-      type: object
-      properties: {}
-    ProvisionTargetType:
-      type: string
-      enum:
-      - AWS_ACCOUNT
-      - ALL_PROVISIONED_ACCOUNTS
-    DescribeAccountAssignmentCreationStatusResponse:
-      type: object
-      properties:
-        AccountAssignmentCreationStatus:
-          allOf:
-          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
-          - description: The status object for the account assignment creation operation.
-    PutInlinePolicyToPermissionSetResponse:
-      type: object
-      properties: {}
-    AttachedManagedPolicyList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AttachedManagedPolicy'
-    DescribePermissionSetProvisioningStatusRequest:
-      type: object
-      required:
-      - InstanceArn
-      - ProvisionPermissionSetRequestId
-      title: DescribePermissionSetProvisioningStatusRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        ProvisionPermissionSetRequestId:
-          allOf:
-          - $ref: '#/components/schemas/UUId'
-          - description: The identifier that is provided by the <a>ProvisionPermissionSet</a> call to retrieve the current status of the provisioning workflow.
-    AccessControlAttributeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccessControlAttribute'
-      minItems: 0
-      maxItems: 50
-    DeleteAccountAssignmentResponse:
-      type: object
-      properties:
-        AccountAssignmentDeletionStatus:
-          allOf:
-          - $ref: '#/components/schemas/AccountAssignmentOperationStatus'
-          - description: The status object for the account assignment deletion operation.
-    TagKey:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
-    Duration:
-      type: string
-      pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
-      minLength: 1
-      maxLength: 100
-    ListAccountsForProvisionedPermissionSetResponse:
-      type: object
-      properties:
-        AccountIds:
-          allOf:
-          - $ref: '#/components/schemas/AccountList'
-          - description: The list of AWS <code>AccountIds</code>.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    GetInlinePolicyForPermissionSetResponse:
-      type: object
-      properties:
-        InlinePolicy:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetPolicyDocument'
-          - description: The inline policy that is attached to the permission set.
+    ServiceQuotaExceededException: {}
     DescribeInstanceAccessControlAttributeConfigurationResponse:
       type: object
       properties:
@@ -4168,284 +4353,81 @@ components:
           allOf:
           - $ref: '#/components/schemas/InstanceAccessControlAttributeConfiguration'
           - description: Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
-    PermissionSetProvisioningStatus:
+    AccountAssignment:
       type: object
       properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/StatusValues'
-          - description: The status of the permission set provisioning process.
-        RequestId:
-          allOf:
-          - $ref: '#/components/schemas/UUId'
-          - description: The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.
         AccountId:
           allOf:
           - $ref: '#/components/schemas/AccountId'
-          - description: The identifier of the AWS account from which to list the assignments.
+          - description: The identifier of the AWS account.
         PermissionSetArn:
           allOf:
           - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        FailureReason:
-          allOf:
-          - $ref: '#/components/schemas/Reason'
-          - description: The message that contains an error or exception in case of an operation failure.
-        CreatedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date that the permission set was created.
-      description: A structure that is used to provide the status of the provisioning operation for a specified permission set.
-    CreatePermissionSetRequest:
-      type: object
-      required:
-      - Name
-      - InstanceArn
-      title: CreatePermissionSetRequest
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetName'
-          - description: The name of the <a>PermissionSet</a>.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetDescription'
-          - description: The description of the <a>PermissionSet</a>.
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        SessionDuration:
-          allOf:
-          - $ref: '#/components/schemas/Duration'
-          - description: The length of time that the application user sessions are valid in the ISO-8601 standard.
-        RelayState:
-          allOf:
-          - $ref: '#/components/schemas/RelayState'
-          - description: Used to redirect users within the application during the federation authentication process.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: The tags to attach to the new <a>PermissionSet</a>.
-    DeleteAccountAssignmentRequest:
-      type: object
-      required:
-      - InstanceArn
-      - TargetId
-      - TargetType
-      - PermissionSetArn
-      - PrincipalType
-      - PrincipalId
-      title: DeleteAccountAssignmentRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        TargetId:
-          allOf:
-          - $ref: '#/components/schemas/TargetId'
-          - description: TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
-        TargetType:
-          allOf:
-          - $ref: '#/components/schemas/TargetType'
-          - description: The entity type for which the assignment will be deleted.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set that will be used to remove access.
+          - description: The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         PrincipalType:
           allOf:
           - $ref: '#/components/schemas/PrincipalType'
-          - description: The entity type for which the assignment will be deleted.
+          - description: The entity type for which the assignment will be created.
         PrincipalId:
           allOf:
           - $ref: '#/components/schemas/PrincipalId'
           - description: An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.
-    PrincipalId:
-      type: string
-      pattern: ^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$
-      minLength: 1
-      maxLength: 47
-    ManagedPolicyName:
-      type: string
-      pattern: '[\w+=,.@-]+'
-      minLength: 1
-      maxLength: 128
-    ListPermissionSetsResponse:
-      type: object
-      properties:
-        PermissionSets:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetList'
-          - description: Defines the level of access on an AWS account.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    ListPermissionSetProvisioningStatusResponse:
-      type: object
-      properties:
-        PermissionSetsProvisioningStatus:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetProvisioningStatusList'
-          - description: The status object for the permission set provisioning operation.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    UpdatePermissionSetRequest:
+      description: <p>The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.</p> <note> <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p> </note>
+    TagResourceRequest:
       type: object
       required:
       - InstanceArn
-      - PermissionSetArn
-      title: UpdatePermissionSetRequest
+      - ResourceArn
+      - Tags
+      title: TagResourceRequest
       properties:
         InstanceArn:
           allOf:
           - $ref: '#/components/schemas/InstanceArn'
           - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
+        ResourceArn:
           allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set.
-        Description:
+          - $ref: '#/components/schemas/TaggableResourceArn'
+          - description: The ARN of the resource with the tags to be listed.
+        Tags:
           allOf:
-          - $ref: '#/components/schemas/PermissionSetDescription'
-          - description: The description of the <a>PermissionSet</a>.
-        SessionDuration:
-          allOf:
-          - $ref: '#/components/schemas/Duration'
-          - description: The length of time that the application user sessions are valid for in the ISO-8601 standard.
-        RelayState:
-          allOf:
-          - $ref: '#/components/schemas/RelayState'
-          - description: Used to redirect users within the application during the federation authentication process.
-    DeletePermissionSetRequest:
+          - $ref: '#/components/schemas/TagList'
+          - description: A set of key-value pairs that are used to manage the resource.
+    AccessControlAttribute:
       type: object
       required:
-      - InstanceArn
-      - PermissionSetArn
-      title: DeletePermissionSetRequest
+      - Key
+      - Value
       properties:
-        InstanceArn:
+        Key:
           allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
+          - $ref: '#/components/schemas/AccessControlAttributeKey'
+          - description: The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.
+        Value:
           allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the permission set that should be deleted.
-    AccessDeniedException: {}
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      minItems: 0
-      maxItems: 50
-    PrincipalType:
-      type: string
-      enum:
-      - USER
-      - GROUP
-    ListAccountAssignmentCreationStatusRequest:
-      type: object
-      required:
-      - InstanceArn
-      title: ListAccountAssignmentCreationStatusRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to display for the assignment.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-        Filter:
-          allOf:
-          - $ref: '#/components/schemas/OperationStatusFilter'
-          - description: Filters results based on the passed attribute value.
-    DetachManagedPolicyFromPermissionSetRequest:
-      type: object
-      required:
-      - InstanceArn
-      - PermissionSetArn
-      - ManagedPolicyArn
-      title: DetachManagedPolicyFromPermissionSetRequest
-      properties:
-        InstanceArn:
-          allOf:
-          - $ref: '#/components/schemas/InstanceArn'
-          - description: The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-        PermissionSetArn:
-          allOf:
-          - $ref: '#/components/schemas/PermissionSetArn'
-          - description: The ARN of the <a>PermissionSet</a> from which the policy should be detached.
-        ManagedPolicyArn:
-          allOf:
-          - $ref: '#/components/schemas/ManagedPolicyArn'
-          - description: The AWS managed policy ARN to be detached from a permission set.
-    MaxResults:
-      type: integer
-      minimum: 1
-      maximum: 100
-    ListInstancesResponse:
+          - $ref: '#/components/schemas/AccessControlAttributeValue'
+          - description: The value used for mapping a specified attribute to an identity source.
+      description: These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.
+    ListAccountsForProvisionedPermissionSetResponse:
       type: object
       properties:
-        Instances:
+        AccountIds:
           allOf:
-          - $ref: '#/components/schemas/InstanceList'
-          - description: Lists the IAM Identity Center instances that the caller has access to.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
-    Date:
-      type: string
-      format: date-time
-    ListManagedPoliciesInPermissionSetResponse:
-      type: object
-      properties:
-        AttachedManagedPolicies:
-          allOf:
-          - $ref: '#/components/schemas/AttachedManagedPolicyList'
-          - description: An array of the <a>AttachedManagedPolicy</a> data type object.
+          - $ref: '#/components/schemas/AccountList'
+          - description: The list of AWS <code>AccountIds</code>.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -4456,8 +4438,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
