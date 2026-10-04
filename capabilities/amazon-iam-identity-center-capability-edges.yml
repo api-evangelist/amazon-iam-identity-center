@@ -11,8 +11,17 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 52
+edge_count: 54
 edges:
+- tag: AWS Single Sign On Admin
+  spec_file: amazon-iam-identity-center-aws-single-sign-on-admin-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.95
+  evidence: CreatePermissionSet, CreateAccountAssignment, AttachManagedPolicyToPermissionSet, PermissionsBoundary
+  reason: Administration of permission sets, policy attachment and account assignments centrally across
+    accounts — access administration and federation.
 - tag: '#X Amz Target=SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet'
   spec_file: amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api-openapi.yml
   capability_id: BC-620.20
@@ -280,6 +289,16 @@ edges:
     RelayState, PermissionSetDescription
   reason: Permission sets define what access federated workforce users receive across accounts — squarely
     Identity & Access Management.
+- tag: AWS SSO Identity Store
+  spec_file: amazon-iam-identity-center-aws-sso-identity-store-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: CreateUser / CreateGroup / CreateGroupMembership — "provides a single place to retrieve all
+    of your identities (users and groups)"
+  reason: Workforce identity store CRUD for users, groups and memberships used for single sign-on — squarely
+    identity & access management, not HR employee records.
 - tag: '#X Amz Target=AWSIdentityStore.DescribeGroup'
   spec_file: amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api-openapi.yml
   capability_id: BC-620.20
