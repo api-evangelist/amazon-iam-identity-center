@@ -1,16 +1,73 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-iam-identity-center-identitystore-openapi-original.yml, openapi/amazon-iam-identity-center-sso-admin-openapi-original.yml
+source: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api-openapi.yml,
+  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 56
   by_action_class:
-    acting: 56
+    acting: 44
+    connected: 12
   by_consequence:
-    write: 41
-    physical: 11
+    write: 33
+    physical: 7
+    read: 12
     safety-critical: 4
   human_in_the_loop_required: 4
 operations:
@@ -168,52 +225,32 @@ operations:
   method: post
   operationId: GetGroupId
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSIdentityStore.GetGroupMembershipId
   method: post
   operationId: GetGroupMembershipId
   x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSIdentityStore.GetUserId
   method: post
   operationId: GetUserId
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSIdentityStore.IsMemberInGroups
   method: post
   operationId: IsMemberInGroups
@@ -234,70 +271,42 @@ operations:
   method: post
   operationId: ListGroupMemberships
   x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSIdentityStore.ListGroupMembershipsForMember
   method: post
   operationId: ListGroupMembershipsForMember
   x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSIdentityStore.ListGroups
   method: post
   operationId: ListGroups
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSIdentityStore.ListUsers
   method: post
   operationId: ListUsers
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSIdentityStore.UpdateGroup
   method: post
   operationId: UpdateGroup
@@ -458,9 +467,9 @@ operations:
     escalation:
       human-in-the-loop: required
     audit: required
-- path: /#X-Amz-Target=SWBExternalService.DeletePermissionSet
+- path: /#X-Amz-Target=SWBExternalService.DeletePermissionsBoundaryFromPermissionSet
   method: post
-  operationId: DeletePermissionSet
+  operationId: DeletePermissionsBoundaryFromPermissionSet
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -474,9 +483,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /#X-Amz-Target=SWBExternalService.DeletePermissionsBoundaryFromPermissionSet
+- path: /#X-Amz-Target=SWBExternalService.DeletePermissionSet
   method: post
-  operationId: DeletePermissionsBoundaryFromPermissionSet
+  operationId: DeletePermissionSet
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -672,18 +681,12 @@ operations:
   method: post
   operationId: ListAccountAssignments
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SWBExternalService.ListAccountsForProvisionedPermissionSet
   method: post
   operationId: ListAccountsForProvisionedPermissionSet
@@ -722,18 +725,12 @@ operations:
   method: post
   operationId: ListInstances
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SWBExternalService.ListManagedPoliciesInPermissionSet
   method: post
   operationId: ListManagedPoliciesInPermissionSet
@@ -772,52 +769,32 @@ operations:
   method: post
   operationId: ListPermissionSets
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SWBExternalService.ListPermissionSetsProvisionedToAccount
   method: post
   operationId: ListPermissionSetsProvisionedToAccount
   x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SWBExternalService.ListTagsForResource
   method: post
   operationId: ListTagsForResource
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SWBExternalService.ProvisionPermissionSet
   method: post
   operationId: ProvisionPermissionSet
