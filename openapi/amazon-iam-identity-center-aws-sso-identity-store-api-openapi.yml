@@ -1554,197 +1554,33 @@ paths:
       - AWS SSO Identity Store
 components:
   schemas:
-    InternalServerException: {}
-    AttributeOperation:
-      type: object
-      required:
-      - AttributePath
-      properties:
-        AttributePath:
-          allOf:
-          - $ref: '#/components/schemas/AttributePath'
-          - description: A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.
-        AttributeValue:
-          allOf:
-          - $ref: '#/components/schemas/AttributeValue'
-          - description: The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.
-      description: An operation that applies to the requested group. This operation might add, replace, or remove an attribute.
-    MaxResults:
-      type: integer
-      minimum: 1
-      maximum: 100
-    CreateGroupRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      title: CreateGroupRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        DisplayName:
-          allOf:
-          - $ref: '#/components/schemas/GroupDisplayName'
-          - description: A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing the description of the group.
-    DescribeGroupMembershipRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      - MembershipId
-      title: DescribeGroupMembershipRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        MembershipId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a <code>GroupMembership</code> in an identity store.
-    CreateGroupResponse:
+    Group:
       type: object
       required:
       - GroupId
       - IdentityStoreId
       properties:
-        GroupId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier of the newly created group in the identity store.
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-    GetUserIdResponse:
-      type: object
-      required:
-      - UserId
-      - IdentityStoreId
-      properties:
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a user in the identity store.
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-    Filter:
-      type: object
-      required:
-      - AttributePath
-      - AttributeValue
-      properties:
-        AttributePath:
-          allOf:
-          - $ref: '#/components/schemas/AttributePath'
-          - description: The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
-        AttributeValue:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: 'Represents the data for an attribute. Each attribute value is described as a name-value pair. '
-      description: A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.
-    NextToken:
-      type: string
-      pattern: '[-a-zA-Z0-9+=/:]*'
-      minLength: 1
-      maxLength: 65535
-    ExternalIdIdentifier:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
-      minLength: 1
-      maxLength: 256
-      format: password
-    ExternalId:
-      type: object
-      required:
-      - Issuer
-      - Id
-      properties:
-        Issuer:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIdIssuer'
-          - description: The issuer for an external identifier.
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIdIdentifier'
-          - description: The identifier issued to this resource by an external identity provider.
-      description: The identifier issued to this resource by an external identity provider.
-    GroupMembershipExistenceResults:
-      type: array
-      items:
-        $ref: '#/components/schemas/GroupMembershipExistenceResult'
-    UpdateGroupRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      - GroupId
-      - Operations
-      title: UpdateGroupRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
         GroupId:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a group in the identity store.
-        Operations:
+        DisplayName:
           allOf:
-          - $ref: '#/components/schemas/AttributeOperations'
-          - description: A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.
-    PhoneNumbers:
-      type: array
-      items:
-        $ref: '#/components/schemas/PhoneNumber'
-      minItems: 1
-      maxItems: 1
-    AccessDeniedException: {}
-    IsMemberInGroupsResponse:
-      type: object
-      required:
-      - Results
-      properties:
-        Results:
+          - $ref: '#/components/schemas/GroupDisplayName'
+          - description: The display name value for the group. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time the group is created and stored as an attribute of the group object in the identity store.
+        ExternalIds:
           allOf:
-          - $ref: '#/components/schemas/GroupMembershipExistenceResults'
-          - description: A list containing the results of membership existence checks.
-    CreateGroupMembershipResponse:
-      type: object
-      required:
-      - MembershipId
-      - IdentityStoreId
-      properties:
-        MembershipId:
+          - $ref: '#/components/schemas/ExternalIds'
+          - description: A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.
+        Description:
           allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a newly created <code>GroupMembership</code> in an identity store.
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a description of the specified group.
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
-    Email:
-      type: object
-      properties:
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing an email address. For example, "johndoe@amazon.com."
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string representing the type of address. For example, "Work."
-        Primary:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveBooleanType'
-          - description: A Boolean value representing whether this is the primary email address for the associated resource.
-      description: The email address associated with the user.
+      description: A group object that contains the metadata and attributes for a specified group.
     UpdateUserRequest:
       type: object
       required:
@@ -1765,53 +1601,21 @@ components:
           allOf:
           - $ref: '#/components/schemas/AttributeOperations'
           - description: A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.
-    ValidationException: {}
-    PhoneNumber:
-      type: object
-      properties:
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string representing the type of a phone number. For example, "Mobile."
-        Primary:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveBooleanType'
-          - description: A Boolean value representing whether this is the primary phone number for the associated resource.
-      description: The phone number associated with the user.
-    CreateGroupMembershipRequest:
+    ListGroupMembershipsForMemberRequest:
       type: object
       required:
       - IdentityStoreId
-      - GroupId
       - MemberId
-      title: CreateGroupMembershipRequest
+      title: ListGroupMembershipsForMemberRequest
       properties:
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
-        GroupId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a group in the identity store.
         MemberId:
           allOf:
           - $ref: '#/components/schemas/MemberId'
           - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
-    ListGroupsRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      title: ListGroupsRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
         MaxResults:
           allOf:
           - $ref: '#/components/schemas/MaxResults'
@@ -1819,110 +1623,52 @@ components:
         NextToken:
           allOf:
           - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/Filters'
-          - deprecated: true
-            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.Using filters with ListGroups API is deprecated, please use GetGroupId API instead.
-    ExternalIdIssuer:
-      type: string
-      pattern: \(\?!\(\?i\)\(arn\|aws\):\)[\p\{L\}\p\{M\}\p\{S\}\p\{N\}\p\{P\}]\+
-      minLength: 1
-      maxLength: 100
-      format: password
-    DeleteGroupMembershipResponse:
+          - description: The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+    IsMemberInGroupsResponse:
       type: object
-      properties: {}
-    DescribeUserRequest:
+      required:
+      - Results
+      properties:
+        Results:
+          allOf:
+          - $ref: '#/components/schemas/GroupMembershipExistenceResults'
+          - description: A list containing the results of membership existence checks.
+    ResourceNotFoundException: {}
+    ListUsersResponse:
+      type: object
+      required:
+      - Users
+      properties:
+        Users:
+          allOf:
+          - $ref: '#/components/schemas/Users'
+          - description: A list of <code>User</code> objects in the identity store.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+    GroupIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceId'
+      minItems: 1
+      maxItems: 100
+    DeleteUserRequest:
       type: object
       required:
       - IdentityStoreId
       - UserId
-      title: DescribeUserRequest
+      title: DeleteUserRequest
       properties:
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+          - description: The globally unique identifier for the identity store.
         UserId:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a user in the identity store.
-    SensitiveStringType:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+'
-      minLength: 1
-      maxLength: 1024
-      format: password
-    ListUsersRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      title: ListUsersRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
-        Filters:
-          allOf:
-          - $ref: '#/components/schemas/Filters'
-          - deprecated: true
-            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. Using filters with ListUsers API is deprecated, please use GetGroupId API instead.
-    DescribeGroupResponse:
-      type: object
-      required:
-      - GroupId
-      - IdentityStoreId
-      properties:
-        GroupId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a group in the identity store.
-        DisplayName:
-          allOf:
-          - $ref: '#/components/schemas/GroupDisplayName'
-          - description: The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.
-        ExternalIds:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIds'
-          - description: A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing a description of the group.
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-    GroupMemberships:
-      type: array
-      items:
-        $ref: '#/components/schemas/GroupMembership'
-    DeleteGroupRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      - GroupId
-      title: DeleteGroupRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        GroupId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a group in the identity store.
+    ConflictException: {}
     DescribeGroupMembershipResponse:
       type: object
       required:
@@ -1945,18 +1691,19 @@ components:
           - description: The identifier for a group in the identity store.
         MemberId:
           $ref: '#/components/schemas/MemberId'
-    ResourceId:
+    UserName:
       type: string
-      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
       minLength: 1
-      maxLength: 47
-    ThrottlingException: {}
-    ListGroupMembershipsRequest:
+      maxLength: 128
+      format: password
+    GetGroupMembershipIdRequest:
       type: object
       required:
       - IdentityStoreId
       - GroupId
-      title: ListGroupMembershipsRequest
+      - MemberId
+      title: GetGroupMembershipIdRequest
       properties:
         IdentityStoreId:
           allOf:
@@ -1966,14 +1713,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a group in the identity store.
-        MaxResults:
+        MemberId:
           allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to be returned per request. This parameter is used in all <code>List</code> requests to specify how many results to return in one page.
-        NextToken:
+          - $ref: '#/components/schemas/MemberId'
+          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
+    Email:
+      type: object
+      properties:
+        Value:
           allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code> and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing an email address. For example, "johndoe@amazon.com."
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string representing the type of address. For example, "Work."
+        Primary:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: A Boolean value representing whether this is the primary email address for the associated resource.
+      description: The email address associated with the user.
     Name:
       type: object
       properties:
@@ -2002,29 +1761,29 @@ components:
           - $ref: '#/components/schemas/SensitiveStringType'
           - description: The honorific suffix of the user. For example, "M.D."
       description: The full name of the user.
-    GroupMembership:
+    ListUsersRequest:
       type: object
       required:
       - IdentityStoreId
+      title: ListUsersRequest
       properties:
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        MembershipId:
+          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+        MaxResults:
           allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a <code>GroupMembership</code> object in an identity store.
-        GroupId:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
+        NextToken:
           allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a group in the identity store.
-        MemberId:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+        Filters:
           allOf:
-          - $ref: '#/components/schemas/MemberId'
-          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
-      description: Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.
-    ConflictException: {}
+          - $ref: '#/components/schemas/Filters'
+          - deprecated: true
+            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. Using filters with ListUsers API is deprecated, please use GetGroupId API instead.
     DescribeGroupRequest:
       type: object
       required:
@@ -2040,27 +1799,127 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a group in the identity store.
-    ResourceNotFoundException: {}
     GroupDisplayName:
       type: string
       pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  ]+'
       minLength: 1
       maxLength: 1024
       format: password
-    GetGroupMembershipIdResponse:
+    DescribeUserRequest:
       type: object
       required:
-      - MembershipId
       - IdentityStoreId
+      - UserId
+      title: DescribeUserRequest
       properties:
-        MembershipId:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+        UserId:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a <code>GroupMembership</code> in an identity store.
+          - description: The identifier for a user in the identity store.
+    MaxResults:
+      type: integer
+      minimum: 1
+      maximum: 100
+    DescribeGroupMembershipRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      - MembershipId
+      title: DescribeGroupMembershipRequest
+      properties:
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
+        MembershipId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a <code>GroupMembership</code> in an identity store.
+    DescribeUserResponse:
+      type: object
+      required:
+      - UserId
+      - IdentityStoreId
+      properties:
+        UserName:
+          allOf:
+          - $ref: '#/components/schemas/UserName'
+          - description: A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a user in the identity store.
+        ExternalIds:
+          allOf:
+          - $ref: '#/components/schemas/ExternalIds'
+          - description: A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the user.
+        DisplayName:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The display name of the user.
+        NickName:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: An alternative descriptive name for the user.
+        ProfileUrl:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A URL link for the user's profile.
+        Emails:
+          allOf:
+          - $ref: '#/components/schemas/Emails'
+          - description: The email address of the user.
+        Addresses:
+          allOf:
+          - $ref: '#/components/schemas/Addresses'
+          - description: The physical address of the user.
+        PhoneNumbers:
+          allOf:
+          - $ref: '#/components/schemas/PhoneNumbers'
+          - description: A list of <code>PhoneNumber</code> objects associated with a user.
+        UserType:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string indicating the type of user.
+        Title:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing the title of the user.
+        PreferredLanguage:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The preferred language of the user.
+        Locale:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing the geographical region or location of the user.
+        Timezone:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The time zone for a user.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+    Filters:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+      minItems: 0
+      maxItems: 1
+    SensitiveBooleanType:
+      type: boolean
+    UpdateGroupResponse:
+      type: object
+      properties: {}
     CreateUserRequest:
       type: object
       required:
@@ -2123,44 +1982,17 @@ components:
           allOf:
           - $ref: '#/components/schemas/SensitiveStringType'
           - description: A string containing the time zone of the user.
-    GroupMembershipExistenceResult:
-      type: object
-      properties:
-        GroupId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a group in the identity store.
-        MemberId:
-          allOf:
-          - $ref: '#/components/schemas/MemberId'
-          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
-        MembershipExists:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveBooleanType'
-          - description: Indicates whether a membership relation exists or not.
-      description: Indicates whether a resource is a member of a group in the identity store.
-    ListUsersResponse:
-      type: object
-      required:
-      - Users
-      properties:
-        Users:
-          allOf:
-          - $ref: '#/components/schemas/Users'
-          - description: A list of <code>User</code> objects in the identity store.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
-    MemberId:
-      type: object
-      properties:
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: An object containing the identifiers of resources that can be members.
-      description: An object containing the identifier of a group member.
-    CreateUserResponse:
+    ResourceId:
+      type: string
+      pattern: ([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}
+      minLength: 1
+      maxLength: 47
+    GroupMemberships:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroupMembership'
+    ThrottlingException: {}
+    GetUserIdResponse:
       type: object
       required:
       - UserId
@@ -2169,33 +2001,11 @@ components:
         UserId:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier of the newly created user in the identity store.
+          - description: The identifier for a user in the identity store.
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
-    DeleteUserResponse:
-      type: object
-      properties: {}
-    ExternalIds:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExternalId'
-      minItems: 1
-      maxItems: 10
-    SensitiveBooleanType:
-      type: boolean
-    UpdateGroupResponse:
-      type: object
-      properties: {}
-    AttributeValue:
-      type: object
-      properties: {}
-      description: The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.
-    Users:
-      type: array
-      items:
-        $ref: '#/components/schemas/User'
     AlternateIdentifier:
       type: object
       properties:
@@ -2208,75 +2018,36 @@ components:
           - $ref: '#/components/schemas/UniqueAttribute'
           - description: An entity attribute that's unique to a specific entity.
       description: A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute.
-    UniqueAttribute:
-      type: object
-      required:
-      - AttributePath
-      - AttributeValue
-      properties:
-        AttributePath:
-          allOf:
-          - $ref: '#/components/schemas/AttributePath'
-          - description: A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.
-        AttributeValue:
-          allOf:
-          - $ref: '#/components/schemas/AttributeValue'
-          - description: The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.
-      description: An entity attribute that's unique to a specific entity.
-    UpdateUserResponse:
-      type: object
-      properties: {}
-    Address:
-      type: object
-      properties:
-        StreetAddress:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: The street of the address.
-        Locality:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string of the address locality.
-        Region:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: The region of the address.
-        PostalCode:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: The postal code of the address.
-        Country:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: The country of the address.
-        Formatted:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing a formatted version of the address for display.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string representing the type of address. For example, "Home."
-        Primary:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveBooleanType'
-          - description: A Boolean value representing whether this is the primary address for the associated resource.
-      description: The address associated with the specified user.
-    GetUserIdRequest:
+    ListGroupMembershipsRequest:
       type: object
       required:
       - IdentityStoreId
-      - AlternateIdentifier
-      title: GetUserIdRequest
+      - GroupId
+      title: ListGroupMembershipsRequest
       properties:
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
-        AlternateIdentifier:
+        GroupId:
           allOf:
-          - $ref: '#/components/schemas/AlternateIdentifier'
-          - description: A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a group in the identity store.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to be returned per request. This parameter is used in all <code>List</code> requests to specify how many results to return in one page.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code> and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+    AccessDeniedException: {}
+    DeleteGroupMembershipResponse:
+      type: object
+      properties: {}
+    DeleteGroupResponse:
+      type: object
+      properties: {}
     User:
       type: object
       required:
@@ -2348,20 +2119,29 @@ components:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
       description: A user object that contains the metadata and attributes for a specified user.
-    GetGroupIdResponse:
+    ExternalId:
       type: object
       required:
-      - GroupId
-      - IdentityStoreId
+      - Issuer
+      - Id
       properties:
-        GroupId:
+        Issuer:
           allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a group in the identity store.
-        IdentityStoreId:
+          - $ref: '#/components/schemas/ExternalIdIssuer'
+          - description: The issuer for an external identifier.
+        Id:
           allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
+          - $ref: '#/components/schemas/ExternalIdIdentifier'
+          - description: The identifier issued to this resource by an external identity provider.
+      description: The identifier issued to this resource by an external identity provider.
+    AttributeValue:
+      type: object
+      properties: {}
+      description: The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.
+    Groups:
+      type: array
+      items:
+        $ref: '#/components/schemas/Group'
     ListGroupMembershipsForMemberResponse:
       type: object
       required:
@@ -2375,105 +2155,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: 'The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page. '
-    Filters:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-      minItems: 0
-      maxItems: 1
-    GetGroupIdRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      - AlternateIdentifier
-      title: GetGroupIdRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        AlternateIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/AlternateIdentifier'
-          - description: A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.
-    Groups:
-      type: array
-      items:
-        $ref: '#/components/schemas/Group'
-    AttributePath:
-      type: string
-      pattern: \p{L}+(?:\.\p{L}+){0,2}
-      minLength: 1
-      maxLength: 255
-    ListGroupMembershipsResponse:
-      type: object
-      required:
-      - GroupMemberships
-      properties:
-        GroupMemberships:
-          allOf:
-          - $ref: '#/components/schemas/GroupMemberships'
-          - description: A list of <code>GroupMembership</code> objects in the group.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
-    DeleteGroupResponse:
-      type: object
-      properties: {}
-    IdentityStoreId:
-      type: string
-      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 1
-      maxLength: 36
-    AttributeOperations:
-      type: array
-      items:
-        $ref: '#/components/schemas/AttributeOperation'
-      minItems: 1
-      maxItems: 100
-    UserName:
-      type: string
-      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
-      minLength: 1
-      maxLength: 128
-      format: password
-    Emails:
-      type: array
-      items:
-        $ref: '#/components/schemas/Email'
-      minItems: 1
-      maxItems: 1
-    ListGroupMembershipsForMemberRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      - MemberId
-      title: ListGroupMembershipsForMemberRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        MemberId:
-          allOf:
-          - $ref: '#/components/schemas/MemberId'
-          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
-    GetGroupMembershipIdRequest:
+    DeleteGroupRequest:
       type: object
       required:
       - IdentityStoreId
       - GroupId
-      - MemberId
-      title: GetGroupMembershipIdRequest
+      title: DeleteGroupRequest
       properties:
         IdentityStoreId:
           allOf:
@@ -2483,16 +2170,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a group in the identity store.
-        MemberId:
-          allOf:
-          - $ref: '#/components/schemas/MemberId'
-          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
-    GroupIds:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceId'
-      minItems: 1
-      maxItems: 100
     IsMemberInGroupsRequest:
       type: object
       required:
@@ -2513,7 +2190,215 @@ components:
           allOf:
           - $ref: '#/components/schemas/GroupIds'
           - description: A list of identifiers for groups in the identity store.
-    Group:
+    GetUserIdRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      - AlternateIdentifier
+      title: GetUserIdRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        AlternateIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/AlternateIdentifier'
+          - description: A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.
+    GroupMembershipExistenceResults:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroupMembershipExistenceResult'
+    UniqueAttribute:
+      type: object
+      required:
+      - AttributePath
+      - AttributeValue
+      properties:
+        AttributePath:
+          allOf:
+          - $ref: '#/components/schemas/AttributePath'
+          - description: A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.
+        AttributeValue:
+          allOf:
+          - $ref: '#/components/schemas/AttributeValue'
+          - description: The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.
+      description: An entity attribute that's unique to a specific entity.
+    Address:
+      type: object
+      properties:
+        StreetAddress:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The street of the address.
+        Locality:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string of the address locality.
+        Region:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The region of the address.
+        PostalCode:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The postal code of the address.
+        Country:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: The country of the address.
+        Formatted:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a formatted version of the address for display.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string representing the type of address. For example, "Home."
+        Primary:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: A Boolean value representing whether this is the primary address for the associated resource.
+      description: The address associated with the specified user.
+    Emails:
+      type: array
+      items:
+        $ref: '#/components/schemas/Email'
+      minItems: 1
+      maxItems: 1
+    CreateGroupMembershipResponse:
+      type: object
+      required:
+      - MembershipId
+      - IdentityStoreId
+      properties:
+        MembershipId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a newly created <code>GroupMembership</code> in an identity store.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+    ListGroupsResponse:
+      type: object
+      required:
+      - Groups
+      properties:
+        Groups:
+          allOf:
+          - $ref: '#/components/schemas/Groups'
+          - description: A list of <code>Group</code> objects in the identity store.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it1 is used in the API request to search for the next page.
+    ServiceQuotaExceededException: {}
+    ExternalIdIssuer:
+      type: string
+      pattern: \(\?!\(\?i\)\(arn\|aws\):\)[\p\{L\}\p\{M\}\p\{S\}\p\{N\}\p\{P\}]\+
+      minLength: 1
+      maxLength: 100
+      format: password
+    InternalServerException: {}
+    GroupMembership:
+      type: object
+      required:
+      - IdentityStoreId
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        MembershipId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a <code>GroupMembership</code> object in an identity store.
+        GroupId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a group in the identity store.
+        MemberId:
+          allOf:
+          - $ref: '#/components/schemas/MemberId'
+          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
+      description: Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.
+    ListGroupsRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      title: ListGroupsRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/Filters'
+          - deprecated: true
+            description: A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.Using filters with ListGroups API is deprecated, please use GetGroupId API instead.
+    ValidationException: {}
+    CreateUserResponse:
+      type: object
+      required:
+      - UserId
+      - IdentityStoreId
+      properties:
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier of the newly created user in the identity store.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+    AttributePath:
+      type: string
+      pattern: \p{L}+(?:\.\p{L}+){0,2}
+      minLength: 1
+      maxLength: 255
+    NextToken:
+      type: string
+      pattern: '[-a-zA-Z0-9+=/:]*'
+      minLength: 1
+      maxLength: 65535
+    MemberId:
+      type: object
+      properties:
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: An object containing the identifiers of resources that can be members.
+      description: An object containing the identifier of a group member.
+    Filter:
+      type: object
+      required:
+      - AttributePath
+      - AttributeValue
+      properties:
+        AttributePath:
+          allOf:
+          - $ref: '#/components/schemas/AttributePath'
+          - description: The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.
+        AttributeValue:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: 'Represents the data for an attribute. Each attribute value is described as a name-value pair. '
+      description: A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.
+    Users:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+    GetGroupIdResponse:
       type: object
       required:
       - GroupId
@@ -2523,109 +2408,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a group in the identity store.
-        DisplayName:
-          allOf:
-          - $ref: '#/components/schemas/GroupDisplayName'
-          - description: The display name value for the group. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time the group is created and stored as an attribute of the group object in the identity store.
-        ExternalIds:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIds'
-          - description: A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing a description of the specified group.
         IdentityStoreId:
           allOf:
           - $ref: '#/components/schemas/IdentityStoreId'
           - description: The globally unique identifier for the identity store.
-      description: A group object that contains the metadata and attributes for a specified group.
-    ServiceQuotaExceededException: {}
-    DescribeUserResponse:
-      type: object
-      required:
-      - UserId
-      - IdentityStoreId
-      properties:
-        UserName:
-          allOf:
-          - $ref: '#/components/schemas/UserName'
-          - description: A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a user in the identity store.
-        ExternalIds:
-          allOf:
-          - $ref: '#/components/schemas/ExternalIds'
-          - description: A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the user.
-        DisplayName:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: The display name of the user.
-        NickName:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: An alternative descriptive name for the user.
-        ProfileUrl:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A URL link for the user's profile.
-        Emails:
-          allOf:
-          - $ref: '#/components/schemas/Emails'
-          - description: The email address of the user.
-        Addresses:
-          allOf:
-          - $ref: '#/components/schemas/Addresses'
-          - description: The physical address of the user.
-        PhoneNumbers:
-          allOf:
-          - $ref: '#/components/schemas/PhoneNumbers'
-          - description: A list of <code>PhoneNumber</code> objects associated with a user.
-        UserType:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string indicating the type of user.
-        Title:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing the title of the user.
-        PreferredLanguage:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: The preferred language of the user.
-        Locale:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: A string containing the geographical region or location of the user.
-        Timezone:
-          allOf:
-          - $ref: '#/components/schemas/SensitiveStringType'
-          - description: The time zone for a user.
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-    DeleteUserRequest:
-      type: object
-      required:
-      - IdentityStoreId
-      - UserId
-      title: DeleteUserRequest
-      properties:
-        IdentityStoreId:
-          allOf:
-          - $ref: '#/components/schemas/IdentityStoreId'
-          - description: The globally unique identifier for the identity store.
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for a user in the identity store.
     DeleteGroupMembershipRequest:
       type: object
       required:
@@ -2641,28 +2427,242 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceId'
           - description: The identifier for a <code>GroupMembership</code> in an identity store.
+    DeleteUserResponse:
+      type: object
+      properties: {}
+    CreateGroupRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      title: CreateGroupRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        DisplayName:
+          allOf:
+          - $ref: '#/components/schemas/GroupDisplayName'
+          - description: A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing the description of the group.
+    PhoneNumbers:
+      type: array
+      items:
+        $ref: '#/components/schemas/PhoneNumber'
+      minItems: 1
+      maxItems: 1
+    UpdateUserResponse:
+      type: object
+      properties: {}
+    CreateGroupResponse:
+      type: object
+      required:
+      - GroupId
+      - IdentityStoreId
+      properties:
+        GroupId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier of the newly created group in the identity store.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+    AttributeOperations:
+      type: array
+      items:
+        $ref: '#/components/schemas/AttributeOperation'
+      minItems: 1
+      maxItems: 100
+    GroupMembershipExistenceResult:
+      type: object
+      properties:
+        GroupId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a group in the identity store.
+        MemberId:
+          allOf:
+          - $ref: '#/components/schemas/MemberId'
+          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
+        MembershipExists:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: Indicates whether a membership relation exists or not.
+      description: Indicates whether a resource is a member of a group in the identity store.
+    ListGroupMembershipsResponse:
+      type: object
+      required:
+      - GroupMemberships
+      properties:
+        GroupMemberships:
+          allOf:
+          - $ref: '#/components/schemas/GroupMemberships'
+          - description: A list of <code>GroupMembership</code> objects in the group.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+    DescribeGroupResponse:
+      type: object
+      required:
+      - GroupId
+      - IdentityStoreId
+      properties:
+        GroupId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a group in the identity store.
+        DisplayName:
+          allOf:
+          - $ref: '#/components/schemas/GroupDisplayName'
+          - description: The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.
+        ExternalIds:
+          allOf:
+          - $ref: '#/components/schemas/ExternalIds'
+          - description: A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a description of the group.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+    SensitiveStringType:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+'
+      minLength: 1
+      maxLength: 1024
+      format: password
+    ExternalIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ExternalId'
+      minItems: 1
+      maxItems: 10
+    GetGroupMembershipIdResponse:
+      type: object
+      required:
+      - MembershipId
+      - IdentityStoreId
+      properties:
+        MembershipId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a <code>GroupMembership</code> in an identity store.
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+    IdentityStoreId:
+      type: string
+      pattern: d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 1
+      maxLength: 36
+    GetGroupIdRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      - AlternateIdentifier
+      title: GetGroupIdRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        AlternateIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/AlternateIdentifier'
+          - description: A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.
+    UpdateGroupRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      - GroupId
+      - Operations
+      title: UpdateGroupRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        GroupId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a group in the identity store.
+        Operations:
+          allOf:
+          - $ref: '#/components/schemas/AttributeOperations'
+          - description: A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.
+    CreateGroupMembershipRequest:
+      type: object
+      required:
+      - IdentityStoreId
+      - GroupId
+      - MemberId
+      title: CreateGroupMembershipRequest
+      properties:
+        IdentityStoreId:
+          allOf:
+          - $ref: '#/components/schemas/IdentityStoreId'
+          - description: The globally unique identifier for the identity store.
+        GroupId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for a group in the identity store.
+        MemberId:
+          allOf:
+          - $ref: '#/components/schemas/MemberId'
+          - description: An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.
+    PhoneNumber:
+      type: object
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveStringType'
+          - description: A string representing the type of a phone number. For example, "Mobile."
+        Primary:
+          allOf:
+          - $ref: '#/components/schemas/SensitiveBooleanType'
+          - description: A Boolean value representing whether this is the primary phone number for the associated resource.
+      description: The phone number associated with the user.
+    AttributeOperation:
+      type: object
+      required:
+      - AttributePath
+      properties:
+        AttributePath:
+          allOf:
+          - $ref: '#/components/schemas/AttributePath'
+          - description: A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.
+        AttributeValue:
+          allOf:
+          - $ref: '#/components/schemas/AttributeValue'
+          - description: The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.
+      description: An operation that applies to the requested group. This operation might add, replace, or remove an attribute.
     Addresses:
       type: array
       items:
         $ref: '#/components/schemas/Address'
       minItems: 1
       maxItems: 1
-    ListGroupsResponse:
-      type: object
-      required:
-      - Groups
-      properties:
-        Groups:
-          allOf:
-          - $ref: '#/components/schemas/Groups'
-          - description: A list of <code>Group</code> objects in the identity store.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it1 is used in the API request to search for the next page.
+    ExternalIdIdentifier:
+      type: string
+      pattern: '[\p{L}\p{M}\p{S}\p{N}\p{P}]+'
+      minLength: 1
+      maxLength: 256
+      format: password
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -2673,8 +2673,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -2685,20 +2685,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
