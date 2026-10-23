@@ -13,341 +13,341 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   examples/identitystore-address-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -1896,127 +1896,7 @@ artifacts:
   json-structure/sso-admin-update-permission-set-response-structure.json:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T125852.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T133943.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T143147.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T154045.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-26T215308.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T094438.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T103455.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T123021.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T132314.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T140727.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-28T221322.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T213958.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T230545.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T203505.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T220315.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-31T223420.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T063623.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T210448.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T222808.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T224043.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T161828.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T174231.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T062714.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T212454.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T224856.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T055819.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T144739.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T195450.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T211839.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T011047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T224210.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T200636.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T213054.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T214843.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T232836.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T204815.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T222408.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-12T062655.yml:
@@ -2100,6 +1980,21 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   openapi/_original/amazon-iam-identity-center-identitystore-openapi-original.yml:
     method: harvested
     evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
@@ -2108,345 +2003,183 @@ artifacts:
     method: harvested
     evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
       to the provider's source is unverified
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api-openapi.yml:
+  openapi/amazon-iam-identity-center-aws-single-sign-on-admin-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  ? openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api-openapi.yml
-  : method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api-openapi.yml:
+  openapi/amazon-iam-identity-center-aws-sso-identity-store-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/amazon-iam-identity-center-plans-pricing.yml:
     method: generated
     evidence: declared in the artifact
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-createuser-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deletegroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-deleteuser-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describegroupmembership-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-describeuser-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupid-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getgroupmembershipid-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-getuserid-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-ismemberingroups-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmemberships-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroupmembershipsformember-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listgroups-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-listusers-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updategroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-awsidentitystore-updateuser-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachcustomermanagedpolicyreferencetopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-attachmanagedpolicytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createaccountassignment-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-createpermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteaccountassignment-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinlinepolicyfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deleteinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionsboundaryfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-deletepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentcreationstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeaccountassignmentdeletionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describeinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-describepermissionsetprovisioningstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachcustomermanagedpolicyreferencefrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-detachmanagedpolicyfrompermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getinlinepolicyforpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-getpermissionsboundaryforpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentcreationstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignmentdeletionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountassignments-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listaccountsforprovisionedpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listcustomermanagedpolicyreferencesinpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listinstances-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listmanagedpoliciesinpermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetprovisioningstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsets-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listpermissionsetsprovisionedtoaccount-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-provisionpermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putinlinepolicytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-putpermissionsboundarytopermissionset-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-tagresource-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-untagresource-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updateinstanceaccesscontrolattributeconfiguration-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api
+    method: unknown
+    evidence: no authorship recorded
   rate-limits/amazon-iam-identity-center-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
