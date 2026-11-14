@@ -5,12 +5,27 @@ artifacts:
   agentic-access/amazon-iam-identity-center-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-iam-identity-center-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-iam-identity-center-authentication.yml:
     method: derived
     evidence: declared in the artifact
   capabilities/amazon-iam-identity-center-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  changelog/amazon-iam-identity-center-changelog.yml:
+    method: searched
+    evidence: declared in the artifact
+  cli/amazon-iam-identity-center-cli.yml:
+    method: searched
+    evidence: declared in the artifact
   collections/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api.opencollection.json:
     method: unknown
     evidence: no authorship recorded
@@ -347,6 +362,24 @@ artifacts:
   collections/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api.postman_collection.json:
     method: unknown
     evidence: no authorship recorded
+  compliance/amazon-iam-identity-center-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-iam-identity-center-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-iam-identity-center-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-iam-identity-center-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-iam-identity-center-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-iam-identity-center-problem-types.yml:
+    method: searched
+    evidence: declared in the artifact
   examples/identitystore-address-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -866,6 +899,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-iam-identity-center-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -873,6 +909,222 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-ld/amazon-iam-identity-center-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-add-region-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-account-assignment-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-application-assignment-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-application-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-application-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-instance-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-instance-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-permission-set-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-token-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-token-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-token-with-iamrequest-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-token-with-iamresponse-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-trusted-token-issuer-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-create-user-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-delete-account-assignment-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-delete-application-access-scope-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-delete-application-authentication-method-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-delete-application-grant-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-application-assignment-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-application-assignment-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-application-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-identity-store-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-identity-store-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-instance-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-region-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-region-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-trusted-token-issuer-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-trusted-token-issuer-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-describe-user-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-get-application-access-scope-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-get-application-access-scope-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-get-application-authentication-method-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-get-application-authentication-method-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-get-application-grant-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-get-application-grant-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-account-assignments-for-principal-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-account-assignments-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-accounts-for-provisioned-permission-set-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-access-scopes-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-access-scopes-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-assignments-for-principal-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-assignments-for-principal-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-assignments-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-authentication-methods-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-authentication-methods-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-grants-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-application-grants-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-applications-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-applications-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-identity-stores-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-identity-stores-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-instances-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-instances-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-permission-sets-provisioned-to-account-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-regions-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-regions-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-trusted-token-issuers-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-trusted-token-issuers-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-list-users-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-put-application-access-scope-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-put-application-authentication-method-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-put-application-grant-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-register-client-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-remove-region-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-update-application-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-update-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-update-identity-store-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-update-identity-store-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-update-instance-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-update-trusted-token-issuer-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-iam-identity-center-update-user-request-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/identitystore-address-schema.json:
@@ -1904,7 +2156,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -1973,14 +2225,21 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-iam-identity-center-identitystore-openapi-original.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
-  openapi/_original/amazon-iam-identity-center-sso-admin-openapi-original.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-iam-identity-center-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-iam-identity-center-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-iam-identity-center-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-iam-identity-center-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-iam-identity-center-application-access-scope-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -2017,9 +2276,15 @@ artifacts:
   openapi/amazon-iam-identity-center-trusted-token-issuer-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
-  plans/amazon-iam-identity-center-plans-pricing.yml:
-    method: generated
+  packages/amazon-iam-identity-center-packages.yml:
+    method: searched
     evidence: declared in the artifact
+  patterns/amazon-iam-identity-center-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
+  plans/amazon-iam-identity-center-plans-pricing.yml:
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-iam-identity-center-x-amz-target-awsidentitystore-creategroup-api.postman_collection.json:
     method: unknown
     evidence: no authorship recorded
@@ -2188,10 +2453,16 @@ artifacts:
   postman/amazon-iam-identity-center-x-amz-target-swbexternalservice-updatepermissionset-api.postman_collection.json:
     method: unknown
     evidence: no authorship recorded
+  privacy/amazon-iam-identity-center-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-iam-identity-center-rate-limits.yml:
-    method: generated
+    method: searched
     evidence: declared in the artifact
   rules/amazon-iam-identity-center-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-iam-identity-center-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-iam-identity-center-spectral-rules.yml:
@@ -2210,14 +2481,39 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/identitystore-2020-06-15.json:
-    method: unknown
-    evidence: no authorship recorded
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/identitystore/service/2020-06-15/identitystore-2020-06-15.json
+      (sha256 855cb22403c2, fetched 2026-11-11T21:10:32+00:00)
+  smithy/sso-2019-06-10.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/sso/service/2019-06-10/sso-2019-06-10.json
+      (sha256 e6bf5b609650, fetched 2026-11-11T21:10:30+00:00)
   smithy/sso-admin-2020-07-20.json:
-    method: unknown
-    evidence: no authorship recorded
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/sso-admin/service/2020-07-20/sso-admin-2020-07-20.json
+      (sha256 31a4d4b396f8, fetched 2026-11-11T21:10:31+00:00)
   smithy/sso-oidc-2019-06-10.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/sso-oidc/service/2019-06-10/sso-oidc-2019-06-10.json
+      (sha256 03d3b7387205, fetched 2026-11-11T21:10:31+00:00)
+  terms/amazon-iam-identity-center-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-iam-identity-center-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-iam-identity-center-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-iam-identity-center-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-iam-identity-center-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-iam-identity-center-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-iam-identity-center-well-known.yml:
     method: unknown
     evidence: no authorship recorded

@@ -1,9 +1,8 @@
 aid: amazon-iam-identity-center
 name: Amazon IAM Identity Center
-description: AWS IAM Identity Center (successor to AWS Single Sign-On) is where you create, or connect, your workforce identities
-  in AWS once and manage access centrally across your AWS organization. You can create user identities directly in IAM Identity
-  Center, or bring them from Microsoft Active Directory, and then use IAM Identity Center to manage user access to AWS accounts
-  and business applications with single sign-on.
+description: AWS IAM Identity Center (successor to AWS Single Sign-On) is where you create, or connect, your workforce identities in AWS once
+  and manage access centrally across your AWS organization. You can create user identities directly in IAM Identity Center, or bring them from
+  Microsoft Active Directory, and then use IAM Identity Center to manage user access to AWS accounts and business applications with single sign-on.
 type: Index
 deliveryModel:
   model: saas
@@ -18,21 +17,19 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: freemium
-  onboarding: self-serve
+  pricing: paid
+  onboarding: unknown
   trial: false
-  try_now: true
+  try_now: false
   public: false
-  gated: none
-  gated_source:
-  - onboarding
-  label: Freemium · Self-serve signup
-  confidence: medium
+  label: Paid
+  confidence: high
   source:
-  - plans
+  - finops
   - authentication
+  - rate-limits
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-iam-identity-center.png
 tags:
@@ -51,175 +48,56 @@ url: https://raw.githubusercontent.com/api-evangelist/amazon-iam-identity-center
 created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.23'
-apis:
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-aws-single-sign-on-admin-api
-  name: Amazon IAM Identity Center AWS Single Sign On Admin API
-  description: >-
-    The AWS Single Sign On Admin API from Amazon IAM Identity Center — 37 operation(s) for aws single
-    sign on admin.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - AWS Single Sign On Admin
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-aws-single-sign-on-admin-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/iam/identity-center/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/iam/identity-center/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: Documentation
-    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-aws-sso-identity-store-api
-  name: Amazon IAM Identity Center AWS SSO Identity Store API
-  description: >-
-    The AWS SSO Identity Store API from Amazon IAM Identity Center — 19 operation(s) for aws sso identity
-    store.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - AWS SSO Identity Store
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-aws-sso-identity-store-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/iam/identity-center/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/iam/identity-center/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/iam/identity-center/faqs/
-  - type: Documentation
-    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-access-scope-api
-  name: Amazon IAM Identity Center Iam Identity Center Application Access Scope API
-  description: >-
-    The Iam Identity Center Application Access Scope API from Amazon IAM Identity Center — 4 operation(s)
-    for iam identity center application access scope.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Application Access Scope
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-application-access-scope-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-api
-  name: Amazon IAM Identity Center Iam Identity Center Application API
-  description: >-
-    The Iam Identity Center Application API from Amazon IAM Identity Center — 5 operation(s) for iam identity
-    center application.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Application
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-application-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-assignment-api
-  name: Amazon IAM Identity Center Iam Identity Center Application Assignment API
-  description: >-
-    The Iam Identity Center Application Assignment API from Amazon IAM Identity Center — 5 operation(s)
-    for iam identity center application assignment.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Application Assignment
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-application-assignment-api-openapi.yml
-- aid: >-
-    amazon-iam-identity-center:amazon-iam-identity-center-application-authentication-method-api
-  name: Amazon IAM Identity Center Iam Identity Center Application Authentication Method API
-  description: >-
-    The Iam Identity Center Application Authentication Method API from Amazon IAM Identity Center — 4
-    operation(s) for iam identity center application authentication method.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Application Authentication Method
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-application-authentication-method-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-grant-api
-  name: Amazon IAM Identity Center Iam Identity Center Application Grant API
-  description: >-
-    The Iam Identity Center Application Grant API from Amazon IAM Identity Center — 4 operation(s) for
-    iam identity center application grant.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Application Grant
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-application-grant-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-identity-store-api
-  name: Amazon IAM Identity Center Iam Identity Center Identity Store API
-  description: >-
-    The Iam Identity Center Identity Store API from Amazon IAM Identity Center — 3 operation(s) for iam
-    identity center identity store.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Identity Store
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-identity-store-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-instance-api
-  name: Amazon IAM Identity Center Iam Identity Center Instance API
-  description: >-
-    The Iam Identity Center Instance API from Amazon IAM Identity Center — 4 operation(s) for iam identity
-    center instance.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Instance
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-instance-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-operations-api
-  name: Amazon IAM Identity Center Iam Identity Center Operations API
-  description: >-
-    The Iam Identity Center Operations API from Amazon IAM Identity Center — 11 operation(s) for iam identity
-    center operations.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-operations-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-region-api
-  name: Amazon IAM Identity Center Iam Identity Center Region API
-  description: >-
-    The Iam Identity Center Region API from Amazon IAM Identity Center — 4 operation(s) for iam identity
-    center region.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Region
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-region-api-openapi.yml
-- aid: amazon-iam-identity-center:amazon-iam-identity-center-trusted-token-issuer-api
-  name: Amazon IAM Identity Center Iam Identity Center Trusted Token Issuer API
-  description: >-
-    The Iam Identity Center Trusted Token Issuer API from Amazon IAM Identity Center — 5 operation(s)
-    for iam identity center trusted token issuer.
-  humanURL: https://aws.amazon.com/iam/identity-center/
-  baseURL: https://sso.amazonaws.com
-  tags:
-  - Iam Identity Center Trusted Token Issuer
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iam-identity-center-trusted-token-issuer-api-openapi.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
 common:
-- type: Plans
-  url: plans/amazon-iam-identity-center-plans-pricing.yml
+- type: Spectral
+  url: rules/amazon-iam-identity-center-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-iam-identity-center-rules.yml
+- type: Spectral
+  url: rules/amazon-iam-identity-center-jsonschema-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-iam-identity-center-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-iam-identity-center-data-model.yml
+- type: CLI
+  url: cli/amazon-iam-identity-center-cli.yml
+- type: ChangeLog
+  url: changelog/amazon-iam-identity-center-changelog.yml
+- type: Idempotency
+  url: conventions/amazon-iam-identity-center-conventions.yml
+- type: Conventions
+  url: conventions/amazon-iam-identity-center-conventions.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Lifecycle
+  url: lifecycle/amazon-iam-identity-center-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-iam-identity-center-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-iam-identity-center-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-iam-identity-center-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-iam-identity-center-security.txt
+- type: WellKnown
+  url: well-known/amazon-iam-identity-center-well-known.yml
+- type: Hosts
+  url: hosts/amazon-iam-identity-center-hosts.yml
+- type: Vendors
+  url: vendors/amazon-iam-identity-center-vendors.yml
+- type: SDKs
+  url: packages/amazon-iam-identity-center-packages.yml
+- type: Packages
+  url: packages/amazon-iam-identity-center-packages.yml
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: RateLimits
   url: rate-limits/amazon-iam-identity-center-rate-limits.yml
 - type: FinOps
@@ -307,6 +185,302 @@ common:
     description: Manage access across all accounts in an AWS Organization from a single SSO configuration.
 - type: Integrations
   url: https://aws.amazon.com/marketplace
+- type: UsageTerms
+  url: terms/amazon-iam-identity-center-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-iam-identity-center-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-iam-identity-center-compliance.yml
+- type: Eligibility
+  url: eligibility/amazon-iam-identity-center-eligibility.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-iam-identity-center-ai-preferences.yml
+apis:
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-aws-single-sign-on-admin-api
+  name: Amazon IAM Identity Center AWS Single Sign On Admin API
+  description: The AWS Single Sign On Admin API from Amazon IAM Identity Center — 37 operation(s) for aws single sign on admin.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - AWS Single Sign On Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-aws-single-sign-on-admin-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-account-assignment-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-delete-account-assignment-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-accounts-for-provisioned-permission-set-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-permission-sets-provisioned-to-account-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-permission-set-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-account-assignments-request-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-aws-sso-identity-store-api
+  name: Amazon IAM Identity Center AWS SSO Identity Store API
+  description: The AWS SSO Identity Store API from Amazon IAM Identity Center — 19 operation(s) for aws sso identity store.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://identitystore.{region}.amazonaws.com
+  tags:
+  - AWS SSO Identity Store
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-aws-sso-identity-store-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/iam/identity-center/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/iam/identity-center/faqs/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-user-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-user-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-users-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-update-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-update-user-request-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-access-scope-api
+  name: Amazon IAM Identity Center Iam Identity Center Application Access Scope API
+  description: The Iam Identity Center Application Access Scope API from Amazon IAM Identity Center — 4 operation(s) for iam identity center application
+    access scope.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Application Access Scope
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-application-access-scope-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-access-scopes-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-access-scopes-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-put-application-access-scope-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-get-application-access-scope-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-get-application-access-scope-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-delete-application-access-scope-request-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-api
+  name: Amazon IAM Identity Center Iam Identity Center Application API
+  description: The Iam Identity Center Application API from Amazon IAM Identity Center — 5 operation(s) for iam identity center application.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Application
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-application-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-application-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-application-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-applications-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-update-application-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-applications-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-application-response-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-assignment-api
+  name: Amazon IAM Identity Center Iam Identity Center Application Assignment API
+  description: The Iam Identity Center Application Assignment API from Amazon IAM Identity Center — 5 operation(s) for iam identity center application
+    assignment.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Application Assignment
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-application-assignment-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-assignments-for-principal-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-assignments-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-application-assignment-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-application-assignment-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-application-assignment-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-assignments-for-principal-response-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-authentication-method-api
+  name: Amazon IAM Identity Center Iam Identity Center Application Authentication Method API
+  description: The Iam Identity Center Application Authentication Method API from Amazon IAM Identity Center — 4 operation(s) for iam identity
+    center application authentication method.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Application Authentication Method
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-application-authentication-method-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-authentication-methods-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-authentication-methods-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-put-application-authentication-method-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-delete-application-authentication-method-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-get-application-authentication-method-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-get-application-authentication-method-response-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-application-grant-api
+  name: Amazon IAM Identity Center Iam Identity Center Application Grant API
+  description: The Iam Identity Center Application Grant API from Amazon IAM Identity Center — 4 operation(s) for iam identity center application
+    grant.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Application Grant
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-application-grant-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-grants-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-application-grants-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-put-application-grant-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-delete-application-grant-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-get-application-grant-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-get-application-grant-response-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-identity-store-api
+  name: Amazon IAM Identity Center Iam Identity Center Identity Store API
+  description: The Iam Identity Center Identity Store API from Amazon IAM Identity Center — 3 operation(s) for iam identity center identity store.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://identitystore.{region}.amazonaws.com
+  tags:
+  - Iam Identity Center Identity Store
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-identity-store-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-identity-stores-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-identity-stores-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-identity-store-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-update-identity-store-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-update-identity-store-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-identity-store-request-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-instance-api
+  name: Amazon IAM Identity Center Iam Identity Center Instance API
+  description: The Iam Identity Center Instance API from Amazon IAM Identity Center — 4 operation(s) for iam identity center instance.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Instance
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-instance-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-instance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-instance-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-update-instance-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-instances-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-instances-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-instance-response-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-operations-api
+  name: Amazon IAM Identity Center Iam Identity Center Operations API
+  description: The Iam Identity Center Operations API from Amazon IAM Identity Center — 11 operation(s) for iam identity center operations.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-token-with-iamrequest-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-register-client-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-token-with-iamresponse-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-account-assignments-for-principal-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-token-response-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-region-api
+  name: Amazon IAM Identity Center Iam Identity Center Region API
+  description: The Iam Identity Center Region API from Amazon IAM Identity Center — 4 operation(s) for iam identity center region.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Region
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-region-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-region-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-remove-region-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-add-region-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-regions-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-region-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-regions-response-schema.json
+- aid: amazon-iam-identity-center:amazon-iam-identity-center-trusted-token-issuer-api
+  name: Amazon IAM Identity Center Iam Identity Center Trusted Token Issuer API
+  description: The Iam Identity Center Trusted Token Issuer API from Amazon IAM Identity Center — 5 operation(s) for iam identity center trusted
+    token issuer.
+  humanURL: https://aws.amazon.com/iam/identity-center/
+  baseURL: https://sso.amazonaws.com
+  tags:
+  - Iam Identity Center Trusted Token Issuer
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iam-identity-center-trusted-token-issuer-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-create-trusted-token-issuer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-trusted-token-issuers-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-list-trusted-token-issuers-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-trusted-token-issuer-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-update-trusted-token-issuer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-iam-identity-center-describe-trusted-token-issuer-request-schema.json
 integrations:
 - name: Agent Mode
 - name: Sign in
@@ -316,8 +490,10 @@ integrations:
 - name: Why AWS Marketplace?
 - name: Get started in AWS Marketplace
 - name: Manage Your Account
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
 x-parent: amazon-web-services
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v6
